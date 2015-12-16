@@ -1,0 +1,61 @@
+{
+    "key": "group_563b01cd95df7",
+    "title": "Post Type - Work - Design",
+    "fields": [
+        {
+            "key": "field_563b01cd9e69c",
+            "label": "Design (Only if Design)",
+            "name": "design",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "",
+                        "operator": "=="
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "work"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "services:design"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1446707963
+}

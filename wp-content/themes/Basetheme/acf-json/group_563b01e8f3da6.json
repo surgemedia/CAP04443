@@ -1,0 +1,39 @@
+{
+    "key": "group_563b01e8f3da6",
+    "title": "Post Type - Work - General",
+    "fields": [
+        {
+            "key": "field_563b01e9053d7",
+            "label": "overlay color",
+            "name": "overlay_color",
+            "type": "color_picker",
+            "instructions": "pick the color of the square that is overlaid on hover",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#88B127"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "work"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1446707706
+}

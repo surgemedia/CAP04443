@@ -1,0 +1,45 @@
+.work-obj {
+		display:inline-block;
+		margin:0px;
+		position: relative;
+		overflow:hidden;
+		min-height:4 85px;
+		.overlay {
+			height:100%;
+			width:100%;
+			left:0px;
+			top:0px;
+			position: absolute;
+			transform: translate(0,100%);
+			transition:0.4s ease all;
+			text-align: center;
+			height: 100%;
+		    width: 100%;
+		    left: 0;
+		    top: 0;
+		    position: absolute;
+		    display: flex;
+		        text-align: center;
+   				 align-items: center;
+			hgroup {
+				display:table-cell;
+				vertical-align: middle;
+				margin: 0;
+				padding: 0;
+				display: block;
+   				width: 100%;
+   				color:#fff;
+   				a {
+   					color:#fff;
+   				}
+			}
+			
+		}
+		&:hover {
+			.overlay {
+			transform: translate(0,0);
+			transition:0.4s ease all;
+			 @extend .pattern-bg;
+			}
+		}
+	}

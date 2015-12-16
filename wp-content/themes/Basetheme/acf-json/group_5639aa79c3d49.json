@@ -1,0 +1,240 @@
+{
+    "key": "group_5639aa79c3d49",
+    "title": "Page - Front Page (Home)",
+    "fields": [
+        {
+            "key": "field_5639aa873cbb3",
+            "label": "Video Background",
+            "name": "video_background",
+            "type": "oembed",
+            "instructions": "paste in the full url of the video and it will be used as the background of top section and it will be muted.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_5639aacb3cbb4",
+            "label": "carousel",
+            "name": "carousel",
+            "type": "repeater",
+            "instructions": "This the Slides inside the slider",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_5639aaed3cbb5",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "The big bold text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Design",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5639ab2e3cbb6",
+                    "label": "Subtitle Line 1",
+                    "name": "subtitle_line_one",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25,
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_563a9d90d2e96",
+                    "label": "Subtitle Line 2",
+                    "name": "subtitle_line_two",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25,
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5639ab553cbb7",
+                    "label": "Link Location",
+                    "name": "link_location",
+                    "type": "url",
+                    "instructions": "the place you want this to go when clicked, if you don't want it to go anywhere at #",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ],
+            "collapsed": ""
+        },
+        {
+            "key": "field_563c0ce4637a4",
+            "label": "Featured Work",
+            "name": "featured_work",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_563c0ccb637a3",
+                    "label": "Case Study",
+                    "name": "case_study",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "case_study"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_563c100c637a6",
+                    "label": "Type of Work From the Case study",
+                    "name": "type_of_work",
+                    "type": "select",
+                    "instructions": "select the kind of work you want to get from the case study",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "design": "Design",
+                        "video": "Video",
+                        "development": "Development"
+                    },
+                    "default_value": {
+                        "design": "design"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                }
+            ]
+        },
+        {
+            "key": "field_563c10a41977a",
+            "label": "Featured Case Study",
+            "name": "featured_case_study",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "case_study"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1446785215
+}
