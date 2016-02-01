@@ -32,5 +32,8 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     }
+  },
+  "devDependencies": {
+    "Rusha": "rusha#~0.7.7"
   }
 }
