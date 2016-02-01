@@ -1,0 +1,44 @@
+// {
+//     "key": "group_5501353268888",
+//     "title": "Post Type - Testimonimal",
+//     "fields": [
+//         {
+//             "key": "field_5501354106459",
+//             "label": "company name",
+//             "name": "company_name",
+//             "prefix": "",
+//             "type": "text",
+//             "instructions": "",
+//             "required": 0,
+//             "conditional_logic": 0,
+//             "wrapper": {
+//                 "width": "",
+//                 "class": "",
+//                 "id": ""
+//             },
+//             "default_value": "",
+//             "placeholder": "",
+//             "prepend": "",
+//             "append": "",
+//             "maxlength": "",
+//             "readonly": 0,
+//             "disabled": 0
+//         }
+//     ],
+//     "location": [
+//         [
+//             {
+//                 "param": "post_type",
+//                 "operator": "==",
+//                 "value": "testimonial"
+//             }
+//         ]
+//     ],
+//     "menu_order": 0,
+//     "position": "normal",
+//     "style": "default",
+//     "label_placement": "top",
+//     "instruction_placement": "label",
+//     "hide_on_screen": "",
+//     "modified": 1426142665
+// }
