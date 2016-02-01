@@ -1,0 +1,57 @@
+.process{
+	height: 140vh;
+  position: relative;
+  
+  .box{
+	background: rgba(#fff,.8);
+    position: absolute;
+    top: 34em;
+    z-index: 2;
+    min-height: 50em;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    .content{
+    	text-align: center;
+    	ul{
+    		list-style: none;
+    		padding: 0;
+				width: 90%;
+    		display: inline-block;
+				margin-bottom: 3em;
+    		li{
+    			float:left;
+    			width: 20%;
+    			padding: 0 1em;
+					i{
+						font-size: 5em;
+						color:$blue_bg;
+						margin-bottom: .3em;
+					}
+					span{
+						display:block;
+						b{
+							font-size: $paragraph-size;
+							color: $blue_bg;
+						}
+						p{
+							display: inline;
+							line-height: 1.5;
+						}
+	    		}
+    		}
+    	}
+    	.description{
+    		width:65%;
+    		margin:auto;
+    		p{
+    			line-height: 1.5;
+    		}
+    	}
+    	.btn-basic{
+    		width: 315px;
+    	}
+    }
+  }
+}

@@ -55,7 +55,8 @@ function display_sidebar() {
         'is_404',
         'is_front_page',
         'is_page',
-        'is_single',
+        'is_single'
+
 
       ]
     );

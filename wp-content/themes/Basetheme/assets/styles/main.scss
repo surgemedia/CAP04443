@@ -1,24 +1,66 @@
-@import "common/_variables";
+@import "common/variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import "common/_global";
-@import "common/_fonts";
-@import "components/_buttons";
-@import "components/_comments";
-@import "components/_forms";
-@import "components/_grid";
-@import "components/_wp-classes";
+@import "common/global";
 
-@import "components/_work-obj";
+/*----------  ATOMS  ----------*/
 
-@import "layouts/_header";
-@import "layouts/_sidebar";
-@import "layouts/_footer";
-@import "layouts/_pages";
-@import "layouts/_posts";
+@import "components/atoms/buttons";
+@import "components/atoms/links";
+@import "components/atoms/titles";
+@import "components/atoms/paragraphs";
+
+/*----------  MOLECULES  ----------*/
+
+@import "components/molecules/forms";
+@import "components/molecules/service";
+@import "components/molecules/process";
+@import "components/molecules/home-detail";
+@import "components/molecules/contact-detail";
+@import "components/molecules/contact-form";
+@import "components/molecules/login";
+
+/*----------  ORGANISMS  ----------*/
+
+@import "components/organisms/header";
+@import "components/organisms/services";
+@import "components/organisms/contact";
+
+/*----------  OTHERS  ----------*/
+
+@import "components/wp-styles/grid";
+@import "components/wp-styles/wp-classes";
+@import "components/wp-styles/comments";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
 
 
+/*----------  RESPONSIVE  ----------*/
+
+
+@media (max-width: $screen-sm-max) {
+	@import "res/_res-xs-sm.scss";
+}
+@media (max-width: $screen-xs-max) {
+	@import "res/_res-xs.scss";
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	@import "res/_res-sm.scss";
+}
+@media (min-width: $screen-md-min) {
+	@import "res/_res-md-lg.scss";
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+	@import "res/_res-md.scss";
+}
+@media (min-width: $screen-lg-min) {
+	@import "res/_res-lg.scss";
+}
