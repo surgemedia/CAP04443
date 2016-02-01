@@ -17,10 +17,6 @@
 
 function acf_get_field_reference( $field_name, $post_id ) {
 	
-	// vars
-	$reference = false;
-	
-	
 	// try cache
 	$found = false;
 	$cache = wp_cache_get( "field_reference/post_id={$post_id}/name={$field_name}", 'acf', false, $found );
@@ -32,57 +28,8 @@ function acf_get_field_reference( $field_name, $post_id ) {
 	}
 			
 	
-	// load value depending on the $type
-	if( is_numeric($post_id) ) {
-		
-		$v = get_post_meta( $post_id, "_{$field_name}", false );
-		
-		// value is an array
-		if( isset($v[0]) ) {
-			
-		 	$reference = $v[0];
-		 	
-	 	}
-
-	} elseif( strpos($post_id, 'user_') !== false ) {
-		
-		$user_id = str_replace('user_', '', $post_id);
-		$user_id = intval( $user_id );
-		
-		$v = get_user_meta( $user_id, "_{$field_name}", false );
-		
-		// value is an array
-		if( isset($v[0]) ) {
-			
-		 	$reference = $v[0];
-		 	
-	 	}
-	 	
-	} elseif( strpos($post_id, 'comment_') !== false ) {
-		
-		$comment_id = str_replace('comment_', '', $post_id);
-		$comment_id = intval( $comment_id );
-		
-		$v = get_comment_meta( $comment_id, "_{$field_name}", false );
-		
-		// value is an array
-		if( isset($v[0]) ) {
-			
-		 	$reference = $v[0];
-		 	
-	 	}
-	 	
-	} else {
-		
-		$v = get_option( "_{$post_id}_{$field_name}", false );
-	
-		if( ! is_null($v) ) {
-			
-			$reference = $v;
-			
-	 	}
-	 	
-	}
+	// get reference
+	$reference = acf_get_metadata( $post_id, $field_name, true );
 	
 	
 	//update cache
@@ -515,17 +462,17 @@ function have_rows( $selector, $post_id = false ) {
 		// If post_id has changed, this is most likely an archive loop
 		if( $change == 'post_id' ) {
 			
-			if( $prev && $prev['post_id'] == $post_id ) {
-				
-				// case: Change in $post_id was due to a nested loop ending
-				// action: move up one level through the loops
-				reset_rows();
-			
-			} elseif( empty($_post_id) && $sub_exists ) {
+			if( empty($_post_id) && $sub_exists ) {
 				
 				// case: Change in $post_id was due to this being a nested loop and not specifying the $post_id
 				// action: move down one level into a new loop
 				$new_child_loop = true;
+			
+			} elseif( $prev && $prev['post_id'] == $post_id ) {
+				
+				// case: Change in $post_id was due to a nested loop ending
+				// action: move up one level through the loops
+				reset_rows();
 			
 			} else {
 				
@@ -697,6 +644,21 @@ function acf_get_row() {
 	
 	// return
 	return false;
+	
+}
+
+function get_row_index() {
+	
+	// vars
+	$row = acf_get_row();
+	
+	
+	// bail early if no row
+	if( !$row ) return 0;
+	
+	
+	// return
+	return $row['i'] + 1;
 	
 }
 
@@ -1720,6 +1682,15 @@ function add_row( $selector, $value, $post_id = false ) {
 	$i = (int) acf_get_metadata( $post_id, $field['name'] );
 	
 	
+	// if no rows, save this field via update_field() so that the reference field is created
+	if( !$i ) {
+		
+		// acf_update_value will return boolean, simply convert this to int for 1 | 0 (the number of rows!)
+		return (int) acf_update_value( array( $value ), $post_id, $field );
+		
+	}
+	
+	
 	// increase $i
 	$i++;
 	
@@ -1733,7 +1704,7 @@ function add_row( $selector, $value, $post_id = false ) {
 		
 		foreach( $value as $k => $v ) {
 		
-			update_sub_field( array( $field['name'], $i, $k ), $v, $post_id );
+			update_sub_field( array( $field['key'], $i, $k ), $v, $post_id );
 			
 		}
 	
@@ -1778,17 +1749,13 @@ function update_row( $selector, $row = 1, $value = false, $post_id = false ) {
 	
 	
 	// bail early if no field
-	if( !$field ) {
-		
-		return false;
-		
-	}
+	if( !$field ) return false;
 	
 	
 	// update sub fields
 	foreach( $value as $k => $v ) {
 		
-		update_sub_field( array( $field['name'], $row, $k ), $v, $post_id );
+		update_sub_field( array( $field['key'], $row, $k ), $v, $post_id );
 		
 	}
 	
@@ -1853,7 +1820,7 @@ function delete_row( $selector, $row = 1, $post_id = false ) {
 	// update sub field values
 	foreach( $rows[0] as $k => $v ) {
 		
-		update_sub_field( array( $field['name'], $row, $k ), null, $post_id );
+		update_sub_field( array( $field['key'], $row, $k ), null, $post_id );
 		
 	}
 	

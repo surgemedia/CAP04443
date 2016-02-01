@@ -47,7 +47,7 @@ class acf_pro {
 		
 		// actions
 		add_action('init',										array($this, 'register_assets'));
-		add_action('acf/include_field_types',					array($this, 'include_field_types'));
+		add_action('acf/include_field_types',					array($this, 'include_field_types'), 5);
 		add_action('acf/input/admin_enqueue_scripts',			array($this, 'input_admin_enqueue_scripts'));
 		add_action('acf/field_group/admin_enqueue_scripts',		array($this, 'field_group_admin_enqueue_scripts'));
 		add_action('acf/field_group/admin_l10n',				array($this, 'field_group_admin_l10n'));
@@ -55,7 +55,6 @@ class acf_pro {
 		
 		// filters
 		add_filter('acf/get_valid_field',						array($this, 'get_valid_field'), 11, 1);
-		add_filter('acf/update_field',							array($this, 'update_field'), 1, 1);
 		add_filter('acf/prepare_field_for_export', 				array($this, 'prepare_field_for_export'));
 		add_filter('acf/prepare_field_for_import', 				array($this, 'prepare_field_for_import'));
 		
@@ -222,78 +221,6 @@ class acf_pro {
 		
 	}
 	
-	
-	/*
-	*  update_field
-	*
-	*  This function will attempt to modify the $field's parent value from a field_key into a post_id
-	*
-	*  @type	function
-	*  @date	4/11/2013
-	*  @since	5.0.0
-	*
-	*  @param	$post_id (int)
-	*  @return	$post_id (int)
-	*/
-	
-	function update_field( $field ) {
-		
-		// bail ealry if not relevant
-		if( is_numeric($field['parent']) ) {
-			
-			return $field;
-				
-		}
-		
-		
-		// vars
-		$ref = 0;
-		
-		
-		// create reference
-		if( empty($this->ref) ) {
-			
-			$this->ref = array();
-			
-		}
-		
-		
-		if( isset($this->ref[ $field['parent'] ]) ) {
-			
-			$ref = $this->ref[ $field['parent'] ];
-			
-		} else {
-			
-			// get parent without caching (important not to cache as parent $field will now contain new sub fields)
-			$parent = acf_get_field( $field['parent'], true );
-			
-			
-			// bail ealry if no parent
-			if( !$parent ) {
-				
-				return $field;
-				
-			}
-			
-			
-			// get ref
-			$ref = $parent['ID'] ? $parent['ID'] : $parent['key'];
-			
-			
-			// update ref
-			$this->ref[ $field['parent'] ] = $ref;
-			
-		}
-		
-		
-		// update field's parent
-		$field['parent'] = $ref;
-		
-		
-		// return
-		return $field;
-		
-	}
 	
 	
 	/*
