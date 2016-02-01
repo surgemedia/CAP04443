@@ -15,20 +15,7 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php', // Theme customizer
-  'lib/function-debug.php',                // debuggings fun
-  'lib/function-get-featured-image-url.php',      // get feaured image url for aq resizer
-  'lib/function-include-part.php',      // includes componentes
-  // 'lib/function-getslug.php',                     // get the current slug
-  'lib/function-get_id_from_slug.php',            // get id from slug
-  // 'lib/function_clean_youtube_link.php',            // just get the v=
-  'lib/function-display-gravity-form.php',            // Easy ACF to Gravity form display func
-  'lib/function-truncate-content.php',            // truncate long text
-  // 'lib/function-get_post_page_content.php',            // get content from another page
-  // 'lib/gravity_forms-v5.php',            // Adds Gravity form to ACF
-  'lib/acf-option-page.php',            // theme Option Page
-  // 'lib/wp-api-register-property.php',            // WP API post type addons
-  'lib/aq_resizer.php',                // Image resizer
+  'lib/customizer.php' // Theme customizer
 ];
 
 foreach ($sage_includes as $file) {

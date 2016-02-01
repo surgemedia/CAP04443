@@ -7,14 +7,14 @@ if( have_rows('services') ):
     while ( have_rows('services') ) : the_row();
 
   			if ("even"==$flick) {
-					includePart('includes/molecule-service-even.php',
+					includePart('components/molecule-service-even.php',
 											get_sub_field("image"),
 											get_sub_field("title"),
 											get_sub_field("content"),
 											get_sub_field("register_text"));
 					$flick="odd";
   			} else {
-  				includePart('includes/molecule-service-odd.php',
+  				includePart('components/molecule-service-odd.php',
 											get_sub_field("image"),
 											get_sub_field("title"),
 											get_sub_field("content"),

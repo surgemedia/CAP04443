@@ -4,4 +4,4 @@ function includePart($args){
 				include(locate_template($args[0]));
 				unset($args);
 			}
-			 ?>
+ ?>
