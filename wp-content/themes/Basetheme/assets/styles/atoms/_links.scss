@@ -1,0 +1,22 @@
+.links{
+	color:$link-color;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+.register{
+	@extend .links;
+	font-weight: $Heavy;
+	font-size: 30px;
+	display: block;
+	margin-bottom:1em;
+}
+
+.more-info{
+	@extend .links;
+	font-weight: $SemiBold;
+	font-size: 14px;
+	display: block;
+}
