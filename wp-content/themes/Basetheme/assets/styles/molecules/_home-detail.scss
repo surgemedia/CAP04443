@@ -1,0 +1,18 @@
+.home-detail{
+	background: $blue_bg;
+	height:100vh;
+	display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  .box{
+  	text-align: center;
+  	width: 80%;
+    margin: auto;
+		img{
+			margin-bottom: 1em;
+		}
+		p{
+			color:#fff;
+		}
+  }
+}
