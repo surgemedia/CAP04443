@@ -13,7 +13,7 @@
 </div>
 <div class="col-lg-6">
 		<div class="card col-lg-6">
-			<i class="glyphicon glyphicon-start"></i>
+			<i class="icon-insects">aad</i>
 			<div class="package">
 				Package heart
 			</div>
