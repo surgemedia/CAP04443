@@ -5,36 +5,37 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "common/fonts";
 @import "common/global";
 
 /*----------  ATOMS  ----------*/
 
-@import "components/atoms/buttons";
-@import "components/atoms/links";
-@import "components/atoms/titles";
-@import "components/atoms/paragraphs";
+@import "atoms/buttons";
+@import "atoms/links";
+@import "atoms/titles";
+@import "atoms/paragraphs";
 
 /*----------  MOLECULES  ----------*/
 
-@import "components/molecules/forms";
-@import "components/molecules/service";
-@import "components/molecules/process";
-@import "components/molecules/home-detail";
-@import "components/molecules/contact-detail";
-@import "components/molecules/contact-form";
-@import "components/molecules/login";
+@import "molecules/forms";
+@import "molecules/service";
+@import "molecules/process";
+@import "molecules/home-detail";
+@import "molecules/contact-detail";
+@import "molecules/contact-form";
+@import "molecules/login";
 
 /*----------  ORGANISMS  ----------*/
 
-@import "components/organisms/header";
-@import "components/organisms/services";
-@import "components/organisms/contact";
+@import "organisms/header";
+@import "organisms/services";
+@import "organisms/contact";
 
 /*----------  OTHERS  ----------*/
 
-@import "components/wp-styles/grid";
-@import "components/wp-styles/wp-classes";
-@import "components/wp-styles/comments";
+@import "wp-styles/grid";
+@import "wp-styles/wp-classes";
+@import "wp-styles/comments";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
