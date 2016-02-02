@@ -245,7 +245,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{lib,includes}/**/*.php', '*.php'],
+    files: ['{lib,components}/**/*.php', '*.php'],
     proxy: config.devUrl,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],

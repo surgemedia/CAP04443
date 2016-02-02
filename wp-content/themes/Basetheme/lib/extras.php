@@ -31,3 +31,37 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+
+/*======================================
+=            EXTRA FUCTIONS            =
+======================================*/
+
+$custom_includes = [
+  'lib/function-debug.php',    // Scripts and stylesheets
+  'lib/gravity_forms-v5.php',    // Scripts and stylesheets
+  'lib/function-display-gravity-form.php',    // Scripts and stylesheets
+  'lib/function-get_id_from_slug.php',    // Scripts and stylesheets
+  'lib/function-get-featured-image-url.php',    // Scripts and stylesheets
+  'lib/function-truncate-content.php',    // Scripts and stylesheets
+  'lib/function-includePart.php',    // Scripts and stylesheets
+  'lib/function-getUserTaxonomy.php',    // Scripts and stylesheets
+
+
+  'lib/taxonomy-school.php'    // Scripts and stylesheets
+
+
+];
+
+foreach ($custom_includes as $file) {
+  if (!$filepath = locate_template($file)) {
+    trigger_error(sprintf(__('Error locating %s for inclusion in Extra', 'sage'), $file), E_USER_ERROR);
+  }
+
+  include $filepath;
+}
+unset($file, $filepath);
+
+
+
+
