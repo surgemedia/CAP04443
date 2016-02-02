@@ -9,7 +9,7 @@
   <?php get_template_part('templates/content', 'page'); ?>
 
 <div class="col-lg-6">
-	<?php 	includePart('includes/organism-user-info.php');?>
+	<?php 	includePart('components/organism-user-info.php');?>
 </div>
 <div class="col-lg-6">
 		<div class="card col-lg-6">
