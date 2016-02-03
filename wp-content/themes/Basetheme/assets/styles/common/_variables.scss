@@ -28,8 +28,14 @@ $grid-gutter-width: 0px;
 /*==============================
 =            Colour            =
 ==============================*/
-$blue-bg:       #22adc2;
-$grey-bg:				#ebebeb;
-$font-color: 		#736f66;
+$blue: 					#22adc2;
+$blue-light:		#4ebdce;
+$grey:					#ebebeb;
+$grey-dark:			#736f66;
+$pink:					#f35c9f;
+
+$blue-bg:       $blue;
+$grey-bg:				$grey;
+$font-color: 		$grey-dark;
 $title-color:		#000;
-$link-color:		#f35c9f;
+$link-color:		$pink;

@@ -19,9 +19,16 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "capricorn.js": {
+      "files": [
+        "scripts/capricorn.js"
+      ]
     }
+  
   },
   "config": {
     "devUrl": "http://example.dev"
   }
 }
+        

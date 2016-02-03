@@ -1,0 +1,6 @@
+var menu = {
+	toggle : function(){
+		
+	}
+
+};

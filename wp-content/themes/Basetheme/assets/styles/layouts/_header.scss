@@ -1,0 +1,52 @@
+.banner{
+	background-color: $blue;
+	height: 144px;
+	margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  padding: 20px;
+
+	.box{
+		padding: 20px;
+		background-color: $blue-light;
+		width:444px;
+		display:inline-block;
+		.navbar{
+	    position: relative;
+	    float: left;
+	    margin-right: 0;
+	    padding: 9px 10px;
+	    margin:0;
+	    background-color: transparent;
+	    background-image: none;
+	    border: 3px solid #fff;
+	    border-radius: 0;
+	    span{
+		    border: 2px solid #fff;
+		    width: 2.5em;
+		    display: block;
+		    margin: .5em 0;
+	    }
+		}
+		
+		.menu-wrap{
+			display:block;
+			ul{
+				list-style: none;
+				li{
+					display: inline-block;
+				}
+
+			}
+		}
+	}
+	.logout{
+		display:inline-block;
+		a{
+			text-decoration: none;
+	    border: 3px solid #fff;
+	    width: 100%;
+	    display: inline-block;
+		}
+	}
+}

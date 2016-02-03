@@ -18,6 +18,7 @@
 /*----------  MOLECULES  ----------*/
 
 @import "molecules/forms";
+@import "molecules/package";
 @import "molecules/service";
 @import "molecules/process";
 @import "molecules/home-detail";
@@ -30,6 +31,7 @@
 @import "organisms/header";
 @import "organisms/services";
 @import "organisms/contact";
+@import "organisms/packages";
 
 /*----------  OTHERS  ----------*/
 
@@ -64,4 +66,7 @@
 }
 @media (min-width: $screen-lg-min) {
 	@import "res/_res-lg.scss";
+}
+@media (min-width: $screen-lg-min) and (max-width: 1440px) {
+	@import "res/_res-lg-1440.scss";
 }

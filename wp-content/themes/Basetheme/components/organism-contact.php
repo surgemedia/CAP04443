@@ -5,7 +5,7 @@
 <div class="contact" style="background-image:url('<?php echo $image;?>')">
 	
 	<div class="col-lg-6">
-		<?php 	includePart('includes/molecule-contact-detail.php',
+		<?php 	includePart('components/molecule-contact-detail.php',
 											"Contact Us", //title
 											"(07) 3846 6391",//phone
 											"info@capricornphotography.com.au",//email
@@ -13,7 +13,7 @@
 											);?>
 	</div>
 	<div class="col-lg-6">
-				<?php 	includePart('includes/molecule-contact-form.php',
+				<?php 	includePart('components/molecule-contact-form.php',
 											"Make An Enquiry" //title
 											);
  		?>
