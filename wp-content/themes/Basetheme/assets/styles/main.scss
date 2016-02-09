@@ -3,7 +3,9 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/bootstrap-chosen/bootstrap-chosen.scss";
 // endbower
+
 
 @import "common/fonts";
 @import "common/global";
@@ -32,6 +34,7 @@
 @import "organisms/services";
 @import "organisms/contact";
 @import "organisms/packages";
+@import "organisms/user-info";
 
 /*----------  OTHERS  ----------*/
 
@@ -42,6 +45,7 @@
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
+@import "layouts/checkout";
 @import "layouts/posts";
 @import "layouts/tinymce";
 
@@ -67,6 +71,10 @@
 @media (min-width: $screen-lg-min) {
 	@import "res/_res-lg.scss";
 }
-@media (min-width: $screen-lg-min) and (max-width: 1440px) {
+@media (min-width: $screen-lg-min) and (max-width: 1439px) {
 	@import "res/_res-lg-1440.scss";
 }
+@media (min-width: 1440px){
+	@import "res/_res-1440.scss";
+}
+	

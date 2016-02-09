@@ -10,15 +10,15 @@
  		<h1><?php echo $title; ?></h1>
  		<ul>
  			<li>
- 				<i class="glyphicon glyphicon-pencil"></i>
+ 				<i class="icon-telephone"></i>
  				<p><?php echo $phone; ?></p>
  			</li>
  			<li>
- 				<i class="glyphicon glyphicon-music"></i>
+ 				<i class="icon-send"></i>
  				<p><?php echo $email; ?></p>
  			</li>
  			<li>
- 				<i class="glyphicon glyphicon-envelope"></i>
+ 				<i class="icon-envelope"></i>
  				<p><?php echo $pobox; ?></p>
  			</li>
  		</ul>

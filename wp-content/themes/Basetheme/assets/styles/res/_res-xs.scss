@@ -1,0 +1,372 @@
+/*========================================
+=            Molecule Package            =
+========================================*/
+.package{
+	.box{
+		margin: auto;
+		[class*='icon-']{
+			
+		}
+		.title h1{
+			font-size: 10vw;
+		}
+		.info{
+			
+		}
+		ul{
+
+			li{
+
+				.price{
+
+				}
+				a{
+
+				}
+			}
+			.free{
+
+			}
+		}
+	}
+}
+
+.package-info{
+
+	.package-collection{
+
+	}
+	.title{
+
+	}
+	.detail{
+
+	}
+	ul{
+		li{
+		 	a{
+
+		 	}
+		 &:first-child{
+			a{
+
+			}
+		 }
+		}
+	}
+}
+
+/*======================================
+=            Button Log Out            =
+======================================*/
+.banner{
+	.logout{
+		
+    width: 32%;
+    
+		a{
+			
+		}
+	}
+}
+
+
+
+/*==========================================
+=            Organism User Info            =
+==========================================*/
+.user-info{
+ 
+  .scroll-hide{
+  
+  	.box{
+  		img{
+  		
+  		}
+  		
+
+          p{
+         
+          }
+          h1{
+          
+          }
+  	}
+    .purchase{
+      .table-head{
+        font-size: 18px;
+        ul{
+     
+          li{
+        
+          }
+          li:nth-child(n+2){
+           
+          }
+          li:first-child{
+           
+          }
+        }
+      }
+      .cart_list{
+        .mini_cart_item{
+        	font-size: 18px;
+          .quantity,
+          .price,
+          .name,
+          .title{
+          	float:left;
+          	width: 50%;
+          	height: 3.5em;
+          }
+          
+          
+          .quantity{
+           
+            .chosen-container{
+              .chosen-single{
+                span{
+              
+                }
+                div b{
+              
+                }
+              }
+              &.chosen-with-drop{
+                .chosen-single div b{
+                }
+              }
+            }
+            .remove{
+             background-color: $grey-dark;
+             color: #fff !important;
+              &:hover{
+              
+              }
+            }
+          }
+          .subtotal{
+          }       
+        }
+      }
+      section{
+        .total{
+        
+          span{
+          
+          }
+
+          strong{
+           font-size: 20px;
+          }
+
+          .amount{
+          }
+        }
+        .buttons{
+          a{
+           width:100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*================================================
+=            Molecule Contact Detail             =
+================================================*/
+.contact-detail{
+  height: 65vh;
+  .box{
+    width: 90%;
+    h1{
+      font-size: 40px;
+    }
+    ul{
+    
+      li{
+        i{
+          font-size: 40px;
+        }
+        p{
+          font-size: 15px;
+        }
+      }
+      
+    }
+  }
+  
+}
+
+/*=============================================
+=            Molecule Contact Form            =
+=============================================*/
+
+.contact-form{
+    height: 85vh;
+
+  .box{
+    width: 90%;
+    
+    h1{
+      font-size: 40px;
+
+    }
+    .form{
+      /**** Fix style after connect with WP***/
+      ul{
+        
+        li{
+          
+        }
+        textarea,
+        input{
+          font-size: 18px;
+        }
+        textarea{
+          
+        }
+      }
+      input[type=submit]{
+        
+      }
+      /**** fix style after connect with WP***/
+    }
+
+  }
+  
+}
+
+
+
+/*===========================================
+=            Organism Conctac us            =
+===========================================*/
+.contact{
+  height: auto;
+  background-position: center;
+  padding-bottom: 2em;
+}
+
+
+/*=======================================
+=            Layout Checkout            =
+=======================================*/
+.woocommerce{
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message{
+   
+  }
+  .image-bg{
+    
+  } 
+
+  .check-form{
+    padding: 0 1em;
+   
+    h1{
+      font-size: 40px;
+      }
+    h2{
+      font-size: 25px;
+    }
+
+    .woocommerce-shipping-fields,
+    .woocommerce-billing-fields{
+      
+      p label{
+        font-size: 18px;
+
+        abbr{
+         
+        }
+      }
+      input{
+        
+        
+      }
+      .medium{
+        .select2-container,
+        input{
+          width:100% !important;
+        }
+      }
+      .select2-container .select2-choice{
+        
+      }
+      .input-text{
+        
+      }
+      .form-row-first,
+      .form-row-last{
+        width: 100%;
+        input{
+          
+        }
+      }
+
+      [id$="_address_2_field"]{
+        
+        label{
+          
+        }
+      }
+    }
+    #order_review{
+      
+      table.shop_table tfoot td,
+      table.shop_table tfoot th,
+      table.shop_table td,
+      table.shop_table{
+     
+      }
+      
+      table.shop_table{
+        display:inline-block;
+        & *{
+          
+        }
+        .cart-subtotal,
+        .shipping{
+          
+        }
+        th{
+          
+        }
+        td:first-child,
+        th:first-child{
+          
+        }
+        td:last-child,
+        th:last-child{
+         
+        }
+        tbody{
+          
+        }
+        .cart_item{
+          .product-total,
+          .product-name{
+            
+            span{
+             
+            }
+          }
+        }
+        .order-total{
+          
+          th{
+           
+          }
+          td .amount{
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+

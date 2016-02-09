@@ -92,3 +92,27 @@
 		}
 	}
 }
+
+.pink{
+	background-color: $pink;
+}
+
+.blue{
+	background-color: $blue;
+}
+
+.grey{
+	background-color: $grey;
+		color: $grey-dark;
+		ul li a{
+			border-color:$grey-dark;
+		} 
+}
+
+.grey-dark{
+	background-color: $grey-dark;
+		color: $grey;
+		ul li a{
+			border-color:$grey;
+		}
+}

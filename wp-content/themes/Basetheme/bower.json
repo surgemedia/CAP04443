@@ -7,7 +7,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.6"
+    "bootstrap-sass": "3.3.6",
+    "bootstrap-chosen": "^1.0.1",
+    "chosen": "^1.4.2"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -31,9 +33,17 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff",
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
+    },
+    "bootstrap-chosen": {
+      "main": [
+        "./bootstrap-chosen.scss"
+      ]
     }
+
   },
   "devDependencies": {
-    "Rusha": "rusha#~0.7.7"
+    "Rusha": "rusha#~0.7.7",
+    "bootstrap-chosen": "^1.0.1",
+    "chosen": "^1.4.2"
   }
 }

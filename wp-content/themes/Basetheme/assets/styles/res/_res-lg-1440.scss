@@ -16,3 +16,100 @@
 		}
 	}
 }
+
+/*==========================================
+=            Organism User Info            =
+==========================================*/
+
+.user-info{
+  
+  .scroll-hide{
+   
+  	.box{
+  		img{
+  		
+  		}
+  		
+
+          p{
+         
+          }
+          h1{
+          
+          }
+  	}
+    .purchase{
+      .table-head{
+        font-size: 18px;
+        ul{
+     
+          li{
+        
+          }
+          li:nth-child(n+2){
+           
+          }
+          li:first-child{
+           
+          }
+        }
+      }
+      .cart_list{
+        .mini_cart_item{
+          
+          .name{
+          
+          }
+          .price{
+            
+          } 
+          .quantity{
+           
+            .chosen-container{
+              .chosen-single{
+                span{
+              
+                }
+                div b{
+              
+                }
+              }
+              &.chosen-with-drop{
+                .chosen-single div b{
+                }
+              }
+            }
+            .remove{
+             
+              &:hover{
+              
+              }
+            }
+          }
+          .subtotal{
+          }       
+        }
+      }
+      section{
+        .total{
+        
+          span{
+          
+          }
+
+          strong{
+           width: 100%;
+          }
+
+          .amount{
+          }
+        }
+        .buttons{
+          a{
+           
+          }
+        }
+      }
+    }
+  }
+}

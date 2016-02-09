@@ -21,6 +21,6 @@
 <?php 	includePart('components/organism-contact.php',
 											"https://unsplash.it/1080/600/?blur"); //image
 																						?>
-
+							
 
 <?php endwhile; ?>

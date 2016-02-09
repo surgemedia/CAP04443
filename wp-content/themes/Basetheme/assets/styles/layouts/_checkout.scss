@@ -1,0 +1,139 @@
+.woocommerce{
+	display: inline-block;
+	width:100%;
+	.woocommerce-error,
+	.woocommerce-info,
+	.woocommerce-message{
+		margin: 0 !important;
+	}
+	.image-bg{
+		height: 100vh;
+	  background-size: cover;
+	} 
+
+	.check-form{
+		padding: 0 4em;
+		background: #fff;
+		margin-bottom: 3em;
+		h1{
+				text-align: center;
+				
+				margin-top: 2em;
+			}
+		h1,h2{
+			text-transform: uppercase;
+			color:$grey-dark;
+			font-weight: $Heavy;
+		}
+
+		.woocommerce-shipping-fields,
+		.woocommerce-billing-fields{
+			
+			p label{
+				font-weight: $Medium;
+				abbr{
+					color:$blue;
+				}
+			}
+			input{
+				border: 1px solid $grey-dark;
+				
+			}
+			.medium{
+				.select2-container,
+				input{
+					width:49% !important;
+					height: 40px;
+					font-size: 18px;
+					font-weight: $Medium;
+				}
+			}
+			.select2-container .select2-choice{
+				border-radius: 0;
+				border: 1px solid $grey-dark;
+			}
+			.input-text{
+				font-size: 18px;
+				font-weight: $Medium;
+				color:$grey;
+				height: 7em;
+			}
+			.form-row-first,
+			.form-row-last{
+				width: 49.4%;
+				input{
+					height: 40px;
+					font-size: 18px;
+					font-weight: $Medium;
+				}
+			}
+			[id$="_address_2_field"]{
+				label{
+					visibility: hidden;
+				}
+			}
+		}
+		#order_review{
+			margin-top: 3em;
+			table.shop_table tfoot td,
+			table.shop_table tfoot th,
+			table.shop_table td,
+			table.shop_table{
+				border: 0;
+			}
+			
+			table.shop_table{
+				display:inline-block;
+				& *{
+					display:inline-block;
+					width:100%;
+				}
+				.cart-subtotal,
+				.shipping{
+					display:none;
+				}
+				th{
+					font-weight: $Heavy;
+					font-size: $paragraph-size;
+					color: $grey-dark;
+				}
+				td:first-child,
+				th:first-child{
+					width:60%;
+					float:left;
+				}
+				td:last-child,
+				th:last-child{
+					width:40%;
+					float: left;
+				}
+				tbody{
+					margin-bottom: 3em;
+				}
+				.cart_item{
+					.product-total,
+					.product-name{
+						font-size: $paragraph-size;
+						color: $grey-dark;
+						text-transform: uppercase;
+						span{
+							text-transform: lowercase;
+							width: auto;
+						}
+					}
+				}
+				.order-total{
+					background-color: $grey-dark;
+					color:#fff;
+					th{
+						color:#fff;
+						text-transform: uppercase;
+					}
+					td .amount{
+						font-size: $paragraph-size;
+					}
+				}
+			}
+		}
+	}
+}

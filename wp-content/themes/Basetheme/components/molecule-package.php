@@ -6,11 +6,12 @@
 	$info		=$args[5];
 	$price	=$args[6];
 	$length	=$args[7];
-
+	$detail =$args[8];
+	$color = $args[9];
 ?>
 
 
-<article class="package col-lg-<?php echo ("half"==$length)? '6': '12'; ?>	 text-center">
+<article class="package col-sm-<?php echo ("half"==$length)? '6': '12'; ?> text-center <?php echo $color;?>">
 			<div class="box">
 				<i class="<?php echo $icon;?>"></i>
 				<hgroup class="title">
@@ -21,8 +22,15 @@
 				<p class="info"><?php echo $info; ?></p>
 				<ul>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
-					<li class="pull-left"><a href="">add</a></li>
-					<li class="pull-right"><a role="button" data-toggle="collapse" href="#collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
+					<li class="pull-left"><a href="" data-color="<?php echo $color;?>">add</a></li>
+					<li class="pull-right"><a class="detail" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
 				</ul>
 			</div>
 </article>
+<?php 	includePart('components/molecule-package-info.php',
+												$id, //id
+												$line1." ".$line2, //title
+												$detail,
+												$color,
+												"visible-xs"
+												);?> 

@@ -1,49 +1,22 @@
 <div class="user-info">
-		<div class="menu-bar">
-			
-		</div>
-		
-		<div class="frame">
+	<div class="scroll-hide">
+		<div class="box">
 			<img width="264" height="110" src="https://unsplash.it/264/110" alt="">
 			<p>Anglican Church Grammar School</p>
 			<p>Year 7C</p>
 			<p>Student’s name</p>
-			<div class="name">EDWARD</div>
-			<table>
-				<th>
-					<tr>ITEM DETAILS</tr>
-					<tr>ITEM PRICE</tr>
-					<tr>QUANTITY</tr>
-					<tr>SUBTOTAL</tr>
-				</th>
-				<td>
-					<tr>STANDARD PORTRAIT SET </tr>
-					<tr>$65</tr>
-					<tr>X</tr>
-					<tr>$195</tr>
-				</td>
-				<td>
-					<tr>STANDARD PORTRAIT SET </tr>
-					<tr>$65</tr>
-					<tr>X</tr>
-					<tr>$195</tr>
-				</td>
-				<td>
-					<tr>STANDARD PORTRAIT SET </tr>
-					<tr>$65</tr>
-					<tr>X</tr>
-					<tr>$195</tr>
-				</td>
-			</table>
+			<h1>EDWARD</h1>
 		</div>
-
-		<div class="col-lg-6 push-right">
-			
-			<div class="total">
-				<span>YOUR TOTAL</span>
-				<span>$360</span>
-			</div>
-
-			<a class="bt-basic" href="">ORDER NOW</a>
+    <div class="purchase">
+    	<div class="table-head hidden-xs">
+    		<ul>
+    			<li>ITEMS DETAILS</li>
+    			<li>ITEM PRICE</li>
+    			<li>QUANTITY</li>
+    			<li>SUBTOTAL</li>
+    		</ul>
+    	</div>
+    	<?php dynamic_sidebar('primary'); ?>
 		</div>
 	</div>
+</div>

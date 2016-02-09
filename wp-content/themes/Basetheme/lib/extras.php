@@ -46,7 +46,7 @@ $custom_includes = [
   'lib/function-truncate-content.php',    // Scripts and stylesheets
   'lib/function-includePart.php',    // Scripts and stylesheets
   'lib/function-getUserTaxonomy.php',    // Scripts and stylesheets
-
+  'lib/function-add-cart-fragment.php', // Add Cart Fragment
 
   'lib/taxonomy-school.php'    // Scripts and stylesheets
 
@@ -62,6 +62,4 @@ foreach ($custom_includes as $file) {
 }
 unset($file, $filepath);
 
-
-
-
+add_theme_support( 'woocommerce' );

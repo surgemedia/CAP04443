@@ -2,7 +2,10 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js"
+        "scripts/main.js",
+        "scripts/capricorn.js",
+        "../../bower_components/chosen/chosen.jquery.min.js"
+    
       ],
       "main": true
     },
@@ -19,11 +22,6 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
-    },
-    "capricorn.js": {
-      "files": [
-        "scripts/capricorn.js"
-      ]
     }
   
   },
