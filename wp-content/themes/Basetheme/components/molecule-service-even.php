@@ -5,10 +5,10 @@
 	$register_text=$args[4];
 ?>
 <section class="service">
-	<div class="col-lg-6">
+	<div class="col-md-6">
 		<div class="image" style="background-image: url('<?php echo $image;?>')"></div>
 	</div>
-	<div class="col-lg-6">
+	<div class="col-md-6">
 		<div class="frame">
 				<div class="box">
 					<div class="content">

@@ -376,4 +376,123 @@
   }
 }
 
+/*=============================================
+=            Molecule Home Details            =
+=============================================*/
+
+.home-detail{
+ 
+  img{
+    
+  }
+  .box{
+    width: 90%;
+    img{
+     
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+}
+
+/*========================================
+=            Molucule Process            =
+========================================*/
+.process{
+  
+  
+  .box{
+    
+    .content{
+      h1{
+        font-size: 40px;
+      }
+      ul{
+        
+        li{
+          padding: 0 1em;
+          i{
+            
+          }
+          span{
+          
+            b{
+             
+            }
+            p{
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      .description{
+       
+        p{
+          font-size: 18px;
+        }
+      }
+      .btn-basic{
+       
+      }
+    }
+  }
+}
+
+/*=========================================
+=            Molecule Services            =
+=========================================*/
+.service{
+  .image{
+   
+  }
+  .frame{
+ 
+    .box{
+     
+      .content{
+        h1{
+          font-size: 40px;
+        }
+        p{
+          font-size: 18px;
+        }
+        .register{
+
+        }
+        .more-info{
+
+        }
+      }
+    }
+  }
+}
+
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+
+  .home-menu{
+  
+    img{
+     right:initial;
+     left:20px;
+    }
+    .banner{ 
+      
+      button.navbar{
+        left: initial;
+        right: 20px;
+      }
+      .box{
+        
+      }
+      .logout{
+        
+      }
+    }
+  }
+}
+
 

@@ -7,8 +7,11 @@
 		margin: 0 !important;
 	}
 	.image-bg{
-		height: 100vh;
+		height: auto;
 	  background-size: cover;
+		.checkout{
+			background-color: #fff;
+		}
 	} 
 
 	.check-form{

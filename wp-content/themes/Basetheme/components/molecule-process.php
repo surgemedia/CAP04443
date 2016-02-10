@@ -16,7 +16,7 @@
 					 	// loop through the rows of data
 					    while ( have_rows('processes') ) : the_row();?>
 
-					  			<li><i class="glyphicon glyphicon-<?php the_sub_field('icon'); ?>"></i>
+					  			<li><i class="icon-<?php the_sub_field('icon'); ?>"></i>
 					  			<span><b><?php echo $counter.".";?></b> <?php the_sub_field('text');?></span>
 					  			</li>
 						<?php

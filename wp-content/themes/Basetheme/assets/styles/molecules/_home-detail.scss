@@ -1,9 +1,13 @@
 .home-detail{
 	background: $blue_bg;
-	height:100vh;
-	display: table-cell;
-  vertical-align: middle;
+	height:auto;
   position: relative;
+  padding-top: 5em;
+  text-align: center;
+	padding-bottom: 4em;
+  img{
+  	display: none;
+  }
   .box{
   	text-align: center;
   	width: 80%;

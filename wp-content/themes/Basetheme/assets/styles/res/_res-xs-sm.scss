@@ -126,3 +126,56 @@
 	}
 	
 }
+
+/*========================================
+=            Molucule Process            =
+========================================*/
+.process{
+	height: auto;
+	background-size: contain;
+  background-position-x: top; 
+  background-repeat: no-repeat; 
+	padding-top: 30em;
+	padding-bottom: 5em;
+	background-size: 983px;
+  background-position-x: right;
+  .box{
+		position: static;
+		width: 100%;
+    margin-left: 0;
+    background-color: #fff;
+    .content{
+ 
+      ul{
+        
+        li{
+        	float: none;
+        	width: 100%;
+        	margin-bottom:1em;
+        	padding: 0 6em;
+          i{
+            
+          }
+          span{
+          
+            b{
+             
+            }
+            p{
+            	
+            }
+          }
+        }
+      }
+      .description{
+        
+        p{
+          
+        }
+      }
+      .btn-basic{
+       
+      }
+    }
+  }
+}

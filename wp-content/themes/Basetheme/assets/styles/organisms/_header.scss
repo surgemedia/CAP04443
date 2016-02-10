@@ -1,6 +1,35 @@
 .header{
-	height:100vh;
+	height:auto;
+	background-color: $blue;
+	display:inline-block;
 	/* div{
 		height:100%;
 	} */
+	.home-menu{
+		position:absolute;
+		z-index: 1;
+		img{
+			position: absolute;
+	    right: 0;
+	    z-index: 2;
+	    height: 69px;
+	    width: auto;
+	    top: 17px;
+	    right: 20px;
+		}
+		.banner{ 
+			padding: 0;
+			height: 96px;
+			button.navbar{
+				top: 20px;
+    		left: 20px;
+			}
+			.box{
+				width: 100%;
+			}
+			.logout{
+				display: none;
+			}
+		}
+	}
 }

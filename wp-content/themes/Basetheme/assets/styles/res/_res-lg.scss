@@ -108,3 +108,234 @@
     }
   }
 }
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+  height:70em;
+  display:block;
+  /* div{
+    height:100%;
+  } */
+  .home-menu{
+    
+    .banner .logout{
+    
+    }
+  }
+}
+
+
+/*=============================================
+=            Molecule Home Details            =
+=============================================*/
+
+.home-detail{
+  height:70em;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 8em;
+  img{
+    display: inline;
+  }
+  .box{
+    
+    img{
+     
+    }
+    p{
+      
+    }
+  }
+}
+/*======================================
+=            Molecule Login            =
+======================================*/
+
+.frame{
+  height: 70em;
+  padding: 0;
+  .box{
+    .nav-tabs{
+      li{
+       a{
+
+        }
+        &.active a{
+
+        }
+      } 
+    }
+    .info{
+
+    }
+    .tab-content{
+
+      /**** fix style after connect with WP***/
+      ul{
+
+        input{
+
+        }
+      }
+      input[type=submit]{
+
+      }
+      /**** fix style after connect with WP***/
+    }
+    .download{
+      .info{
+
+      }
+      i{
+
+      }
+    }
+  }
+}
+/*=========================================
+=            Molecule Services            =
+=========================================*/
+.service{
+  .image{
+   
+  }
+  .frame{
+ 
+    .box{
+     width:90%;
+      .content{
+        h1{
+        }
+        p{
+        }
+        .register{
+
+        }
+        .more-info{
+
+        }
+      }
+    }
+  }
+}
+
+/*=======================================
+=            Layout Checkout            =
+=======================================*/
+.woocommerce{
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message{
+   
+  }
+  .image-bg{
+    height: 100vh;
+    display:block;
+  } 
+
+  .check-form{
+    
+   
+    h1{
+      
+      }
+    h2{
+     
+    }
+
+    .woocommerce-shipping-fields,
+    .woocommerce-billing-fields{
+      
+      p label{
+        
+
+        abbr{
+         
+        }
+      }
+      input{
+        
+        
+      }
+      .medium{
+        .select2-container,
+        input{
+         
+        }
+      }
+      .select2-container .select2-choice{
+        
+      }
+      .input-text{
+        
+      }
+      .form-row-first,
+      .form-row-last{
+        
+        input{
+          
+        }
+      }
+
+      [id$="_address_2_field"]{
+        
+        label{
+          
+        }
+      }
+    }
+    #order_review{
+      
+      table.shop_table tfoot td,
+      table.shop_table tfoot th,
+      table.shop_table td,
+      table.shop_table{
+     
+      }
+      
+      table.shop_table{
+        
+        & *{
+          
+        }
+        .cart-subtotal,
+        .shipping{
+          
+        }
+        th{
+          
+        }
+        td:first-child,
+        th:first-child{
+          
+        }
+        td:last-child,
+        th:last-child{
+         
+        }
+        tbody{
+          
+        }
+        .cart_item{
+          .product-total,
+          .product-name{
+            
+            span{
+             
+            }
+          }
+        }
+        .order-total{
+          
+          th{
+           
+          }
+          td .amount{
+            
+          }
+        }
+      }
+    }
+  }
+}

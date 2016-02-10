@@ -7,12 +7,12 @@
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active col-lg-6">
+        <li role="presentation" class="active col-xs-6">
           <a href="#prepaid" aria-controls="prepaid" role="tab" data-toggle="tab">
             Prepaid
           </a>
         </li>
-        <li role="presentation" class="col-lg-6">
+        <li role="presentation" class="col-xs-6">
           <a href="#postpaid" aria-controls="postpaid" role="tab" data-toggle="tab">
             Postpaid
           </a>
@@ -52,7 +52,7 @@
       </div>
       <div class="download">
         <span class="info">Download more info about prepaid & postpaid service</span>
-        <i class="glyphicon glyphicon-plus"></i>
+        <i class="icon-document"></i>
         
       </div>
       
