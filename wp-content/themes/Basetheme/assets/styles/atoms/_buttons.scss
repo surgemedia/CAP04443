@@ -5,6 +5,8 @@
 	color: #fff;
 	background: $background;
 	font-size: $paragraph-size;
+	text-transform: uppercase;
+	font-weight: $Heavy;
 	&:hover{
 		text-decoration: none;
 	}

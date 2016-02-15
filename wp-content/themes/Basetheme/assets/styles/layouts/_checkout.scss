@@ -137,6 +137,26 @@
 					}
 				}
 			}
+			.woocommerce-checkout-payment{
+				background-color: #fff;
+				.wc_payment_method{
+					text-align: center;
+					text-transform: uppercase;
+					a,
+					img{
+						display: none;
+
+					}
+				}
+				.button{
+					font-size: $paragraph-size;
+					text-transform: uppercase;
+					font-weight: $Heavy;
+					background-color: $blue;
+					height: 2em;
+					border-radius: 0;
+				}
+			}
 		}
 	}
 }
