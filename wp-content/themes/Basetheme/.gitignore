@@ -4,4 +4,6 @@ dist
 bower_components
 node_modules
 npm-debug.log
-wp-content/updraft
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
