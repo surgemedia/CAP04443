@@ -48,9 +48,8 @@ $custom_includes = [
   'lib/function-getUserTaxonomy.php',    // Scripts and stylesheets
   'lib/function-add-cart-fragment.php', // Add Cart Fragment
   'lib/function-show-option-page.php', // Show ACF option page
-
-  'lib/taxonomy-school.php'    // Scripts and stylesheets
-
+  'lib/taxonomy-school.php',   // Scripts and stylesheets
+  'lib/function-programmatic_login.php'    // Scripts and stylesheets
 
 ];
 
