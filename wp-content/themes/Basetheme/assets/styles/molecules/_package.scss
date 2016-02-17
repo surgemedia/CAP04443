@@ -54,9 +54,12 @@
 	padding: 5%;
 	color:#fff;
 	.package-collection{
-		border: 1px solid #fff;
-    height: 28em;
+	/* 	border: 1px solid #fff; */
+    height: auto;
     margin-bottom: 4em;
+    display: inline-block;
+    width: 100%;
+
 	}
 	.title{
 		font-weight: $Heavy;
@@ -115,4 +118,81 @@
 		ul li a{
 			border-color:$grey;
 		}
+}
+
+.package-img{
+	height: 240px;
+}
+
+.pack-2-frames{
+	&.smaller:before{
+		font-size: 10em;
+		top:34px;
+	}
+	&:before{
+		font-size: 13em;
+	}
+	&.bigger:before{
+  	font-size: 16em;
+  	top: -21px;
+	}
+}
+,
+.pack-3-frames{
+	&.smaller:before{
+    font-size: 15em;
+    top: 0px;
+	}
+	&:before{
+		font-size: 19em;
+    top: -42px;
+	}
+	&.bigger:before{
+  	font-size: 24em;
+  	top:-77px;
+	}
+}
+
+.pack-5-frames{
+	&.smaller:before{
+		font-size: 15em;
+    top: -10px;
+	}
+	&:before{
+ 		font-size: 18em;
+    bottom: -22px;
+
+	}
+	&.bigger:before{
+    font-size: 20em;
+    top: -47px;
+	}
+}
+
+[class*="pack-"]{
+	height: 200px;	
+	display:block;
+  position: relative;
+  &:before{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.pack-bookmarks{
+	font-size: 13em;
+}
+.pack-class{
+	font-size: 20em;
+  top: -41px;
+}
+.pack-graduation{
+	font-size: 11em;
+  top: 27px;
+}
+.pack-combination{
+	font-size: 21em;
+  top: -34px;
 }

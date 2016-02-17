@@ -8,36 +8,36 @@
 
 
 <div class="<?php echo $show;?>">
-	<section class="package-info collapseExample-<?php echo $id;?> collapse col-lg-12 text-center <?php echo $color;?>" id="">
+	<section class="package-info collapseExample-<?php echo $id;?> collapse col-xs-12 text-center <?php echo $color;?>" id="">
 				<div class="box">
 					<div class="package-collection">
-						<div class="col-lg-6">
-							<i class="pack-3_5x5s"></i>
-							<p>3.5x5s</p>
+						<div class="col-lg-6 package-img">
+							<i class="pack-2-frames"></i>
+							<div>3.5x5s</div>
 						</div>
-						<div class="col-lg-6">
-							<i class="pack-5x7s"></i>
-							<p>5x7s</p>
+						<div class="col-lg-6 package-img">
+							<i class="pack-5-frames"></i>
+							<div>Mini Wallet</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 package-img">
+							<i class="pack-3-frames"></i>
+							<div>5x7s</div>
+						</div>
+						<div class="col-lg-6 package-img">
 							<i class="pack-bookmarks"></i>
-							<p>Bookmarks</p>
+							<div>Bookmarks</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 package-img">
 							<i class="pack-class"></i>
-							<p>Class</p>
+							<div>Class</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 package-img">
 							<i class="pack-graduation"></i>
-							<p>Graduation</p>
+							<div>Graduation</div>
 						</div>
-						<div class="col-lg-6">
-							<i class="pack-mini_wallet"></i>
-							<p>Mini Wallet</p>
-						</div>
-						<div class="col-lg-6">
-							<i class="pack-pendant_key_rings"></i>
-							<p>Pendant Key Rings</p>
+						<div class="col-lg-6 package-img">
+							<i class="pack-combination"></i>
+							<div>Pendant Key Rings</div>
 						</div>						
 					</div>
 
