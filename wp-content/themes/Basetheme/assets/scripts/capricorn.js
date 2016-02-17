@@ -37,3 +37,12 @@ jQuery(document).ready(function(){
         jQuery(this).trigger('mousedown');
       });
     }
+
+/*=========================================
+=            Placeholder Forms            =
+=========================================*/
+function placeholder_login(){
+		jQuery('#user_login').attr('placeholder', 'Username');
+}
+placeholder_login();
+

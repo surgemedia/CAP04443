@@ -35,6 +35,9 @@
 					font-size: $paragraph-size;
 					text-align: left;
 					border-radius: 0;
+					&::placeholder{
+						color:#fff;
+					}
 				}
 				textarea{
 					height: 160px;
