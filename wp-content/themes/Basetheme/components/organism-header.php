@@ -5,7 +5,7 @@
 	</div>
 	<div class="col-xs-12 col-lg-6 col-lg-push-6">
 		<?php 	includePart('components/molecule-login.php',
-			"https://unsplash.it/600/800/?blur" //image
+			get_field('login_background') //image
 			);
 		?>
 	</div>

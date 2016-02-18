@@ -39,6 +39,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 $custom_includes = [
   'lib/function-debug.php',    // Scripts and stylesheets
+  'lib/aq_resizer.php',    // Scripts and stylesheets
   'lib/gravity_forms-v5.php',    // Scripts and stylesheets
   'lib/function-display-gravity-form.php',    // Scripts and stylesheets
   'lib/function-get_id_from_slug.php',    // Scripts and stylesheets
@@ -49,7 +50,9 @@ $custom_includes = [
   'lib/function-add-cart-fragment.php', // Add Cart Fragment
   'lib/function-show-option-page.php', // Show ACF option page
   'lib/taxonomy-school.php',   // Scripts and stylesheets
-  'lib/function-programmatic_login.php'    // Scripts and stylesheets
+  'lib/function-programmatic_login.php',    // Scripts and stylesheets
+  'lib/function-user_logged_in.php'    // Scripts and stylesheets
+
 
 ];
 

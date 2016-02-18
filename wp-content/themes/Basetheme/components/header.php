@@ -25,7 +25,7 @@
     </div>    
   </div>
   <div class="logout pull-right">
-    <a href="">
+    <a href="<?php echo wp_logout_url( home_url() ); ?>">
       LOG OUT
     </a>
   </div>

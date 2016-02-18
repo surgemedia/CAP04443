@@ -7,11 +7,3 @@
 		<input type="hidden" name="redirect_to" value="http://capricorn.local/shop/">
 	</p>
 </form>
-<?php
-if(isset($_POST['username'])){
-programmatic_login($_POST['username']);
-}
-?>
-<?php
-debug(wp_get_current_user()->user_email);
-?>

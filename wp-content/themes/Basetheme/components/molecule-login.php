@@ -1,7 +1,8 @@
 <?php
-$image=$args[1];
+$image = $args[1];
+$image_url = aq_resize($image,960,1080,true,true,true);
 ?>
-<div class="frame" style="background-image:url(<?php echo $image?>)">
+<div class="frame" style="background-image:url(<?php echo $image_url?>)">
   
   <div class="box">
     <div>
@@ -23,15 +24,11 @@ $image=$args[1];
         <div role="tabpanel" class="tab-pane active" id="prepaid">
           <div class="info">Short login instructions for prepaid users.</div>
           <div class="form">
-          <?php if(is_user_logged_in() == false){ ?>
+          <?php if(user_logged_in() == false){ ?>
             <?php includePart('components/atom-user-login-form.php'); ?>
             <?php } else { ?>
-            <h2>Hi, <?php echo wp_get_current_user()->display_name; ?></h2>
+            <h2>Hi, <?php echo wp_get_current_user()->data->display_name; ?></h2>
             <a href="<?php echo get_permalink( get_page_by_title( 'User' )->ID ); ?>">Order Now</a>
-            <a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
-            <?php 
-                debug(get_permalink( get_page_by_title( 'User' )->ID ));
-             ?>
             <?php } ?>
           </div>
           <div class="info">Request an ID</div>

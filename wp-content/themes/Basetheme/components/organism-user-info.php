@@ -1,11 +1,19 @@
+<?php 
+	$school = $args[1];
+	$year =  $args[2];
+	$class = $args[3];
+	$logo = $args[4];
+	$student_name = $args[5];
+
+ ?>
+ <?php //debug($args); ?>
 <div class="user-info">
 	<div class="scroll-hide">
 		<div class="box">
-			<img width="264" height="110" src="https://unsplash.it/264/110" alt="">
-			<p>Anglican Church Grammar School</p>
-			<p>Year 7C</p>
-			<p>Student’s name</p>
-			<h1>EDWARD</h1>
+			<img width="auto" height="auto" src="<?php echo $logo ?>" alt="">
+			<p><?php echo $school; ?></p>
+			<p><?php echo $year; ?> - <?php echo $class; ?></p>
+			<h1><?php echo $student_name; ?></h1>
 		</div>
     <div class="purchase">
     	<div class="table-head hidden-xs">
