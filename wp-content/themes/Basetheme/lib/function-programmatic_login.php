@@ -10,6 +10,7 @@ if ( !is_wp_error( $user ) && $user->caps['administrator'] == NULL)
 	  wp_set_current_user($user->ID);
 	  wp_set_auth_cookie($user->ID, true, false);
 	  update_user_caches($user);
+	  // wp_redirect( get_permalink( get_page_by_title( 'User' )->ID ));
 	}
 }
 
