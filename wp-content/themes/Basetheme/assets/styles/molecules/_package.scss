@@ -39,7 +39,7 @@
 					text-transform: uppercase;
 					font-weight: $Heavy;
 					display: inline-block;
-					border: 3px solid #fff;
+					border: 3px solid;
 			    padding: .5em 0;
 				}
 			}
@@ -54,9 +54,12 @@
 	padding: 5%;
 	color:#fff;
 	.package-collection{
-		border: 1px solid #fff;
-    height: 28em;
+	/* 	border: 1px solid #fff; */
+    height: auto;
     margin-bottom: 4em;
+    display: inline-block;
+    width: 100%;
+
 	}
 	.title{
 		font-weight: $Heavy;
@@ -84,7 +87,7 @@
 				width: 100%;
 				font-size: $paragraph-size;
 				font-weight: $Heavy;
-				border: 3px solid #fff;
+				border: 3px solid;
 			  padding: .5em 0;
 			  margin-bottom: 2em;
 			}
@@ -115,4 +118,77 @@
 		ul li a{
 			border-color:$grey;
 		}
+}
+
+.package-img{
+	height: 240px;
+}
+
+.pack-2-frames{
+	&.wallet:before{
+		font-size: 10em;
+		top:34px;
+	}
+	&.inches3x5:before{
+		font-size: 13em;
+	}
+	&.inches5x7:before{
+  	font-size: 16em;
+  	top: -21px;
+	}
+}
+,
+.pack-3-frames{
+	&.wallet:before{
+    font-size: 15em;
+    top: 0px;
+	}
+	&.inches3x5:before{
+		font-size: 19em;
+    top: -42px;
+	}
+	&.inches5x7:before{
+  	font-size: 24em;
+  	top:-77px;
+	}
+}
+
+.pack-5-frames{
+	&.wallet:before{
+		font-size: 16em;
+    top: -10px;
+	}
+	&.inches3x5:before{
+ 		font-size: 18em;
+    bottom: -22px;
+
+	}
+	&.inches5x7:before{
+    font-size: 20em;
+    top: -47px;
+	}
+}
+
+[class*="pack-"]{
+	height: 200px;	
+	display:block;
+  position: relative;
+  &:before{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.pack-bookmarks{
+	font-size: 13em;
+}
+.pack-class{
+	font-size: 20em;
+  top: -41px;
+}
+.pack-combination{
+	font-size: 21em;
+  top: -34px;
 }

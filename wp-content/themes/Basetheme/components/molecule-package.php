@@ -23,7 +23,7 @@
 				<ul>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
 					<li class="pull-left"><a href="" data-color="<?php echo $color;?>">add</a></li>
-					<li class="pull-right"><a class="detail" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
+					<li class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
 				</ul>
 			</div>
 </article>

@@ -54,15 +54,14 @@
    font-style: normal;
    font-weight: normal;
    line-height: 1;
-   font-size: 10em;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 
 }
-.pack-3_5x5s:before{content:'\0041';}
-.pack-5x7s:before{content:'\0042';}
+.pack-2-frames:before{content:'\0041';}
+.pack-3-frames:before{content:'\0042';}
 .pack-bookmarks:before{content:'\0043';}
 .pack-class:before{content:'\0044';}
-.pack-graduation:before{content:'\0045';}
-.pack-mini_wallet:before{content:'\0046';}
-.pack-pendant_key_rings:before{content:'\0047';}
+
+.pack-5-frames:before{content:'\0046';}
+.pack-combination:before{content:'\0047';}
