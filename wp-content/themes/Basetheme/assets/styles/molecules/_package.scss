@@ -39,7 +39,7 @@
 					text-transform: uppercase;
 					font-weight: $Heavy;
 					display: inline-block;
-					border: 3px solid #fff;
+					border: 3px solid;
 			    padding: .5em 0;
 				}
 			}
@@ -87,7 +87,7 @@
 				width: 100%;
 				font-size: $paragraph-size;
 				font-weight: $Heavy;
-				border: 3px solid #fff;
+				border: 3px solid;
 			  padding: .5em 0;
 			  margin-bottom: 2em;
 			}
@@ -125,45 +125,45 @@
 }
 
 .pack-2-frames{
-	&.smaller:before{
+	&.wallet:before{
 		font-size: 10em;
 		top:34px;
 	}
-	&:before{
+	&.inches3x5:before{
 		font-size: 13em;
 	}
-	&.bigger:before{
+	&.inches5x7:before{
   	font-size: 16em;
   	top: -21px;
 	}
 }
 ,
 .pack-3-frames{
-	&.smaller:before{
+	&.wallet:before{
     font-size: 15em;
     top: 0px;
 	}
-	&:before{
+	&.inches3x5:before{
 		font-size: 19em;
     top: -42px;
 	}
-	&.bigger:before{
+	&.inches5x7:before{
   	font-size: 24em;
   	top:-77px;
 	}
 }
 
 .pack-5-frames{
-	&.smaller:before{
-		font-size: 15em;
+	&.wallet:before{
+		font-size: 16em;
     top: -10px;
 	}
-	&:before{
+	&.inches3x5:before{
  		font-size: 18em;
     bottom: -22px;
 
 	}
-	&.bigger:before{
+	&.inches5x7:before{
     font-size: 20em;
     top: -47px;
 	}
@@ -187,10 +187,6 @@
 .pack-class{
 	font-size: 20em;
   top: -41px;
-}
-.pack-graduation{
-	font-size: 11em;
-  top: 27px;
 }
 .pack-combination{
 	font-size: 21em;

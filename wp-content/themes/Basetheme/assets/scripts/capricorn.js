@@ -46,3 +46,10 @@ function placeholder_login(){
 }
 placeholder_login();
 
+/*=========================================
+=            Packages Collapse            =
+=========================================*/
+jQuery("[class*='collapseExample-']").on('show.bs.collapse', function () {
+  jQuery("[class*='collapseExample-']").collapse('hide');
+});
+
