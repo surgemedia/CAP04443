@@ -7,3 +7,5 @@ npm-debug.log
 local-config.php
 wp-content/uploads
 wp-content/themes/Basetheme/post_types/old
+#wp-content/plugins
+#wp-content/themes/WPCM
