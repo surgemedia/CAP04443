@@ -1,5 +1,6 @@
 <?php 
-// Register Custom Taxonomy
+/** School Taxonomy */
+
 function schoolTaxonomy() {
 
 	$labels = array(
@@ -37,7 +38,5 @@ function schoolTaxonomy() {
 
 }
 add_action( 'init', 'schoolTaxonomy', 0 );
-/*
-
 
  ?>

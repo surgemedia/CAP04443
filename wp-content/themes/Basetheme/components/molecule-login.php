@@ -23,11 +23,11 @@ $image=$args[1];
         <div role="tabpanel" class="tab-pane active" id="prepaid">
           <div class="info">Short login instructions for prepaid users.</div>
           <div class="form">
-          <?php if(!is_user_logged_in()){ ?>
+          <?php if(is_user_logged_in() == false){ ?>
             <?php includePart('components/atom-user-login-form.php'); ?>
             <?php } else { ?>
             <h2>Hi, <?php echo wp_get_current_user()->display_name; ?></h2>
-            <a href="/user/">Order Now</a>
+            <a href="<?php echo get_permalink( get_page_by_title( 'User' )->ID ); ?>">Order Now</a>
             <a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
             <?php 
                 debug(get_permalink( get_page_by_title( 'User' )->ID ));
