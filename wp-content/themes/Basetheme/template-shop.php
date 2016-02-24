@@ -22,7 +22,6 @@
         wp_get_current_user()->data->display_name
         );
     $term_name = $school->slug;
-    unset($school);
     unset($user_id);
     ?>
 </div>
@@ -32,6 +31,7 @@
 // Setup your custom query
 $args = array( 
     'post_type'              => array( 'product' ),
+    'post__in'              => array(  get_field('products_listing', 'school_'.$school->term_id),),
      'tax_query' => array(
         array(
             'taxonomy' => 'school',
@@ -40,25 +40,29 @@ $args = array(
         ),
       ),
     );
+unset($school);
+
 //debug($args);
 $products = Array();
 $loop = new WP_Query( $args );
 $temp = Array();
 $count = 1;
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
     <?php 
-    if($count != 3){
-    array_push($temp,get_post());
-    $count++;
-    } else {
-         array_push($products,Array(get_post()));
-         $count = 1;
-    } 
-    if(sizeof($temp) == 2){
-    array_push($products,$temp);
-    $temp = Array();
-    }
+    $size = get_field('size',get_the_id());
+
+    debug($size);
+    // if($size == ){
+    // array_push($temp,get_post());
+    // $count++;
+    // } else {
+    //      array_push($products,Array(get_post()));
+    //      $count = 1;
+    // } 
+    // if(sizeof($temp) == 2){
+    // array_push($products,$temp);
+    // $temp = Array();
+    // }
      ?>
 <?php endwhile; wp_reset_query(); // Remember to reset ?>
 
@@ -68,8 +72,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
 <?php for ($i=0; $i < sizeof($products); $i++) {
 
         if(sizeof($products[$i]) == 2){
-            // debug($products[$i][0]);
-            // debug($products[$i][1]);
+
         includePart('components/organism-double-package.php',
         $products[$i][0]->ID, //$id1
         $products[$i][1]->ID, //$id2
@@ -81,7 +84,6 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
         }
 
         if(sizeof($products[$i]) == 1){
-           // debug($products[$i][0]);
         includePart('components/organism-single-package.php',
         $products[$i][0]->ID, //$id1
         get_field('color',$products[$i][0])

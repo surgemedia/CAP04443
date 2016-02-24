@@ -109,7 +109,9 @@
                 "half": "half",
                 "full": "large"
             },
-            "default_value": [],
+            "default_value": [
+                "half"
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -136,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1456277116
+    "modified": 1456278656
 }
