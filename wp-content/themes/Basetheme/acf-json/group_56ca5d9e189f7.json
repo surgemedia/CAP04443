@@ -1,0 +1,140 @@
+{
+    "key": "group_56ca5d9e189f7",
+    "title": "Product - Side Column",
+    "fields": [
+        {
+            "key": "field_56ccf8b978893",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "the title under the title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56ca5f1d7f826",
+            "label": "Color",
+            "name": "color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pink": "Pink",
+                "blue": "Blue",
+                "grey": "Grey",
+                "grey-dark": "Dark Grey"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_56ca5f517f827",
+            "label": "Icon",
+            "name": "icon",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "icon-envelope": "envelope",
+                "icon-send": "send",
+                "icon-document": "document",
+                "icon-telephone": "telephone",
+                "icon-camera": "camera",
+                "icon-credit-card": "credit-card",
+                "icon-logistics": "logistics",
+                "icon-purchase": "purchase",
+                "icon-user": "user",
+                "icon-bows": "bows",
+                "icon-graduation": "graduation",
+                "icon-insects": "insects",
+                "icon-school-materials": "school-materials",
+                "icon-set-frame": "set-frame",
+                "icon-whales": "whales",
+                "icon-down": "down",
+                "icon-up": "up"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_56cd064c0f205",
+            "label": "Size",
+            "name": "size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "half": "half",
+                "full": "large"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1456277116
+}

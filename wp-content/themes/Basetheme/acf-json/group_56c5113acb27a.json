@@ -3,28 +3,6 @@
     "title": "User - Custom Fields",
     "fields": [
         {
-            "key": "field_56c511500abc1",
-            "label": "School",
-            "name": "school",
-            "type": "taxonomy",
-            "instructions": "Please select the school you are from",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "school",
-            "field_type": "select",
-            "allow_null": 0,
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "multiple": 0
-        },
-        {
             "key": "field_56c511a40abc4",
             "label": "Grade",
             "name": "grade",
@@ -168,5 +146,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1455779434
+    "modified": 1455839830
 }

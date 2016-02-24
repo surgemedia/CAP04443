@@ -1,55 +1,62 @@
 <?php  
-	$id1=$args[1];
-	$id2=$args[2];
+	//Products
+	$product1=$args[1];
+	$product2=$args[2];
+	//Colors
 	$color1= $args[3];
 	$color2= $args[4];
-?>
+	if(strlen($color1) <= 0){
+		$color1 = 'blue';
+	}
+	if(strlen($color2) <= 0){
+		$color2 = 'pink';
+	}
 
+	//Meta Data
+	$product1_meta =  $args[5];
+	$product2_meta =  $args[6];	
+	//Price
+
+
+?>
+<?php  ?>
 		<?php 	includePart('components/molecule-package.php',
-													$id1,
-													"icon-insects", //$icon
-													"Mini",					//$line1
-													"Value Pack",		//$line2
-													"Class + Mini Portrait Set",//$info
-													"$30", //$price
-													"half", //length 
-													"The Mega Value Pack represents MEGA value, especially for families who like to send a decent sized photo to both sets of grandparents.
-		Our class groups are on a 8x10inch template (20.3x25.4cm). They are laminated in 100 micron film (as opposed to the more commonly used 80 micron film), which means they have a premium quality glass-like finish.
-		You can choose our standard border (your school colours), one of the custom borders (incorporating photos taken around your school) or we can work with you to develop a unique one to suit your tastes.", //detail
-													$color1//color
+													$product2,
+													get_field('icon',$product2), 	//icon
+													explode(" ",get_post($product2)->post_title, 2)[0],							//line1
+													explode(" ",get_post($product2)->post_title, 2)[1],					//line2
+													get_field('subtitle',$product2),			//info
+													"$".$product2_meta['_price'][0], //price
+													"half", 						//length 
+													get_the_content($product2), //detail
+													$color2            				//color
 													);?> 
 		
 	
 		<?php 	includePart('components/molecule-package.php',
-													$id2,
-													"icon-school-materials", //$icon
-													"Standard",					//$line1
-													"Value Pack",		//$line2
-													"Class + Standard Portrait Set",//$info
-													"$45", //$price
-													"half", //length 
-													"The Mega Value Pack represents MEGA value, especially for families who like to send a decent sized photo to both sets of grandparents.
-		Our class groups are on a 8x10inch template (20.3x25.4cm). They are laminated in 100 micron film (as opposed to the more commonly used 80 micron film), which means they have a premium quality glass-like finish.
-		You can choose our standard border (your school colours), one of the custom borders (incorporating photos taken around your school) or we can work with you to develop a unique one to suit your tastes.",
-													$color2 //color
+													$product1,
+													get_field('icon',$product1), 	//$icon
+													explode(" ",get_post($product1)->post_title, 2)[0],						//$line1
+													explode(" ",get_post($product1)->post_title, 2)[1],					//$line2
+													get_field('subtitle',$product1),			//$info
+													"$".$product1_meta['_price'][0], 							//$price
+													"half",						 	//length 
+													get_the_content($product1),
+													$color1						 	//color
 													);?> 
 
 	<?php 	includePart('components/molecule-package-info.php',
-												$id1, //id
+												$product1->ID, //id
 												"Mini Value Pack", //title
-												"The Mega Value Pack represents MEGA value, especially for families who like to send a decent sized photo to both sets of grandparents.
-		Our class groups are on a 8x10inch template (20.3x25.4cm). They are laminated in 100 micron film (as opposed to the more commonly used 80 micron film), which means they have a premium quality glass-like finish.
-		You can choose our standard border (your school colours), one of the custom borders (incorporating photos taken around your school) or we can work with you to develop a unique one to suit your tastes.",
+												$product1->post_content,
 												$color1,
 												"hidden-xs"
 												);?> 
 
 	<?php 	includePart('components/molecule-package-info.php',
-												$id2, //id
+												$product2->ID, //id
 												"Standard Value Pack", //title
-												"The Mega Value Pack represents MEGA value, especially for families who like to send a decent sized photo to both sets of grandparents.
-		Our class groups are on a 8x10inch template (20.3x25.4cm). They are laminated in 100 micron film (as opposed to the more commonly used 80 micron film), which means they have a premium quality glass-like finish.
-		You can choose our standard border (your school colours), one of the custom borders (incorporating photos taken around your school) or we can work with you to develop a unique one to suit your tastes.",
+												$product2->post_content,
 												$color2,
 												"hidden-xs"
 												);?> 
