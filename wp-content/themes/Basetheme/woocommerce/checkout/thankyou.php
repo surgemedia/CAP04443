@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( $order ) : ?>
-
+ <div class="col-lg-6 col-lg-offset-3" >
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
 
 		<p class="woocommerce-thankyou-order-failed"><?php _e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ); ?></p>
@@ -34,9 +34,15 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+		<h1 class=" woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></h1>
 
-		<ul class="woocommerce-thankyou-order-details order_details">
+		<ul class="woocommerce-thankyou-order-details order_details col-lg-8 col-lg-offset-2">
+		<?php if ( $order->payment_method_title ) : ?>
+			<li class="method">
+				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
+				<strong><?php echo $order->payment_method_title; ?></strong>
+			</li>
+			<?php endif; ?>
 			<li class="order">
 				<?php _e( 'Order Number:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
@@ -49,12 +55,7 @@ if ( $order ) : ?>
 				<?php _e( 'Total:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 			</li>
-			<?php if ( $order->payment_method_title ) : ?>
-			<li class="method">
-				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
-				<strong><?php echo $order->payment_method_title; ?></strong>
-			</li>
-			<?php endif; ?>
+			
 		</ul>
 		<div class="clear"></div>
 
@@ -68,3 +69,4 @@ if ( $order ) : ?>
 	<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>
 
 <?php endif; ?>
+</div>

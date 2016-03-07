@@ -53,3 +53,11 @@ jQuery("[class*='collapseExample-']").on('show.bs.collapse', function () {
   jQuery("[class*='collapseExample-']").collapse('hide');
 });
 
+jQuery(document).ready(function(){
+	if(jQuery('#billing_email')){
+		jQuery('#billing_email').val('');
+		
+	}
+});
+
+

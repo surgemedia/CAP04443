@@ -24,7 +24,18 @@
     			<li>SUBTOTAL</li>
     		</ul>
     	</div>
-    	<?php dynamic_sidebar('primary'); ?>
+    	<?php 
+    		global $woocommerce;
+    		$GLOBALS['remove_page_on_click'];
+    		$GLOBALS['remove_page_on_click'] = false;
+    		$items = $woocommerce->cart->get_cart();
+    		//debug(sizeof($items));
+    		if(sizeof($items) == 0){ 
+			$GLOBALS['remove_page_on_click'] = true;
+			} else {
+       			echo do_shortcode('[woocommerce_cart]');
+			}
+    	 ?>
 		</div>
 	</div>
 </div>

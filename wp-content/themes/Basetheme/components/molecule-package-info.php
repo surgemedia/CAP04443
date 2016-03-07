@@ -4,10 +4,12 @@
 	$detail =$args[3];
 	$color  =$args[4];
 	$show   =$args[5];
+	$rand   =$args[6];
+
 	$package_info =  get_package_attributes($id);
 ?>
 <div class="<?php echo $show;?>">
-	<section class="package-info collapseExample-<?php echo $id;?> collapse col-xs-12 text-center <?php echo $color;?>" id="">
+	<section  class="package-info collapseExample-<?php echo $rand;?> collapse col-xs-12 text-center <?php echo $color;?>" >
 		<div class="box">
 			<div class="package-collection">
 			<?php // debug($package_info) ?>
@@ -62,8 +64,8 @@
 			</hgroup>
 			<p class="detail"><?php echo $detail; ?></p>
 			<ul>
-				<li class=""><a href="">add now</a></li>
-				<li class=""><a role="button" data-toggle="collapse" href=".collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >close</a></li>
+				<li class=""><a href="javascript:jQuery('#<?php echo $rand ?>cart a').click();">add now</a></li>
+				<li class=""><a href="javascript:jQuery('#<?php echo $rand ?>details a').click();" >close</a></li>
 			</ul>
 		</div>
 	</section>

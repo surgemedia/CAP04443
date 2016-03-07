@@ -8,6 +8,7 @@
 	$length		=$args[7];
 	$detail 	=$args[8];
 	$color 		= $args[9];
+	$rand =    $args[10];
 
 	$price_button = do_shortcode('[add_to_cart id="'.$id.'"]' );
 	$price_button = explode('</span>',$price_button)[1];
@@ -27,13 +28,13 @@
 				<p class="info"><?php echo $info; ?></p>
 				<ul>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
-					<li class="pull-left">
+					<li id="<?php  echo $rand ?>cart" class="pull-left">
 						<!-- <a href="" data-color="<?php echo $color;?>">add</a> -->
 						<?php 
 						echo $price_button;
 						 ?>
 					</li>
-					<li class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $id; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
+					<li id="<?php  echo $rand ?>details"  class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
 				</ul>
 			</div>
 </article>
@@ -42,5 +43,7 @@
 												$line1." ".$line2, //title
 												$detail,
 												$color,
-												"visible-xs"
+												"visible-xs",
+												$rand,
+												$price_button
 												);?> 

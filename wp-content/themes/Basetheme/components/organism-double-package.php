@@ -15,6 +15,9 @@
 	//Meta Data
 	$product1_meta =  $args[5];
 	$product2_meta =  $args[6];	
+	$rand1 =  $args[7];	
+	$rand2  =  $args[8];	
+
 	//Price
 
 
@@ -29,7 +32,8 @@
 				"$".$product2_meta['_price'][0], //price
 				"half", 						//length 
 				get_the_content($product2), //detail
-				$color2            				//color
+				$color2 ,
+				$rand2        				//color
 				);?> 
 	<?php } ?>
 
@@ -43,7 +47,8 @@
 				"$".$product1_meta['_price'][0], 							//$price
 				"half",						 	//length 
 				get_the_content($product1),
-				$color1						 	//color
+				$color1,
+				$rand1					 	//color
 				);?> 
 	<?php } ?>
 
@@ -53,16 +58,18 @@
 			"Mini Value Pack", //title
 			get_the_content($product1),
 			$color1,
-			"hidden-xs"
+			"hidden-xs",
+			$rand1 
 			);?> 
 	<?php } ?>
 
-	<?php if(strlen($product1) > 0){ ?>
+	<?php if(strlen($product2) > 0){ ?>
 	<?php 	includePart('components/molecule-package-info.php',
 			$product2, //id
 			"Standard Value Pack", //title
 			get_the_content($product2),
 			$color2,
-			"hidden-xs"
+			"hidden-xs",
+			$rand2
 			);?> 
 	<?php } ?>
