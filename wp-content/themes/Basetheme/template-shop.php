@@ -74,16 +74,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
 <?php //var_dump($remove_page_on_click); ?>
 <?php if($GLOBALS['remove_page_on_click']){ ?>
     <script>
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-        }
-        return "";
-    }
+    function reloadPageFirstProduct(){
     var count = false;
     window.setInterval(function(){
         if(getCookie('woocommerce_cart_hash').length > 0 && count == false){
@@ -91,7 +82,21 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
         count = true;
         }
     }, 500);
+}
+reloadPageFirstProduct();
+//redirect on cart.php to get-photos
+
     </script>
+<?php }  else { ?>
+<script>
+function showUpdateCart(){
+    jQuery('.woocommerce  ul.cart_list.product_list_widget input.button' ).addClass('hide');
+    jQuery( ".input-text" ).change(function() {
+        jQuery('.woocommerce  ul.cart_list.product_list_widget input.button' ).removeClass('hide');
+    });
+}
+    showUpdateCart();
+</script>
 <?php } ?>
 </div>
 <?php //endwhile; ?>

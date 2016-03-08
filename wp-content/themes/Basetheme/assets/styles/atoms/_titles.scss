@@ -1,6 +1,12 @@
-h1{
-	margin-bottom: 1em;
+h1 {
 	    text-transform: uppercase;
-    color: $grey;
-    font-weight: 900;
+}
+
+.simple-page {
+			h1 {
+				margin-top:1em;
+			color: $blue;
+		    font-weight: 900;
+		    margin-bottom: 0.5em;
+		}
 }

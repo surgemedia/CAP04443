@@ -32,7 +32,7 @@
 				?>		
 			</ul>
 			<div class="description"><?php echo $process_description; ?></div>
-			<a class="btn-basic" href="">Register Now</a>
+			<a class="btn-basic" href="<?php the_field('register_now_link') ?>">Register Now</a>
 		</div>
 	</div>
 </div>

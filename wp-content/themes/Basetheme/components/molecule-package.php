@@ -29,9 +29,12 @@
 				<ul>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
 					<li id="<?php  echo $rand ?>cart" class="pull-left">
-						<!-- <a href="" data-color="<?php echo $color;?>">add</a> -->
+						
 						<?php 
-						echo $price_button;
+
+						if($GLOBALS['turnoff_add'] != true ){
+							echo $price_button;
+						}
 						 ?>
 					</li>
 					<li id="<?php  echo $rand ?>details"  class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>

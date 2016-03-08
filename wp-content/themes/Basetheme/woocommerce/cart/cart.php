@@ -1,3 +1,8 @@
+<?php if(is_page('cart')){ ?>
+<script>
+	window.location.href = "/get-photos";
+</script>
+<?php } ?>
 <?php
 /**
  * Cart Page

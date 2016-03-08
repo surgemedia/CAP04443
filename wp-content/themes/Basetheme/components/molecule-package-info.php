@@ -64,7 +64,9 @@
 			</hgroup>
 			<p class="detail"><?php echo $detail; ?></p>
 			<ul>
+			<?php if($GLOBALS['turnoff_add'] != true ){ ?>
 				<li class=""><a href="javascript:jQuery('#<?php echo $rand ?>cart a').click();">add now</a></li>
+			<?php } ?>
 				<li class=""><a href="javascript:jQuery('#<?php echo $rand ?>details a').click();" >close</a></li>
 			</ul>
 		</div>
