@@ -27,14 +27,14 @@ function schoolTaxonomy() {
 	);
 	$args = array(
 		'labels'                     => $labels,
-		'hierarchical'               => false,
+		'hierarchical'               => true,
 		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'school', array('user' ), $args );
+	register_taxonomy( 'school', array('user','product','order' ), $args );
 
 }
 add_action( 'init', 'schoolTaxonomy', 0 );

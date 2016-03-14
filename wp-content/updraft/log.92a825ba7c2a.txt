@@ -1,0 +1,16 @@
+0000.000 (0) Opened log file at time: Tue, 08 Mar 2016 04:08:21 +0000 on http://capricorn.local
+0000.003 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.11.26 WP: 4.4.2 PHP: 5.6.10 (Darwin aegirs-iMac.local 15.0.0 Darwin Kernel Version 15.0.0: Wed Aug 26 16:57:32 PDT 2015; root:xnu-3247.1.106~1/RELEASE_X86_64 x86_64) MySQL: 5.5.44 Server: Apache/2.2.29 (Unix) mod_wsgi/3.5 Python/2.7.10 PHP/5.6.10 mod_ssl/2.2.29 OpenSSL/0.9.8zg DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.22.0 safe_mode: 0 max_execution_time: 900 memory_limit: 5000M (used: 48.3M | 49.3M) multisite: N mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.005 (0) Free space on disk containing Updraft's temporary directory: 325764 Mb
+0000.009 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.030 (0) Requesting semaphore lock (fd)
+0000.033 (0) Set semaphore last lock (fd) time to 2016-03-08 04:08:21
+0000.035 (0) Semaphore lock (fd) complete
+0000.043 (0) Backup run: resumption=0, nonce=92a825ba7c2a, begun at=1457410101 (0s ago), job type=backup
+0000.046 (0) Scheduling a resumption (1) after 300 seconds (1457410401) in case this run gets aborted
+0000.080 (0) Checking if we have a zip executable available
+0000.082 (0) Testing: /usr/bin/zip
+0000.104 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.106 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.107 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.109 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=128) (out=105) (deflated 18%)
+0000.111 (0) Output: total bytes=128, compressed=105 -> 18% savings

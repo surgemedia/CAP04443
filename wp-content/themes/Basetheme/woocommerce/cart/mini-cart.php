@@ -16,7 +16,7 @@
  * @package WooCommerce/Templates
  * @version 2.5.0
  */
-
+global $woocommerce;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -33,9 +33,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
+				
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-
+				// debug($cart_item['quantity']);
 					$product_name  = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
 					$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 					$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
@@ -45,17 +45,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="name"><?php echo $product_name . '&nbsp;'; ?></div>
 						
 						<div class="title visible-xs">ITEMS PRICE</div>
+						<?php 
+							$cart_id = WC()->cart->generate_cart_id( explode(',',$_GET['cart-update'])[0] );
+					    	$prod_in_cart = WC()->cart->find_product_in_cart( $cart_id );
+					    	WC()->cart->set_quantity( $prod_in_cart, explode(',',$_GET['cart-update'])[1],true );
+					     ?>
 						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="price">' . sprintf( '%s', $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 						
 						<div class="title visible-xs">QUANTITY</div>
 						<div class="quantity">
-						<select name="" id="">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
+						<?php //debug($cart_item['product_id']); ?>
+						<select class="my_select_box" name="" id="" >
+						<?php  ?>
+							
+							
+						<?php //WC_Cart::set_quantity( $cart_item_key, explode(',',$_GET['cart-update'])[1] ); ?>
+							<?php for ($i=1; $i < 21; $i++) { 
+								$selected = false;
+								if($cart_item['quantity'] == $i && ($i < 20)){
+									$selected = 'selected';
+								}
+									$option = '<option value="'.$cart_item['product_id'].'#'.$i.'" ';
+									$option .= ' ';
+									 $option .= $selected.'>'.$i.'</option>';
+									echo $option;
+								if($i > 20){
+									echo '<option value='.$cart_item['quantity'].' '.$selected.'>'.$cart_item['quantity'].'</option>';
+								}
+
+								} 
+							?>
+							<?php //echo $cart_item['quantity']; ?>
+							<?php// echo getQtyInCart($_product->id) ?>
 						</select>
+
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">x</a>',
@@ -69,16 +92,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 						
 						<div class="title visible-xs">SUBTOTAL</div>
 						<div class="subtotal">
-							
+							<span>$<?php echo $cart_item['line_subtotal']; ?></span>
 						</div>
-						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
+						<?php echo WC()->cart->get_item_data( $cart_item );
+							
+						 ?>
 
 					</li>
 					<?php
 				}
 			}
 		?>
+<script>
+	jQuery(".my_select_box").chosen({
+    width: "50%",
+    max_selected_options:20
+  });
 
+	jQuery('.my_select_box').on('change', function(evt, params) {
+   if(evt.target == this){
+   		select_info = '?cart-update='+jQuery(this).val().split('#');
+   		window.location.href = '<?php echo get_permalink(get_id_from_slug('get-photos')); ?>' + select_info;
+     }
+  });
+</script>
 	<?php else : ?>
 
 		<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
@@ -86,10 +123,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 
 </ul><!-- end product list -->
-
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<p class="total col-sm-6 col-sm-offset-6"><strong class=""><?php _e( 'YOUR TOTAL', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+	<p class="total col-sm-6 col-sm-offset-6"><strong class=""><?php _e( 'YOUR TOTAL', 'woocommerce' ); ?>:</strong> 
+	<?php //echo WC()->cart->get_cart_total(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 

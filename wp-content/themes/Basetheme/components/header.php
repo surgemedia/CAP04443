@@ -24,10 +24,19 @@
       </nav>
     </div>    
   </div>
-  <div class="logout pull-right">
+  <?php if(is_user_logged_in()){ ?>
+  <div class="logout pull-right"> 
     <a href="<?php echo wp_logout_url( home_url() ); ?>">
       LOG OUT
     </a>
   </div>
+  <?php } else { ?>
+   <div class="logout pull-right">
+    <a href="/">
+     Log In
+    </a>
+  </div>
+
+    <?php } ?>
 
 </header> 

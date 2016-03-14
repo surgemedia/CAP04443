@@ -28,32 +28,26 @@ $image_url = aq_resize($image,960,1080,true,true,true);
             <?php includePart('components/atom-user-login-form.php'); ?>
             <?php } else { ?>
             <h2>Hi, <?php echo wp_get_current_user()->data->display_name; ?></h2>
-            <a href="<?php echo get_permalink( get_page_by_title( 'User' )->ID ); ?>">Order Now</a>
+            <a href="<?php echo get_permalink( get_page_by_title( 'Get Photos' )->ID ); ?>">Order Now</a>
             <?php } ?>
           </div>
-          <div class="info">Request an ID</div>
+          <div class="info"><a href="<?php the_field('download_more'); ?>">Request an ID</a></div>
         </div>
         
         <div role="tabpanel" class="tab-pane" id="postpaid">
           <div class="info">Short login instructions for prepaid users.</div>
           <div class="form">
-            <form name="" id="" action="" method="post">
-              
+            <form name="" id="" action="http://gallery.myprophoto.com.au/wap/login" method="post">
               <p class="login-username">
-                
                 <input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Username">
               </p>
               <p class="login-password">
-                
                 <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">
               </p>
               
-              
               <p class="login-submit">
                 <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="LOGIN">
-                
               </p>
-              
             </form>
           </div>
           
@@ -61,9 +55,10 @@ $image_url = aq_resize($image,960,1080,true,true,true);
         
       </div>
       <div class="download">
-        <span class="info">Download more info about prepaid & postpaid service</span>
-        <i class="icon-document"></i>
-        
+        <a href="<?php the_field('download_more'); ?>">
+          <span class="info">Download more info about prepaid & postpaid service</span>
+          <i class="icon-document"></i>
+        </a>
       </div>
       
     </div>

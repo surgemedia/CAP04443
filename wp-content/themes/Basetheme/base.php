@@ -20,7 +20,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap" role="document">
       <div class="content row">
-        <main class="main">
+        <main class="">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
     </div><!-- /.wrap -->
     <?php
       do_action('get_footer');
-     if (!is_page_template('template-custom.php')){
+     if (!is_page_template('template-shop.php')){
        get_template_part('components/footer');  
      }
   

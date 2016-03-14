@@ -3,7 +3,7 @@
 	color:#fff;
 	height: 480px;
 	display: flex;
-  align-items: center;
+    align-items: center;
 	padding: 0 2%;
 	
 	.box{
@@ -47,6 +47,9 @@
 				width: auto;
 			}
 		}
+	}
+	.added_to_cart.wc-forward {
+		display:none;
 	}
 }
 
@@ -153,9 +156,9 @@
 	}
 }
 
-.pack-5-frames{
+.pack-5-frames {
 	&.wallet:before{
-		font-size: 16em;
+	font-size: 16em;
     top: -10px;
 	}
 	&.inches3x5:before{
@@ -192,3 +195,13 @@
 	font-size: 21em;
   top: -34px;
 }
+
+// WORDPRESS FUNCTIONAL CLASSES
+
+.three-5x7s:before { @extend .pack-3-frames.inches5x7; }
+.two-3.5x5s:before { }
+.two-wallet:before { }
+.5-mini-wallet:before { }
+.class:before { }
+.pendant-key-rings:before { }
+.bookmarks:before { }
