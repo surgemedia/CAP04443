@@ -8,6 +8,7 @@
 	
 	.box{
 		margin: auto;
+		min-width:60%;
 		[class*='icon-']{
 			font-size: 4em;
 		}
@@ -196,6 +197,15 @@
   top: -34px;
 }
 
+	.section-title {
+		    padding: 0.3em 0.2em;
+		    display: inline-block;
+		    overflow: hidden;
+		    width: 100%;
+		    color:$grey-dark;
+		    text-align: center;
+}
+
 // WORDPRESS FUNCTIONAL CLASSES
 
 .three-5x7s:before { @extend .pack-3-frames.inches5x7; }
@@ -205,3 +215,4 @@
 .class:before { }
 .pendant-key-rings:before { }
 .bookmarks:before { }
+

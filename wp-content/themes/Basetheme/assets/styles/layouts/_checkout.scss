@@ -6,6 +6,9 @@
 	.woocommerce-message{
 		margin: 0 !important;
 	}
+	label {
+		 color:$grey-dark;
+	}
 	.image-bg{
 		height: auto;
 	  background-size: cover;
@@ -18,12 +21,22 @@
 		padding: 0 4em;
 		background: #fff;
 		margin-bottom: 3em;
+		min-height: 65vh;
+		.form-row .select2-container {
+		line-height: 1.7;
+		font-size:18px;
+		}
 		h1{
-				text-align: center;
-				
-				margin-top: 2em;
+				text-align: left;
+				color:$blue;
+				margin-top: 1em;
+				margin-bottom: 1em;
+
+				font-weight: $Heavy;
+				text-transform: uppercase;
+
 			}
-		h1,h2{
+		h2 {
 			text-transform: uppercase;
 			color:$grey-dark;
 			font-weight: $Heavy;
@@ -39,7 +52,8 @@
 				}
 			}
 			input{
-				border: 1px solid $grey-dark;
+				border: 4px solid $grey-dark;
+				color:$grey-dark;
 				
 			}
 			.medium{
@@ -49,17 +63,25 @@
 					height: 40px;
 					font-size: 18px;
 					font-weight: $Medium;
+					color:$grey-dark;
+					text-indent: 10px;
+
 				}
 			}
 			.select2-container .select2-choice{
 				border-radius: 0;
-				border: 1px solid $grey-dark;
+				border: 4px solid $grey-dark;
 			}
 			.input-text{
 				font-size: 18px;
 				font-weight: $Medium;
-				color:$grey;
+				color:$grey-dark;
+				text-indent: 10px;
 				height: 7em;
+				border: 4px solid $grey-dark;
+			}
+			.form-row {
+
 			}
 			.form-row-first,
 			.form-row-last{
@@ -68,6 +90,8 @@
 					height: 40px;
 					font-size: 18px;
 					font-weight: $Medium;
+					color: $grey-dark;
+					text-indent: 10px;
 				}
 			}
 			[id$="_address_2_field"]{
@@ -159,4 +183,30 @@
 			}
 		}
 	}
+	p#billing_state_field,
+	p#shipping_state_field {
+    margin-top: 0.3em;
+	}
+	.shipping_address {
+		padding:2em 0 0 0;
+	}
+}
+	#ship-to-different-address {
+		p {  line-height: 1.3;
+    margin: 0;
+    float: left; 
+
+	input {
+    line-height: 2;
+    display: inline-block;
+    float: left;
+    margin: 0em 0.3em 0 0;
+	}	
+	input[type=checkbox]:checked:before {
+		font-size:0.7em;
+	}
+	}
+	}
+#order_comments_field {
+	clear:both;
 }

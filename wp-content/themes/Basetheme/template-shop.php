@@ -29,7 +29,7 @@
 for ($i=0; $i < sizeof(get_field('package_under_school', 'school_'.$school->term_id)); $i++) { 
 $product_section = get_field('package_under_school', 'school_'.$school->term_id)[$i];
 if($product_section['title']){
-        echo '<h1 class>'.$product_section['title'].'</h1>';
+        echo '<h1 class="section-title">'.$product_section['title'].'</h1>';
     }
 $args = array( 
     'post_type'              => array( 'product' ),

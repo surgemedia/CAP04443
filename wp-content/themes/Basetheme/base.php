@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
     </div><!-- /.wrap -->
     <?php
       do_action('get_footer');
-     if (!is_page_template('template-shop.php')){
+     if (!is_page_template('template-shop.php') OR !is_page_template('template-services.php')){
        get_template_part('components/footer');  
      }
   

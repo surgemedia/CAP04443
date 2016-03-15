@@ -1,5 +1,5 @@
 <header class="banner">
-    <!-- <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a> -->
+  
     <div class="menu">
       <button type="button" class="navbar collapsed">
         <span class="sr-only">Toggle navigation</span>
@@ -24,6 +24,7 @@
       </nav>
     </div>    
   </div>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img width="61" height="61" src="" alt="<?php bloginfo('name'); ?>" /></a>
   <?php if(is_user_logged_in()){ ?>
   <div class="logout pull-right"> 
     <a href="<?php echo wp_logout_url( home_url() ); ?>">

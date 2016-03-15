@@ -56,12 +56,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 				?>
 				<li class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 				<div class="title visible-xs">ITEMS DETAILS</div>
-					<div class="product-name" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
+					<div class="product-name col-md-5" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
 							if ( ! $_product->is_visible() ) {
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
 							} else {
-								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a date-href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
 							}
 
 							// Meta data
@@ -74,13 +74,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</div>
 <div class="title visible-xs">ITEMS PRICE</div>
-					<div class="product-price" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
+					<div class="product-price col-md-3" data-title="<?php _e( 'Price', 'woocommerce' ); ?>">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
 					</div>
 <div class="title visible-xs">QUANTITY</div>
-					<div class="product-quantity quantity" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
+					<div class="product-quantity quantity col-md-2" data-title="<?php _e( 'Quantity', 'woocommerce' ); ?>">
 						<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -95,8 +95,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
 						?>
+						<div class="product-remove">
+						<?php
+							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+								__( 'Remove this item', 'woocommerce' ),
+								esc_attr( $product_id ),
+								esc_attr( $_product->get_sku() )
+							), $cart_item_key );
+						?>
 					</div>
-					<div class="product-subtotal" data-title="<?php _e( 'Total', 'woocommerce' ); ?>"> 
+					</div>
+
+					<div class="product-subtotal col-md-2" data-title="<?php _e( 'Total', 'woocommerce' ); ?>"> 
             <?php 
               echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); 
             ?> 
@@ -121,7 +133,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+				<input type="submit" class="button update-cart" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php //do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -137,7 +149,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 </form>
 
-<div class="cart-collaterals">
+<div class="cart-collaterals col-md-6">
 
 
 	
