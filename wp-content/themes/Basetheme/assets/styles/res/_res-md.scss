@@ -3,15 +3,11 @@
 =====================================*/
 .banner{ 
 	.box{
-		
-		
-		
 		width:545px;
 		padding-left: 1.5em;
 		padding-top: 20px; 
 		.menu-wrap{
-
-			padding-left: 6em;
+			padding-top: 6em;
 			ul{
 				li{
 					display: inline-block;
@@ -46,7 +42,8 @@
 		ul{
 
 			li{
-
+				width:auto;
+				padding:0px 10px;
 				.price{
 
 				}
@@ -182,3 +179,8 @@
 
 
 
+.cart_list {
+	.cart-item {
+		padding:1em;
+	}
+}

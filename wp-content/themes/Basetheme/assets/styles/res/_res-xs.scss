@@ -3,6 +3,8 @@
 ========================================*/
 .package{
 	.box{
+    width:90%;
+    
 		margin: auto;
 		[class*='icon-']{
 			
@@ -109,6 +111,11 @@
         }
       }
       .cart_list{
+        .cart_list {
+            .cart-item {
+              padding:1em;
+            }
+          }
         .mini_cart_item{
           padding: 0 1em;
         	font-size: 18px;
@@ -354,6 +361,7 @@
           
         }
         .cart_item{
+          padding:1em;
           .product-total,
           .product-name{
             
@@ -496,3 +504,98 @@
 }
 
 
+.cart_list { 
+  .cart_item {
+      padding:1em !important;
+      border-top:1px solid $grey;
+      border-bottom:1px solid $grey;
+    margin-bottom: 0 !important;
+    position: relative;
+      .title.visible-xs {
+      margin-right: 2em;
+      float: left;
+      line-height: 2em;
+    margin-top: 1em;
+    display: inline-block !important;
+    clear: left;
+    }
+
+    .product-subtotal {
+        float: right;
+        font-weight: bold;
+    }
+
+    .product-quantity{
+            position: initial !important;
+        width: 50%;
+        float: left;
+    }
+    
+    input.input-text.qty {
+        margin:0em 3em;
+    }
+
+    .product-name {
+        margin-bottom: 1em;
+    }
+    .amount {
+      color:$grey-dark;
+    }
+    .product-remove {
+      top: 1em !important;
+    right: 1em;
+    font-size: 1.3em;
+    left: auto !important;
+    }
+  }
+}
+
+ .purchase { 
+        .cart-collaterals {
+          float: right;
+          width:100%;
+          display: inline-block;
+          padding: 1em 0;
+          tr.order-total {
+          display: block;
+          margin: 0 auto;
+          float: none;
+          width: auto;
+      }
+
+      tbody {
+          width: 100%;
+          display: inline-block;
+          float: left;
+      }
+
+      table.shop_table.shop_table_responsive {
+          width: 100%;
+          display: inline-block;
+          float: left;
+          text-align: center;
+      }
+
+    tr.order-total {
+        text-align: center;
+        width: 100%;
+    }
+  td {
+          display: inline-block;
+
+          }
+
+    .order-total {
+    span {
+          margin: 0 0 0 1em !important;
+        }
+     th {
+        display: inline-block;
+        
+        tr { th { td {
+        display: inline-block;
+
+        }}}}
+    }
+  }
+}

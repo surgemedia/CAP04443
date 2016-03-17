@@ -11,7 +11,7 @@
 		padding-top: 20px; 
 		.menu-wrap{
 
-			padding-left: 6em;
+			padding-top: 6em;
 			ul{
 				li{
 					display: inline-block;
@@ -27,3 +27,27 @@
 	}
 }
 
+
+.cart_list {
+	.cart-item {
+		padding:1em;
+	}
+}
+
+.package .box ul li a {
+	padding:.5em 0px;
+}
+.cart-collaterals { 
+	 .checkout-button {
+		text-align: center !important;
+		display: block !important;
+		margin: 0 auto !important;
+		// margin-top: .3em;
+		width: 80% !important;
+	 }
+}
+.purchase {
+      input.button.update-cart {
+      	float:none !important;
+      }
+      }

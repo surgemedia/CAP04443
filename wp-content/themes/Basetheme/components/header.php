@@ -1,4 +1,4 @@
-<header class="banner">
+<header class="banner <?php echo  $GLOBALS['header_class'] ?>">
   
     <div class="menu">
       <button type="button" class="navbar collapsed">
@@ -18,13 +18,13 @@
               wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
             endif;
             ?>
-
         </div>
-       
       </nav>
     </div>    
   </div>
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img width="61" height="61" src="" alt="<?php bloginfo('name'); ?>" /></a>
+  <?php if(!is_front_page()){ ?>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><img width="61" height="61" src="<?php echo get_field('small_logo','option') ?>" alt="<?php bloginfo('name'); ?>" /></a>
+    <?php } ?>
   <?php if(is_user_logged_in()){ ?>
   <div class="logout pull-right"> 
     <a href="<?php echo wp_logout_url( home_url() ); ?>">

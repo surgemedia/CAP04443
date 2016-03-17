@@ -17,7 +17,7 @@
 			<h1 class="student-name"><?php echo $student_name; ?></h1>
 		</div>
     <div class="purchase col-md-10 col-md-push-1 ">
-    	<div class="table-head hidden-xs">
+    	<div class="table-head hidden-sm hidden-xs ">
     		<ul>
     			<li>ITEMS DETAILS</li>
     			<li>ITEM PRICE</li>

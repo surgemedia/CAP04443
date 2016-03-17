@@ -73,3 +73,21 @@ foreach ($custom_includes as $file) {
 unset($file, $filepath);
 
 add_theme_support( 'woocommerce' );
+
+
+// WP ALL EXPORT INTERTAL FUNCTION
+/*
+<?php
+function getSchoolNameOrder($value){
+  $school_id = get_user_meta($value, $key = '', $single = false)['school'][0];
+  $school = get_term_by('id', $school_id[0], 'school');
+  return $school_id; 
+};
+
+function getIDOrder($value){
+  $user_id = get_user_meta($value, $key = '', $single = false)['description'][0];
+  $user_id = explode('_',$user_id,2)[1];
+  return $user_id;
+};
+?>
+*/

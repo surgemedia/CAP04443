@@ -90,7 +90,7 @@ input[type=radio]:before {
           float:right;
           display:inline-block;
           text-transform: uppercase;
-          //font-size: $paragraph-size;
+        //font-size: $paragraph-size;
           border: 2px solid #fff;
           border-radius: 0;
           color:#fff;
@@ -99,16 +99,16 @@ input[type=radio]:before {
           
   }
 }
-.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
-    background-color: transparent;
-    display: inline-block;
-    border-color: transparent;
+body .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: transparent !important;
+    display: inline-block !important;
+    border-color: transparent !important;
     margin: 0px;
     padding: 0px !important;
     margin-bottom: 0px !important;
     margin-top:0px !important;
 }
-.gform_wrapper .gfield_description+.gform_wrapper .gfield_description.validation_message, .gform_wrapper .ginput_container+.gfield_description.validation_message {
+body .gform_wrapper .gfield_description+.gform_wrapper .gfield_description.validation_message, .gform_wrapper .ginput_container+.gfield_description.validation_message {
     margin-bottom: 0px !important;
     margin-top:0px !important;
      padding-bottom: 0px !important;
@@ -116,9 +116,9 @@ input[type=radio]:before {
       color:$pink;
       //text-shadow: 0px 0px 5px #3E0B22;
 }
-.gform_wrapper li.gfield_error input[type=email], .gform_wrapper li.gfield_error input[type=number], .gform_wrapper li.gfield_error input[type=password], .gform_wrapper li.gfield_error input[type=tel], .gform_wrapper li.gfield_error input[type=text], .gform_wrapper li.gfield_error input[type=url], .gform_wrapper li.gfield_error textarea {
-  border:3px solid $pink;
+body .gform_wrapper li.gfield_error input[type=email], .gform_wrapper li.gfield_error input[type=number], .gform_wrapper li.gfield_error input[type=password], .gform_wrapper li.gfield_error input[type=tel], .gform_wrapper li.gfield_error input[type=text], .gform_wrapper li.gfield_error input[type=url], .gform_wrapper li.gfield_error textarea {
+  border:3px solid $pink !important;
 }
-.validation_error {
-  display:none;
+body .validation_error {
+  display:none !important;
 }

@@ -5,7 +5,7 @@ $_SESSION['failed'] = false;
 if(isset($_POST['username'])){
 	$username = $_POST['username'];
 	$user_data = get_user_by('login', $username );
-	debug($user_data);
+		//debug($user_data);
 	  $eq = get_field('eq', 'user_'.$user_data->data->ID);
 	  $firstname = get_field('first_name', 'user_'.$user_data->data->ID);
 	  $school = get_user_meta($user_data->data->ID, $key = '', $single = false)['school'][0];
@@ -18,7 +18,7 @@ if(isset($_POST['username'])){
 	    if ( !is_wp_error($user) ){
 	       // echo $user->get_error_message();
 		wp_set_object_terms( $user_data->data->ID, array( $school ), 'school', false);
-		header('Location: '.get_permalink(get_id_from_slug('get-photos')));
+		header('Location: '.site_url().'/get-photos/');
 		die();
 		} else {
 			$_SESSION['failed'] = true;

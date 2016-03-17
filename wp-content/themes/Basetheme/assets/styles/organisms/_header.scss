@@ -21,15 +21,23 @@
 			padding: 0;
 			height: 96px;
 			button.navbar{
-				top: 20px;
-    		left: 20px;
+				top: 40px;
+    			left: 40px;
 			}
 			.box{
-				width: 100%;
+				    width: auto;
+				   	top: 20px;
+    				left: 20px;
 			}
 			.logout{
 				display: none;
 			}
 		}
 	}
+}
+.full-width-header {
+	button.navbar{
+				top: 40px !important;
+   				 left: 40px !important;
+			}
 }
