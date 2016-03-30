@@ -22,7 +22,7 @@
  			</li>
  			<li>
  				<i class="icon-envelope"></i>
- 				<p><?php echo $pobox; ?></p>
+ 				<?php echo $pobox; ?>
  			</li>
  		</ul>
  	</div>

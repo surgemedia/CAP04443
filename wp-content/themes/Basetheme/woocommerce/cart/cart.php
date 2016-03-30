@@ -98,9 +98,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<div class="product-remove">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">REMOVE ITEM</a>',
 								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-								__( 'Remove this item', 'woocommerce' ),
+								__( 'Remove all of this item from cart', 'woocommerce' ),
 								esc_attr( $product_id ),
 								esc_attr( $_product->get_sku() )
 							), $cart_item_key );

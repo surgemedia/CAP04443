@@ -42,7 +42,7 @@ jQuery(document).ready(function(){
 =            Placeholder Forms            =
 =========================================*/
 function placeholder_login(){
-		jQuery('#user_login').attr('placeholder', 'Username');
+		jQuery('#user_login').attr('placeholder', 'Unique ID');
 }
 placeholder_login();
 
@@ -72,4 +72,6 @@ function getCookie(cname) {
     }
 
 
-
+jQuery(document).bind('gform_post_render', function(){
+   jQuery('[data-hide-on-submit]').addClass('hide');
+});

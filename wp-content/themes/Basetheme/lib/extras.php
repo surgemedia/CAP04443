@@ -54,8 +54,7 @@ $custom_includes = [
   'lib/function-my_edit_user_section.php',    // Scripts and stylesheets
   'lib/function-user_logged_in.php',    // Scripts and stylesheets
   'lib/function-get-package-attributes.php',    // Scripts and stylesheets
-  'lib/WC-extras.php',    // Scripts and stylesheets
-  'lib/woocommerce-show-attributes.php'    // Scripts and stylesheets
+  'lib/WC-extras.php'    // Scripts and stylesheets
 
 
 

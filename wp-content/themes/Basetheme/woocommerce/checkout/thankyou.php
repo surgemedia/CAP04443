@@ -36,6 +36,7 @@ if ( $order ) : ?>
 
 		<h1 class=" woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></h1>
 
+		<?php /* ?>
 		<ul class="woocommerce-thankyou-order-details order_details col-lg-8 col-lg-offset-2">
 		<?php if ( $order->payment_method_title ) : ?>
 			<li class="method">
@@ -57,11 +58,12 @@ if ( $order ) : ?>
 			</li>
 			
 		</ul>
+		<?php */ ?>
 		<div class="clear"></div>
 
 	<?php endif; ?>
 
-	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+	<?php //do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
 	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
 
 <?php else : ?>

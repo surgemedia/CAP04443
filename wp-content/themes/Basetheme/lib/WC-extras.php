@@ -13,4 +13,14 @@
 	        return __( 'Add', 'woocommerce' );
 	 
 	}
+			//Change the Billing Address checkout label
+		function wc_billing_field_strings( $translated_text, $text, $domain ) {
+		    switch ( $translated_text ) {
+		        case 'Billing Details' :
+		            $translated_text = __( 'Your contact info', 'woocommerce' );
+		            break;
+		    }
+		    return $translated_text;
+		}
+		add_filter( 'gettext', 'wc_billing_field_strings', 20, 3 );
  ?>

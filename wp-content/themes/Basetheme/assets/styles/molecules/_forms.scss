@@ -122,3 +122,9 @@ body .gform_wrapper li.gfield_error input[type=email], .gform_wrapper li.gfield_
 body .validation_error {
   display:none !important;
 }
+.gform_confirmation_message {
+    @extend .h1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+}

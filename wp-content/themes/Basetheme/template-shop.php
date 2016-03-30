@@ -40,8 +40,8 @@ if($product_section['title']){
 $args = array( 
     'post_type'              => array( 'product' ),
     'orderby'              => 'post__in',
-    'post__in'              => $product_section['products_in_section'],
-     'tax_query' => array( array(  'taxonomy' => 'school',   'field' => 'slug', 'terms'    => $term_name,  ),  ), );
+    'post__in'              => $product_section['products_in_section']
+     );
 //debug($product_section['products_in_section']);
 $loop = new WP_Query( $args );
 $two_pack = Array();

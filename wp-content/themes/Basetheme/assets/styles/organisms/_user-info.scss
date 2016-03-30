@@ -33,7 +33,7 @@
         border-radius:0px;
     }
     .cart_item {
-      margin: 0em 0 1em 0;
+      margin: 0em 0 2em 0;
       .product-name {
         a {
           font-size:20px;
@@ -51,17 +51,25 @@
           position:relative;
         }
         .product-remove {
-          position:absolute;
-          left:5em;
-          top:0px;
+              position: absolute;
+              left: -0.9em;
+              top: 25px;
           a {
             display: block;
-            font-weight: 700;
-            line-height: 0.95;
-            background: $grey-dark;
+            font-weight: 900;
+            line-height: 2.95;
+            /* background: #F44336; */
             text-align: center;
-            color: #fff !important;
-            font-size: 1.7em;
+            color: #F44336!important;
+            height: auto;
+            font-size: 0.7em;
+            width: auto;
+            &:hover {
+              background:transparent;
+              color:$pink !important;
+
+
+            }
           }
         }
     }

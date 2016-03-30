@@ -10,7 +10,15 @@
 	.box{
 		width:360px;
 		margin:auto;
-	
+		small.error {
+			    font-weight: 700;
+			    background: $pink;
+			    color: #fff;
+			    display: inline-block;
+			    padding: 1em;
+			    width: 100%;
+			    text-align: center;
+		}
 		.nav-tabs{
 			border:0;
 			li{
@@ -42,6 +50,7 @@
 			font-weight: $SemiBold;
 			font-size: 14px;
 			padding: 1em 0;
+			display:inline-block;
 
 		}
 		.tab-content{
@@ -114,6 +123,24 @@
 	
 
 }
+.active { 
+	a.prepaid:after {
+    content:"orders";
+    position:absolute;
+    font-size:0.4em;
+    right:10px;
+    bottom:5px;
+	}
+	a.postpaid:after {
+    content:"orders";
+    position:absolute;
+    font-size:0.4em;
+    right:35px;
+    bottom:5px;
+	}
+}
+
+
 #login-area {
 	h2 {
 		// text-align: center;
@@ -142,3 +169,6 @@
 			}
 		}
 	}
+#needHelp {
+
+}
