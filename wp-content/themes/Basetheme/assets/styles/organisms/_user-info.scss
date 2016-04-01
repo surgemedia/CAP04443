@@ -39,6 +39,11 @@
           font-size:20px;
           font-weight:$Heavy;
           text-transform: uppercase;
+          &:hover {
+            text-decoration: none !important;
+            cursor: pointer;
+            // color:$pink;
+          }
         }
 
       }

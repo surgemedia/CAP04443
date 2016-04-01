@@ -54,14 +54,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			if ( $_product && $_product->exists()  && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
-				<li class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<li onclick="showProductPosition(this)" data-prodCartID="<?php echo $cart_item['product_id']; ?>" class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 				<div class="title visible-xs">ITEMS DETAILS</div>
 					<div class="product-name col-md-5" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
 							if ( ! $_product->is_visible() ) {
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
 							} else {
-								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a date-href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a data-href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $_product->get_title() ), $cart_item, $cart_item_key );
 							}
 
 							// Meta data

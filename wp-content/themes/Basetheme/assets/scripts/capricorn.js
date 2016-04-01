@@ -75,3 +75,16 @@ function getCookie(cname) {
 jQuery(document).bind('gform_post_render', function(){
    jQuery('[data-hide-on-submit]').addClass('hide');
 });
+
+
+
+
+function showProductPosition(product){
+  var the_id = jQuery(product).data('prodcartid');
+      //console.log(the_id);
+      jQuery('[data-prodid="'+the_id+'"]')[0].scrollIntoView({
+          behavior: "smooth", // or "auto" or "instant"
+          block: "start" // or "end"
+      });
+       jQuery('[data-prodid="'+the_id+'"] a.detail')[0].click();
+}

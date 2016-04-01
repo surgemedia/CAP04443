@@ -65,15 +65,17 @@
 			width: 300px;
 		}
 	}
+	.shop,
 	.logout{
 		display:inline-block;
 		padding: 20px 0;
     height: 104px;
-    width: 19%;
+    margin-right:10px;
+    // width: 19%;
     text-align: center;
     line-height: 3;
-    position: absolute;
-    right:43px;
+    // position: absolute;
+    // right:43px;
     z-index: 2;
 		a{
 			color: #fff;
@@ -85,6 +87,9 @@
 	    font-size: 18px;
 	    font-weight: $Heavy;
 		}
+	}
+	.shop {
+		a { background:$pink; }
 	}
 }
 // .page-template-template-services {

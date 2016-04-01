@@ -31,6 +31,14 @@
       LOG OUT
     </a>
   </div>
+  <?php if(!is_page_template('template-shop.php')){ ?>
+  <div class="shop pull-right"> 
+    <a href="<?php echo '/get-photos/' ?>">
+      Keep Shopping
+    </a>
+  </div>
+  <?php }  ?>
+
   <?php } else { ?>
    <div class="logout pull-right">
     <a href="/">

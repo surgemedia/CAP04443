@@ -17,7 +17,7 @@
 ?>
 
 
-<article class="package col-sm-<?php echo ("half"==$length)? '6': '12'; ?> text-center <?php echo $color;?>">
+<article data-prodID="<?php echo $id; ?>" class="package col-sm-<?php echo ("half"==$length)? '6': '12'; ?> text-center <?php echo $color;?>">
 			<div class="box">
 				<i class="<?php echo $icon;?>"></i>
 				<hgroup class="title">

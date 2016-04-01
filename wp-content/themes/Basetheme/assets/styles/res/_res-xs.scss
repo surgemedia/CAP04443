@@ -23,7 +23,7 @@
 
 				}
 				a{
-
+        
 				}
 			}
 			.free{
@@ -511,11 +511,12 @@
       border-bottom:1px solid $grey;
     margin-bottom: 0 !important;
     position: relative;
+    background:#fff;
       .title.visible-xs {
-      margin-right: 2em;
+      margin-right: 1em;
       float: left;
       line-height: 2em;
-    margin-top: 1em;
+    margin-top: 0em;
     display: inline-block !important;
     clear: left;
     }
@@ -524,7 +525,9 @@
         float: right;
         font-weight: bold;
     }
-
+    .product-price {
+      line-height: 1em;
+    }
     .product-quantity{
             position: initial !important;
         width: 50%;
@@ -537,6 +540,7 @@
 
     .product-name {
         margin-bottom: 1em;
+        clear:both;
     }
     .amount {
       color:$grey-dark;
@@ -551,6 +555,16 @@
 }
 
  .purchase { 
+  min-height: 35px;
+  &:before {
+    content: "No Products in Cart";
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 2em;
+    top: 0px;
+    left: 0px;
+  }
         .cart-collaterals {
           float: right;
           width:100%;

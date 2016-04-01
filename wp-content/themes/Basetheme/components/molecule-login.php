@@ -24,13 +24,17 @@ $image_url = aq_resize($image,960,1080,true,true,true);
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="prepaid">
+          <?php if(user_logged_in() == false){ ?>
           <div class="info">Enter your Unique ID provided on your envelope.</div>
+            <?php } else { ?>
+            <div class="info"></div>
+            <?php } ?>
           <div class="form">
           <?php if(user_logged_in() == false){ ?>
             <?php includePart('components/atom-user-login-form.php'); ?>
             <?php } else { ?>
             <h2>Hi, <?php echo wp_get_current_user()->data->display_name; ?></h2>
-            <a class="btn-basic text-center" href="<?php echo get_permalink( get_page_by_title( 'Get Photos' )->ID ); ?>">Order Now</a>
+            <!-- <a class="btn-basic text-center" href="<?php echo get_permalink( get_page_by_title( 'Get Photos' )->ID ); ?>">Order Now</a> -->
              <a  CLASS="btn-basic text-center" href="<?php echo wp_logout_url( home_url() ); ?>">
                 LOG OUT
               </a>
@@ -59,19 +63,29 @@ $image_url = aq_resize($image,960,1080,true,true,true);
        
         <div role="tabpanel" class="tab-pane" id="postpaid">
           <div class="info"> Browse proofs, select and order.Enter the username and password provided by your school, club, or association"</div>
+          
           <div class="form">
-            <form name="" id="" action="http://gallery.myprophoto.com.au/wap/login" method="post">
+            <form onsubmit="sendlogin(this, event);" >
               <p class="login-username">
-                <input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Username">
+                <input type="text" name="UN" id="user_login" class="input" value="" size="20" placeholder="Username">
               </p>
               <p class="login-password">
-                <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">
+                <input type="password" name="PW" id="user_pass" class="input" value="" size="20" placeholder="Password">
               </p>
               
               <p class="login-submit">
-                <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="LOGIN">
+                <input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="login">
               </p>
             </form>
+            <script type="text/javascript">
+              function sendlogin(theForm, e) {
+                  var username = theForm.elements["UN"].value;
+                  var password = theForm.elements["PW"].value;
+                  var newurl = "http://gallery.myprophoto.com.au/wap/custlogin?uname=" + username + "&pword=" + password;
+                  e.preventDefault();
+                  window.location = newurl;
+              }
+          </script>
           </div>
           
         </div>

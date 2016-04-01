@@ -8,7 +8,6 @@
     <?php 	includePart('components/header.php');?>
     <?php 
         function getSchoolNameOrder($value){
-            
             $school_id = get_user_meta($value, $key = '', $single = false)['school'][0];
             $school = get_term_by('id', $school_id[0], 'school');
             return print_r($school->name);
@@ -42,15 +41,31 @@ $args = array(
     'orderby'              => 'post__in',
     'post__in'              => $product_section['products_in_section']
      );
-//debug($product_section['products_in_section']);
+
 $loop = new WP_Query( $args );
 $two_pack = Array();
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
     <?php 
-    
+
+
+
+    //debug($school_id[0]); get the school id
+    $set_args = array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all');
+    $list_of_schools =  wp_get_post_terms( get_post()->ID, 'school', $set_args );
+    $term_list = array();
+
+    for ($i=0; $i < sizeof($list_of_schools); $i++) { 
+       array_push($term_list,$list_of_schools[$i]->term_id);
+    }
+   array_push($term_list,intval($school_id[0]));
+   // debug($term_list);
+        //debug(wp_get_post_terms( get_post()->ID, 'school', $set_args ));
+     debug(wp_set_post_terms( get_post()->ID, $term_list, 'school' ));
+
+
+
     if(get_field('size',get_post()->ID) == 'full'){
-         //debug(get_post());
+       
         includePart('components/organism-single-package.php',
         get_post()->ID, //$id1
         get_field('color',get_post()->ID),
@@ -62,12 +77,12 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
         array_push($two_pack,get_post());
         if(sizeof($two_pack) == 2){
                 includePart('components/organism-double-package.php',
-                $two_pack[0]->ID, //$id1
                 $two_pack[1]->ID, //$id2
-                get_field('color',$two_pack[0]),  //colors
+                $two_pack[0]->ID, //$id1
                 get_field('color',$two_pack[1]), //colors
-                get_post_meta($two_pack[0]->ID),  //post meta
+                get_field('color',$two_pack[0]),  //colors
                 get_post_meta($two_pack[1]->ID), //post meta
+                get_post_meta($two_pack[0]->ID),  //post meta
                 rand(),
                 rand()
                 );
