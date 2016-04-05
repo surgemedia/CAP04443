@@ -14,6 +14,7 @@
         };
         $user_id = wp_get_current_user()->data->ID;
         $school = get_user_meta(wp_get_current_user()->data->ID, $key = '', $single = false)['school'][0];
+        
         $school_id = wp_set_object_terms($user_id, array( $school ), 'school', false);
         $school = get_term_by('id', $school_id[0], 'school');
         includePart('components/organism-user-info.php',

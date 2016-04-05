@@ -1,35 +1,11 @@
 {
-    "key": "group_56aebe7864b66",
-    "title": "Taxonomy - School",
+    "key": "group_56de14d0eed0f",
+    "title": "Page - Services",
     "fields": [
         {
-            "key": "field_56aebed8ace2e",
-            "label": "Image",
-            "name": "image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "full",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_56cd0ce6f6042",
-            "label": "Package under school",
-            "name": "package_under_school",
+            "key": "field_56de14f41182b",
+            "label": "Packages Displayed",
+            "name": "packages_displayed",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -39,14 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_56cd142cf6044",
+            "collapsed": "",
             "min": "",
             "max": "",
             "layout": "block",
             "button_label": "Add Product Section",
             "sub_fields": [
                 {
-                    "key": "field_56cd0d42f6043",
+                    "key": "field_56de14f41182c",
                     "label": "TItle",
                     "name": "title",
                     "type": "text",
@@ -67,7 +43,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_56cd142cf6044",
+                    "key": "field_56de14f41182d",
                     "label": "Products in section",
                     "name": "products_in_section",
                     "type": "relationship",
@@ -82,9 +58,7 @@
                     "post_type": [
                         "product"
                     ],
-                    "taxonomy": [
-
-                    ],
+                    "taxonomy": [],
                     "filters": [
                         "search",
                         "taxonomy"
@@ -95,45 +69,24 @@
                     "return_format": "id"
                 }
             ]
-        },
-        {
-            "key": "field_570212a7f98aa",
-            "label": "late_fee_applies_after",
-            "name": "late_fee_applies_after",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
         }
     ],
     "location": [
         [
             {
-                "param": "taxonomy",
+                "param": "page_template",
                 "operator": "==",
-                "value": "school"
+                "value": "template-services.php"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1459753651
+    "modified": 1457394994
 }
