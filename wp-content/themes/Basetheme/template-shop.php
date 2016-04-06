@@ -6,51 +6,49 @@
 <?php //while (have_posts()) : the_post(); ?>
 <div class="col-lg-6 left-side">
     <?php 	includePart('components/header.php');?>
-    <?php 
-        function getSchoolNameOrder($value){
-            $school_id = get_user_meta($value, $key = '', $single = false)['school'][0];
-            $school = get_term_by('id', $school_id[0], 'school');
-            return print_r($school->name);
-        };
+    <?php
+      /*=========================================
+        =            Get School                 =
+        =========================================*/
+        debug(getCurrentSchool());
         $user_id = wp_get_current_user()->data->ID;
         $school = get_user_meta(wp_get_current_user()->data->ID, $key = '', $single = false)['school'][0];
-        
         $school_id = wp_set_object_terms($user_id, array( $school ), 'school', false);
         $school = get_term_by('id', $school_id[0], 'school');
+
+        /*=========================================
+        =             Student Info            =
+        =========================================*/
         includePart('components/organism-user-info.php',
-        $school->name,
-        get_field('grade','user_'.$user_id),
-        get_field('class','user_'.$user_id),
-        get_field('image', 'school_'.$school->term_id),
-        wp_get_current_user()->data->display_name
-        );
-    $term_name = $school->slug;
-    unset($user_id);
+                    $school->name,
+                    get_field('grade','user_'.$user_id),
+                    get_field('class','user_'.$user_id),
+                    get_field('image', 'school_'.$school->term_id),
+                    wp_get_current_user()->data->display_name
+                    );
+        $term_name = $school->slug;
+        unset($user_id);
     ?>
 </div>
 <div class="col-lg-6 packages col-lg-push-6 right-side">
-    <?php
+     <?php
+        for ($i=0; $i < sizeof(get_field('package_under_school', 'school_'.$school->term_id)); $i++) { 
+        $product_section = get_field('package_under_school', 'school_'.$school->term_id)[$i];
+        // debug(get_field('package_under_school', 'school_'.$school->term_id));
+        if($product_section['title']){
+                echo '<h1 class="section-title">'.$product_section['title'].'</h1>';
+            }
+        $args = array( 
+            'post_type'              => array( 'product' ),
+            'orderby'              => 'post__in',
+            'post__in'              => $product_section['products_in_section']
+             );
 
-
-for ($i=0; $i < sizeof(get_field('package_under_school', 'school_'.$school->term_id)); $i++) { 
-$product_section = get_field('package_under_school', 'school_'.$school->term_id)[$i];
-if($product_section['title']){
-        echo '<h1 class="section-title">'.$product_section['title'].'</h1>';
-    }
-$args = array( 
-    'post_type'              => array( 'product' ),
-    'orderby'              => 'post__in',
-    'post__in'              => $product_section['products_in_section']
-     );
-
-$loop = new WP_Query( $args );
-$two_pack = Array();
-while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        $loop = new WP_Query( $args );
+        $two_pack = Array();
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <?php 
 
-
-
-    //debug($school_id[0]); get the school id
     $set_args = array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all');
     $list_of_schools =  wp_get_post_terms( get_post()->ID, 'school', $set_args );
     $term_list = array();
@@ -58,13 +56,7 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
     for ($i=0; $i < sizeof($list_of_schools); $i++) { 
        array_push($term_list,$list_of_schools[$i]->term_id);
     }
-   array_push($term_list,intval($school_id[0]));
-   // debug($term_list);
-        //debug(wp_get_post_terms( get_post()->ID, 'school', $set_args ));
-     debug(wp_set_post_terms( get_post()->ID, $term_list, 'school' ));
-
-
-
+    array_push($term_list,intval($school_id[0]));
     if(get_field('size',get_post()->ID) == 'full'){
        
         includePart('components/organism-single-package.php',

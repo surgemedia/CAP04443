@@ -100,7 +100,7 @@
             "key": "field_570212a7f98aa",
             "label": "late_fee_applies_after",
             "name": "late_fee_applies_after",
-            "type": "text",
+            "type": "date_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -109,13 +109,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "display_format": "d\/m\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1
         }
     ],
     "location": [
@@ -135,5 +131,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1459753651
+    "modified": 1459903243
 }

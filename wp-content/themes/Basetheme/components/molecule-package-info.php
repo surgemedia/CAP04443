@@ -7,14 +7,14 @@
 	$rand   =$args[6];
 
 	$package_info =  get_package_attributes($id);
+	//debug($title);
 ?>
 <div class="<?php echo $show;?>">
 	<section  class="package-info collapseExample-<?php echo $rand;?> collapse col-xs-12 text-center <?php echo $color;?>" >
 		<div class="box">
 			<div class="package-collection">
-			<?php // debug($package_info) ?>
 			<?php for ($i=0; $i < sizeof($package_info); $i++) {
-				debug($package_info[$i]);
+
 				switch (trim($package_info[$i])) {
 					//5x7s
 					case '5x7s':
@@ -28,7 +28,7 @@
 							$class = "pack-5x7s";
 							includePart('components/atom-package-img-2.php',$text,$class);
 							break;
-					csane '3-5x7s':
+					case '3-5x7s':
 							$text = 'Three 5x7s';
 							$class = "pack-5x7s";
 							includePart('components/atom-package-img-3.php',$text,$class);
@@ -47,7 +47,7 @@
 							break;
 					case '2-3.5x5s':
 							$text = 'Two 3.5x5s';
-							$class = "pack-2-5x5s";
+							$class = "pack-3-5x5s";
 							includePart('components/atom-package-img-2.php',$text,$class);
 							break;
 					case '3-3.5x5s':
@@ -57,7 +57,7 @@
 							break;
 					case '4-3.5x5s':
 							$text = 'Four 3.5x5s';
-							$class = "pack-4-5x5s";
+							$class = "pack-3-5x5s";
 							includePart('components/atom-package-img-4.php',$text,$class);
 							break;
 					//6x4s
@@ -109,21 +109,21 @@
 							break;
 					//pack-A4-folder
 					case 'a4-folder':
-							$text = 'Four A4 Folder';
-							$class = "pack-A4-folder";
-							includePart('components/atom-package-img-1.php',$text,$class);
+							$text = 'A4 Folder';
+							$class = "pack-a4-folder";
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
 					//portrait-group-folder
 					case 'portrait-group-folder':
 							$text = 'Portrait Group Folder';
-							$class = "portrait-group-folder";
-							includePart('components/atom-package-img-1.php',$text,$class);
+							$class = "pack-portrait-group-folder";
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
 					//TRADITIONAL-GROUP-FOLDER
 					case 'traditional-group-folder':
 							$text = 'traditional group folder';
-							$class = "traditional-group-folder";
-							includePart('components/atom-package-img-1.php',$text,$class);
+							$class = "pack-traditional-group-folder";
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
 
 					case 'bookmarks':
@@ -151,17 +151,6 @@
 								//nothing
 							break;
 					}
-					// case 'two-3.5x5s':
-					// 		$text = "Two 3.5x5s";
-					// 		$class = "pack-2-frames inches3x5";
-					// 		includePart('components/atom-package-img.php',$text,$class);
-					// 		break;
-					// case 'three-5x7s':
-					// 		$text = "Three 5x7s";
-					// 		$class = "pack-3-frames inches5x7";
-					// 		includePart('components/atom-package-img.php',$text,$class);
-					// 		break;
-
 			} ?>
 				
 			</div>
