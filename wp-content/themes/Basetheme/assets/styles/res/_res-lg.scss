@@ -4,15 +4,6 @@
 .left-side{
 	position: fixed;
 }
-
-.right-side{
-	/* height:100vh;
-	overflow-y:scroll; */
-	
-}
-
-
-
 .user-info{
   overflow-x: hidden;
   .scroll-hide{
@@ -21,17 +12,9 @@
     width: 102%;
     padding: 5%;
   	.box{
-  		img{
-  		
-  		}
-  		
-
-          p{
-         
-          }
-          h1{
-          
-          }
+  		    img { }
+          p { }
+          h1 { }
   	}
     .purchase{
       .table-head{
@@ -114,27 +97,18 @@
 .header{
   height:70em;
   display:block;
-  /* div{
-    height:100%;
-  } */
   .home-menu{
-    
-    .banner .logout{
-    
-    }
+    .banner .logout{ }
   }
 }
-
-
 /*=============================================
 =            Molecule Home Details            =
 =============================================*/
-
 .home-detail{
   height:70em;
   display: table-cell;
   vertical-align: middle;
-  padding-top: 8em;
+  padding-top: 6em;
   img{
     display: inline;
   }
@@ -151,7 +125,6 @@
 /*======================================
 =            Molecule Login            =
 ======================================*/
-
 .frame{
   height: 70em;
   padding: 0;

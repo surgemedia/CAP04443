@@ -128,3 +128,14 @@ body .validation_error {
     text-transform: uppercase;
     color: #fff;
 }
+.gform_wrapper ul li.gfield {
+      position: relative;
+}
+.gform_wrapper .gfield_required {
+      color: #F35C9F;
+    position: absolute;
+    margin-left: 0;
+    font-size: 3em;
+    right: 0.5em;
+    top: 50%;
+}

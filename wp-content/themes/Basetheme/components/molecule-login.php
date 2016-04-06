@@ -34,7 +34,6 @@ $image_url = aq_resize($image,960,1080,true,true,true);
             <?php includePart('components/atom-user-login-form.php'); ?>
             <?php } else { ?>
             <h2>Hi, <?php echo wp_get_current_user()->data->display_name; ?></h2>
-            <!-- <a class="btn-basic text-center" href="<?php echo get_permalink( get_page_by_title( 'Get Photos' )->ID ); ?>">Order Now</a> -->
              <a  CLASS="btn-basic text-center" href="<?php echo wp_logout_url( home_url() ); ?>">
                 LOG OUT
               </a>
