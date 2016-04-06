@@ -33,7 +33,7 @@
   </div>
   <?php if(!is_page_template('template-shop.php')){ ?>
   <div class="shop pull-right"> 
-    <a href="<?php echo '/get-photos/' ?>">
+    <a href="<?php echo get_field('shopping_page','option') ?>">
       Keep Shopping
     </a>
   </div>

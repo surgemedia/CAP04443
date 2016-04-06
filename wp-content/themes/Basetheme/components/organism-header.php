@@ -11,7 +11,7 @@
 	</div>
 	<div class="col-xs-12 col-lg-6 col-lg-pull-6">
 		<?php 	includePart('components/molecule-home-detail.php',
-				get_field("logo","options"), //logo
+				get_field("logo","option"), //logo
 				"",//content
 		"/about");?>
 	</div>

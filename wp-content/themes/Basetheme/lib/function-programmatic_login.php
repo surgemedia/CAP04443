@@ -18,7 +18,7 @@ if(isset($_POST['username'])){
 	    if ( !is_wp_error($user) ){
 	       // echo $user->get_error_message();
 		wp_set_object_terms( $user_data->data->ID, array( $school ), 'school', false);
-		header('Location: '.site_url().'/get-photos/');
+		header('Location: '.get_field("shopping_page","option"));
 		die();
 		} else {
 			$_SESSION['failed'] = true;
