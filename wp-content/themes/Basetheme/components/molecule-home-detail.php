@@ -6,7 +6,7 @@
 
 
 <div class="home-detail">
-	<img width="530" height="150" src="<?php echo $logo; ?>" alt="">
+	<img class="img-responsive" width="530" height="150" src="<?php echo $logo; ?>" alt="">
 	<div class="box">
 		<?php echo $details ?>
 		<p><?php the_content(); ?></p>

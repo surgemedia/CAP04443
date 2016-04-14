@@ -19,10 +19,11 @@
 						<h1><?php echo$args['title'] ?></h1>
 						<?php echo $args['content'] ?>
 						<?php
-							if(strlen($args['register_link']) > 0){
+						
+							if(0 >= strlen($args['register_link'])){
 								$args['register_link'] = '/register';
 							} 
-							if(strlen($args['more_info_link']) > 0){
+							if(0 >= strlen($args['register_link'])){
 								$args['more_info_link'] = '/services';
 							} 
 						?>

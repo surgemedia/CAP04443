@@ -31,13 +31,13 @@
     ?>
 </div>
 <div class="col-lg-6 packages col-lg-push-6 right-side">
-     <?php
-        for ($i=0; $i < sizeof(get_field('package_under_school', 'school_'.$school->term_id)); $i++) { 
-        $product_section = get_field('package_under_school', 'school_'.$school->term_id)[$i];
-        // debug(get_field('package_under_school', 'school_'.$school->term_id));
-        if($product_section['title']){
-                echo '<h1 class="section-title">'.$product_section['title'].'</h1>';
-            }
+<?php
+
+    $acf_field_sizeof = get_field('package_under_school', 'school_'.$school->term_id);
+    for ($product_loop=0; $product_loop < sizeof($acf_field_sizeof); $product_loop++) { 
+        $product_section = $acf_field_sizeof[$product_loop];
+     
+        if($product_section['title']){ echo '<h1 class="section-title">'.$product_section['title'].'</h1>'; }
         $args = array( 
             'post_type'              => array( 'product' ),
             'orderby'              => 'post__in',
@@ -46,19 +46,19 @@
 
         $loop = new WP_Query( $args );
         $two_pack = Array();
-        while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <?php 
+    while ( $loop->have_posts() ) : $loop->the_post();
 
     $set_args = array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all');
     $list_of_schools =  wp_get_post_terms( get_post()->ID, 'school', $set_args );
     $term_list = array();
 
-    for ($i=0; $i < sizeof($list_of_schools); $i++) { 
-       array_push($term_list,$list_of_schools[$i]->term_id);
+    for ($j=0; $j < sizeof($list_of_schools); $j++) { 
+       array_push($term_list,$list_of_schools[$j]->term_id);
     }
     array_push($term_list,intval($school_id[0]));
+
+
     if(get_field('size',get_post()->ID) == 'full'){
-       
         includePart('components/organism-single-package.php',
         get_post()->ID, //$id1
         get_field('color',get_post()->ID),
@@ -69,6 +69,8 @@
     if(get_field('size',get_post()->ID) == 'half'){
         array_push($two_pack,get_post());
         if(sizeof($two_pack) == 2){
+                 debug($two_pack[1]->ID); //$id2
+            debug($two_pack[0]->ID); //$id1
                 includePart('components/organism-double-package.php',
                 $two_pack[1]->ID, //$id2
                 $two_pack[0]->ID, //$id1
@@ -84,8 +86,12 @@
         }
     }
      ?>
-<?php endwhile; wp_reset_query();  unset($product_section); }  ?>
-<?php //var_dump($remove_page_on_click); ?>
+<?php endwhile; wp_reset_query(); 
+
+} 
+ unset($product_section); 
+ ?>
+
 <?php if($GLOBALS['remove_page_on_click']){ ?>
     <script>
     function reloadPageFirstProduct(){

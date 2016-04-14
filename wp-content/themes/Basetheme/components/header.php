@@ -24,7 +24,7 @@
   </div>
   <?php if(!is_front_page()){ ?>
     <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-    <img width="61" height="61" src="<?php echo get_field('small_logo','option') ?>" alt="<?php bloginfo('name'); ?>" />
+    <img class="img-responsive" width="61" height="61" src="<?php echo get_field('small_logo','option') ?>" alt="<?php bloginfo('name'); ?>" />
     </a>
     <?php } ?>
   <?php if(is_user_logged_in()){ ?>

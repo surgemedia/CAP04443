@@ -95,7 +95,7 @@
 =            Organism Header            =
 =======================================*/
 .header{
-  height:70em;
+  height:75em;
   display:block;
   .home-menu{
     .banner .logout{ }
@@ -105,10 +105,10 @@
 =            Molecule Home Details            =
 =============================================*/
 .home-detail{
-  height:70em;
+  height:75em;
   display: table-cell;
   vertical-align: middle;
-  padding-top: 6em;
+  padding-top: 8em;
   img{
     display: inline;
   }
@@ -117,7 +117,7 @@
     img{
      
     }
-    p{
+    p{ 
       
     }
   }
@@ -126,7 +126,7 @@
 =            Molecule Login            =
 ======================================*/
 .frame{
-  height: 70em;
+  height: 75em;
   padding: 0;
   .box{
     .nav-tabs{

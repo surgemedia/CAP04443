@@ -37,6 +37,9 @@ $image_url = aq_resize($image,960,1080,true,true,true);
              <a  CLASS="btn-basic text-center" href="<?php echo wp_logout_url( home_url() ); ?>">
                 LOG OUT
               </a>
+               <a  CLASS="btn-basic text-center" href="<?php echo wp_logout_url( home_url() ); ?>">
+                Keep Shopping
+              </a>
             <?php } ?>
              <?php if($_SESSION['failed'] == true){ ?>
                <small class="error">Sorry,that login is incorrect.</small>

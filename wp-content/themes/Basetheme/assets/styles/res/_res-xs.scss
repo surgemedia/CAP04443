@@ -64,14 +64,29 @@
 .banner{
 	.logout{
 		
-    width: 32%;
-    
+    width: 38.7%;
+    margin-top: 0;
+    padding: 0px;
+    height:auto;
 		a{
-			
+			font-size:15px;
+      width:100%;
+      border-bottom:0px;
 		}
+    }
+    .shop.pull-right {
+      margin-top: 0;
+      padding: 0px;
+      width: 38.7%;
+      a {
+       width:100%;
+       font-size:15px;
+       line-height: 2;
+      }
+     // float:left !important;
 	}
-}
 
+}
 
 
 /*==========================================
@@ -612,4 +627,10 @@
         }}}}
     }
   }
+}
+.simple-page {
+
+    width:90%;
+    margin-left:auto;
+    margin-right:auto; 
 }

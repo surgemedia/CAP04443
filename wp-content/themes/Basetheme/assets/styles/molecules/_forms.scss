@@ -51,53 +51,6 @@ input[type=radio]:before {
   }
 
 .simple-page {
-  
-    // background: transparent;
-    // display: table-cell;
-    // width: 50%;
-    // height: 100vh;
-    // vertical-align: middle;
-    // position: relative;
-  form {
-    overflow: hidden;
-          textarea,
-          input{
-            @extend .form-control;
-            background: transparent;
-            color:$grey-dark;
-            border: 3px solid $grey-dark; 
-            height: 40px;
-            font-size: $paragraph-size;
-            text-align: left;
-            border-radius: 0;
-            width:100% !important;
-            &::placeholder{
-              color:$grey-dark; 
-            }
-          }
-          textarea{
-            height: 160px;
-             width:100% !important;
-          }
-        
-        input[type=submit]{
-          width: auto !important;
-          background-color:$blue-bg;
-          border:0;
-           height: auto;
-          padding:1em 2em;
-          font-size:20px !important;
-          float:right;
-          display:inline-block;
-          text-transform: uppercase;
-        //font-size: $paragraph-size;
-          border: 2px solid #fff;
-          border-radius: 0;
-          color:#fff;
-        }
-        /**** fix style after connect with WP***/
-          
-  }
 }
 body .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     background-color: transparent !important;
