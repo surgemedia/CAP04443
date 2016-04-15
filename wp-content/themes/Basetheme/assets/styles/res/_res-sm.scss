@@ -5,7 +5,10 @@
 	.box{
 		width:93%;
 		padding-left: 1.5em;
-		padding-top: 20px; 
+		padding-top: 20px;
+		&.open {
+			width:100%;
+		} 
 		.menu-wrap{
 
 			padding-top: 6em;
@@ -84,4 +87,38 @@
     width:90%;
     margin-left:auto;
     margin-right:auto; 
+}
+.page-template-template-home {
+  .shop {
+    display: none;
+  }
+}
+
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+
+  .home-menu{
+    
+    img{
+     right:0px;
+     // left:20px;
+     max-width:30%;
+    }
+    .banner{ 
+      
+      button.navbar{
+        left: initial;
+        right: 20px;
+      }
+      .box{
+        
+      }
+      .logout{
+        
+      }
+
+    }
+  }
 }

@@ -21,7 +21,8 @@
 		padding: 0 4em;
 		background: #fff;
 		margin-bottom: 3em;
-		min-height: 65vh;
+		min-height: 35vh;
+		overflow: hidden;
 		.form-row .select2-container {
 		line-height: 1.7;
 		font-size:18px;
@@ -114,6 +115,22 @@
 				& *{
 					display:inline-block;
 					width:100%;
+				}
+				.fee {
+					  color:$grey-dark;
+				      border-bottom:2px solid $grey;
+			        th {
+				        font-size: 1.7em;
+				        text-transform: uppercase;
+				        font-weight: 900;
+			        }
+			        td {
+				        // text-align: center;
+				        font-size: 1.7em;
+				        font-weight: 900;
+				        text-indent: 0em;
+				        padding-bottom:0.5em;
+			        }
 				}
 				.cart-subtotal,
 				.shipping{

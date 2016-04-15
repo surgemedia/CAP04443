@@ -53,11 +53,12 @@
    font-family: 'Packages';
    font-style: normal;
    font-weight: normal;
-   line-height: 1;
+   line-height: 240px;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 
 }
+
 .pack-3-5x5s:before{content:'\0041';}
 .pack-5x7s:before{content:'\0042';}
 .pack-bookmarks:before{content:'\0043';}
@@ -70,3 +71,9 @@
 .pack-a4-folder:before{content:'\004a';}
 .pack-portrait-group-folder:before{content:'\004b';}
 .pack-traditional-group-folder:before{content:'\004c';}
+.pack-FAMILY-3.5x5s:before{content:'\004d';}
+.pack-FAMILY-5x7s:before{content:'\004e';}
+.pack-FAMILY-6x4s:before{content:'\004f';}
+.pack-FAMILY-8x12s:before{content:'\0050';}
+.pack-misc:before{content:'\0051';}
+

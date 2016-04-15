@@ -69,15 +69,16 @@
     padding: 0px;
     height:auto;
 		a{
-			font-size:15px;
+			font-size:12px;
       width:100%;
-      border-bottom:0px;
+      //border-bottom:0px;
 		}
     }
     .shop.pull-right {
       margin-top: 0;
       padding: 0px;
       width: 38.7%;
+      display:none;
       a {
        width:100%;
        font-size:15px;
@@ -87,7 +88,15 @@
 	}
 
 }
-
+.page-template-template-shop {
+.banner{ .logout{ 
+  a{
+      font-size:15px;
+      width:100%;
+      border-bottom:3px solid #fff;
+    }
+  }}
+}
 
 /*==========================================
 =            Organism User Info            =
@@ -497,10 +506,11 @@
 .header{
 
   .home-menu{
-  
+    
     img{
      right:initial;
      left:20px;
+     max-width:40%;
     }
     .banner{ 
       
@@ -514,10 +524,15 @@
       .logout{
         
       }
+
     }
   }
 }
-
+.page-template-template-home {
+  .shop {
+    display: none;
+  }
+}
 
 .cart_list { 
   .cart_item {

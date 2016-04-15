@@ -5,7 +5,7 @@
 	margin-left: auto;
 	padding: 20px;
 	padding: 20px;
-	a.brand {display: inline-block;float: left;margin: 1.3em 1em 1.3em 7.3em;}
+	a.brand {display: inline-block;float: left;margin: 0em 1em 0em 5em;}
 	button.navbar{
     position: absolute;
     float: left;
@@ -16,8 +16,8 @@
     background-image: none;
     border: 3px solid #fff;
     border-radius: 0;
-    top: 40px;
-    left: 40px;
+    top: 20px;
+    left: 20px;
     z-index: 2;
     span{
 	    border: 2px solid #fff;
@@ -25,7 +25,28 @@
 	    display: block;
 	    margin: .5em 0;
     }
+    &.cross {
+    	min-height: 58px;
+    	.icon-bar + .icon-bar {
+		transform: rotate(45deg);
+		    position: absolute;
+		    top: 45%;
+		    margin:0px;
+		    padding:0px;
+    	}
+    	.icon-bar {
+		transform: rotate(-45deg);
+		    position: relative;
+		    //top: 35%;
+		    margin:0px;
+		    padding:0px;
+    	}
+    	
+    }
+
 	}
+
+
 	.box{
 		display: none;
 		padding: 20px;
@@ -62,13 +83,16 @@
 		}
 		&.open{
 			display:inline-block;
-			width: 300px;
+			width: 400px;
+			top:0px;
+			left:0px;
+			// max-width:400px;
 		}
 	}
 	.shop,
 	.logout{
 		display:inline-block;
-		padding: 20px 0;
+		padding: 0px 0;
     height: 104px;
     margin-right:10px;
     // width: 19%;
@@ -80,6 +104,7 @@
 		a{
 			color: #fff;
 			text-decoration: none;
+			text-transform: uppercase;
 	    border: 3px solid #fff;
 	    width: auto;
 	    padding:0 20px;

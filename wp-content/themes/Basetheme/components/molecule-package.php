@@ -14,6 +14,7 @@
 	$price_button = explode('</span>',$price_button)[1];
 	$price_button = explode('</div>',$price_button)[0];
 
+	$pull_class = "pullr-right";
 ?>
 
 
@@ -27,17 +28,19 @@
 				</hgroup>
 				<p class="info"><?php echo $info; ?></p>
 				<ul>
+				<?php if($GLOBALS['turnoff_add'] != true ){ ?>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
 					<li id="<?php  echo $rand ?>cart" class="pull-left">
 						
 						<?php 
-
-						if($GLOBALS['turnoff_add'] != true ){
 							echo $price_button;
-						}
+						
 						 ?>
 					</li>
-					<li id="<?php  echo $rand ?>details"  class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
+					<?php } else {
+						$pull_class = "";
+						 } ?>
+					<li id="<?php  echo $rand ?>details"  class="<?php echo $pull_class; ?>"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
 				</ul>
 			</div>
 </article>

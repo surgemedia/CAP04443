@@ -4,6 +4,7 @@
 var menu = {
 	init: function(tag){
 		jQuery(tag).click(function(){
+      jQuery(this).toggleClass('cross'); 
 			jQuery(this).parent().siblings(".box").toggleClass("open");
 		});
 	}	
@@ -49,6 +50,7 @@ placeholder_login();
 /*=========================================
 =            Packages Collapse            =
 =========================================*/
+jQuery("[class*='collapseExample-']").collapse('hide');
 jQuery("[class*='collapseExample-']").on('show.bs.collapse', function () {
   jQuery("[class*='collapseExample-']").collapse('hide');
 });

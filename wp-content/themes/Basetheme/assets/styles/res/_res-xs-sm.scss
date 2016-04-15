@@ -135,7 +135,7 @@
 	background-size: contain;
   background-position-x: top; 
   background-repeat: no-repeat; 
-	padding-top: 30em;
+	padding-top: 5em;
 	padding-bottom: 5em;
 	background-size: 983px;
   background-position-x: right;
@@ -289,4 +289,46 @@
 		width: 80% !important;
 		overflow: hidden;
 	 }
+}
+
+.page-template-template-home {
+  .shop {
+    display: none;
+  }
+}
+
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+
+  .home-menu{
+    
+    img{
+     right:initial;
+     left:20px;
+     max-width:25%;
+    }
+    .banner{ 
+      
+      button.navbar{
+        left: initial;
+        right: 20px;
+      }
+      .box{
+        
+      }
+      .logout{
+        
+      }
+
+    }
+  }
+}
+
+.service .frame {
+  height:auto;
+  padding-top:4em;
+  padding-bottom:4em;
+
 }

@@ -21,6 +21,9 @@
 	.logout{
 		/* position: static; */
 	}
+	.shop{
+		display:none;
+	}
 }
 
 
@@ -189,4 +192,26 @@
     width:90%;
     margin-left:auto;
     margin-right:auto; 
+}
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+
+  .home-menu{
+    
+    img{
+     // right:initial;
+     // right:20px;
+     max-width:20%;
+    }
+    .banner{ 
+      
+     .shop {
+     	padding-top:20px;
+     }
+
+
+    }
+  }
 }

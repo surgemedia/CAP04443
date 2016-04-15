@@ -4,6 +4,7 @@
 */
 ?>
 <?php //while (have_posts()) : the_post(); ?>
+
 <div class="col-lg-6 left-side">
     <?php 	includePart('components/header.php');?>
     <?php

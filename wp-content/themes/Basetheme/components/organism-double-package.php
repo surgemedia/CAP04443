@@ -18,7 +18,6 @@
 	$rand1 =  $args[7];	
 	$rand2  =  $args[8];	
 
-	//Price
 
 
 ?>
@@ -55,7 +54,7 @@
 	<?php if(strlen($product1) > 0){ ?>
 	<?php 	includePart('components/molecule-package-info.php',
 			$product1, //id
-			"Mini Value Pack", //title
+			get_the_title($product1), //title
 			get_the_content($product1),
 			$color1,
 			"hidden-xs",
@@ -66,7 +65,7 @@
 	<?php if(strlen($product2) > 0){ ?>
 	<?php 	includePart('components/molecule-package-info.php',
 			$product2, //id
-			"Standard Value Pack", //title
+			get_the_title($product2), //title
 			get_the_content($product2),
 			$color2,
 			"hidden-xs",

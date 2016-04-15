@@ -113,7 +113,32 @@
       h2,.cart-subtotal,.shipping {
         display: none;
       }
+      .fee-extended,
+        .fee {
+      color:$pink;
+      border-bottom:2px solid $grey;
+     //padding-bottom:2em;
+        th {
+
+        font-size: 1.7em;
+        text-transform: uppercase;
+        font-weight: 900;
+
+        }
+        td {
+          
+        text-align: center;
+        font-size: 1.7em;
+        font-weight: 900;
+        text-indent: 2em;
+        padding-bottom:0.5em;
+
+        }
+
+      }
     }
+
+   
 }
 
     .purchase{
