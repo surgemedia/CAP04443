@@ -112,6 +112,11 @@
 							$class = "pack-a4-folder";
 							includePart('components/atom-package-img.php',$text,$class);
 							break;
+					case 'Folder-A4':
+							$text = 'A4 Folder';
+							$class = "pack-a4-folder";
+							includePart('components/atom-package-img.php',$text,$class);
+							break;
 					//portrait-group-folder
 					case 'Folder-portrait-group':
 							$text = 'Portrait Group Folder';
@@ -124,7 +129,12 @@
 							$class = "pack-traditional-group-folder";
 							includePart('components/atom-package-img.php',$text,$class);
 							break;
-
+					//Bookmarks
+					case 'Bookmarks-1':
+							$text = "One Bookmarks";
+							$class = "pack-bookmarks";
+							includePart('components/atom-package-img.php',$text,$class);
+							break;
 					case 'Bookmark-1':
 							$text = "One Bookmarks";
 							$class = "pack-bookmarks";
@@ -145,21 +155,79 @@
 							$class = "pack-bookmarks";
 							includePart('components/atom-package-img-3.php',$text,$class);
 							break;
+					case 'Bookmarks-Family-1':
+							$text = "One Family Bookmarks";
+							$class = "pack-Bookmarks-Family";
+							includePart('components/atom-package-img-3.php',$text,$class);
+							break;
+					case 'Bookmarks-Family-2':
+							$text = "Two Family Bookmarks";
+							$class = "pack-Bookmarks-Family";
+							includePart('components/atom-package-img-3.php',$text,$class);
+							break;
+					case 'Bookmarks-Family-3':
+							$text = "Three Family Bookmarks";
+							$class = "pack-Bookmarks-Family";
+							includePart('components/atom-package-img-3.php',$text,$class);
+							break;
+					case 'Bookmarks-Family-4':
+							$text = "Four Family Bookmarks";
+							$class = "pack-Bookmarks-Family";
+							includePart('components/atom-package-img-3.php',$text,$class);
+							break;
+					//Bookmarks
 					case 'class':
 							$text = "Class";
 							$class = "pack-class";
 							includePart('components/atom-package-img.php',$text,$class);
 							break;
 					case 'pendant-key-rings':
-							$text = "pendant key rings";
+							$text = "Pendant Key Rings";
 							$class = "pack-pendant-key-rings";
 							includePart('components/atom-package-img.php',$text,$class);
 							break;
-					case 'Wallets-2': //2x3s
-								$text = "Two Wallets";
-								$class = "pack-MINI-WALLETS";
-								includePart('components/atom-package-img-2.php',$text,$class);
+					case 'Pendant-Key-Rings-Family':
+							$text = "Family Pendant Key Rings";
+							$class = "pack-Pendant-Key-Rings-Family";
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
+					//Wallets
+					case 'Wallet-mini-5': //2x3s
+								$text = "Five Mini Wallets";
+								$class = "pack-MINI-WALLETS";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallet-1': //2x3s
+								$text = "One Wallets";
+								$class = "pack-WALLETS";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallet-2': //2x3s
+								$text = "One Wallets";
+								$class = "pack-WALLETS";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallets-Family-1': //2x3s
+								$text = "One Family Wallets";
+								$class = "pack-Wallets-Family";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallets-Family-2': //2x3s
+								$text = "Two Family Wallets";
+								$class = "pack-Wallets-Family";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallets-Family-3': //2x3s
+								$text = "Three Family Wallets";
+								$class = "pack-Wallets-Family";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case 'Wallets-Family-4': //2x3s
+								$text = "Four Family Wallets";
+								$class = "pack-Wallets-Family";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					//Family Sizes
 					case "Family-3-5x5-1":
 								$text = "One Family 3.5x5";
 								$class = "pack-FAMILY-3.5x5s";
