@@ -3,7 +3,7 @@
 Plugin Name: WP All Export Pro
 Plugin URI: http://www.wpallimport.com/export/
 Description: Export any post type to a CSV or XML file. Edit the exported data, and then re-import it later using WP All Import.
-Version: 1.2.3
+Version: 1.3.0
 Author: Soflyy
 */
 
@@ -49,7 +49,7 @@ else {
 	 */
 	define('PMXE_PREFIX', 'pmxe_');
 
-	define('PMXE_VERSION', '1.2.3');
+	define('PMXE_VERSION', '1.3.0');
 
 	define('PMXE_EDITION', 'paid');
 
@@ -595,16 +595,24 @@ else {
 			$table = $this->getTablePrefix() . 'exports';
 			$tablefields = $wpdb->get_results("DESCRIBE {$table};");
 			$iteration = false;
+			$parent_id = false;
+			$export_post_type = false;			
 
 			// Check if field exists
 			foreach ($tablefields as $tablefield) {
 				if ('iteration' == $tablefield->Field) $iteration = true;
+				if ('parent_id' == $tablefield->Field) $parent_id = true;
+				if ('export_post_type' == $tablefield->Field) $export_post_type = true;
 			}
 
 			if ( ! $iteration ){				
-
 				$wpdb->query("ALTER TABLE {$table} ADD `iteration` BIGINT(20) NOT NULL DEFAULT 0;");
-
+			}
+			if ( ! $parent_id ){				
+				$wpdb->query("ALTER TABLE {$table} ADD `parent_id` BIGINT(20) NOT NULL DEFAULT 0;");
+			}
+			if ( ! $export_post_type ){				
+				$wpdb->query("ALTER TABLE {$table} ADD `export_post_type` VARCHAR(64) NOT NULL DEFAULT '';");
 			}
 		}	
 
@@ -618,17 +626,19 @@ else {
 				'whereclause' => '',
 				'joinclause' => '',
 				'filter_rules_hierarhy' => '',
-				'product_matching_mode' => 'strict',
+				'product_matching_mode' => 'parent',
 				'order_item_per_row' => 1,
 				'order_item_fill_empty_columns' => 0,
-				'filepath' => '',
+				'filepath' => '',				
 				'current_filepath' => '',
+				'bundlepath' => '',
 				'export_type' => 'specific',
 				'wp_query' => '',	
 				'wp_query_selector' => 'wp_query',
 				'is_user_export' => false,
 				'is_comment_export' => false,
 				'export_to' => 'csv',	
+				'export_to_sheet' => 'csv',
 				'delimiter' => ',',
 				'encoding' => 'UTF-8',
 				'is_generate_templates' => 1,				
@@ -646,6 +656,7 @@ else {
 				'cc_code' => array(),
 				'cc_sql' => array(),				
 				'cc_options' => array(),
+				'cc_settings' => array(),
 				'friendly_name' => '',
 				'fields' => array('default', 'other', 'cf', 'cats'),
 				'ids' => array(),
@@ -662,7 +673,14 @@ else {
 				'name' => '',
 				'export_only_new_stuff' => 0,
 				'creata_a_new_export_file' => 0,
-				'attachment_list' => array()				
+				'attachment_list' => array(),
+				'order_include_poducts' => 0,
+				'order_include_all_poducts' => 0,
+				'order_include_coupons' => 0,
+				'order_include_all_coupons' => 0,
+				'order_include_customers' => 0,
+				'order_include_all_customers' => 0,
+				'migration' => ''				
 			);
 		}		
 

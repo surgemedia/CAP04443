@@ -1,4 +1,15 @@
 <?php  
+	unset($id);
+	unset($icon);
+	unset($line1);
+	unset($line2);
+	unset($info);
+	unset($price);
+	unset($length);
+	unset($detail);
+	unset($color);
+	unset($rand);
+	
 	$id			=$args[1];
 	$icon		=$args[2];
 	$line1		=$args[3];
@@ -44,7 +55,8 @@
 				</ul>
 			</div>
 </article>
-<?php 	includePart('components/molecule-package-info.php',
+<?php 	
+includePart('components/molecule-package-info.php',
 												$id, //id
 												$line1." ".$line2, //title
 												$detail,
@@ -52,4 +64,15 @@
 												"visible-xs",
 												$rand,
 												$price_button
-												);?> 
+												);
+	unset($id);
+	unset($icon);
+	unset($line1);
+	unset($line2);
+	unset($info);
+	unset($price);
+	unset($length);
+	unset($detail);
+	unset($color);
+	unset($rand);
+												?> 

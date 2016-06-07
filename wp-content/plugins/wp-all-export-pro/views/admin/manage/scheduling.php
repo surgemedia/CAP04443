@@ -7,16 +7,16 @@
 </p>
 
 <p>
-	Trigger Script URL<br />
-	<small>Run the trigger script when you want to update your export. Once per 24 hours is recommended.</small><br />
-	<input style='width: 700px;' type='text' value='<?php echo home_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=trigger'; ?>' />
+	<?php _e('Trigger Script URL', 'wp_all_export_plugin');?><br />
+	<small><?php _e('Run the trigger script when you want to update your export. Once per 24 hours is recommended.', 'wp_all_export_plugin'); ?></small><br />
+	<input style='width: 700px;' type='text' value='<?php echo site_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=trigger'; ?>' />
 	<br /><br />
-	Execution Script URL<br />
-	<small>Run the execution script frequently. Once per two minutes is recommended.</small><br />
-	<input style='width: 700px;' type='text' value='<?php echo home_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=processing'; ?>' /><br /><br />
+	<?php _e('Execution Script URL', 'wp_all_export_plugin');?><br />
+	<small><?php _e('Run the execution script frequently. Once per two minutes is recommended.','wp_all_export_plugin');?></small><br />
+	<input style='width: 700px;' type='text' value='<?php echo site_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=processing'; ?>' /><br /><br />
 	<?php _e('Export File URL', 'wp_all_export_plugin'); ?><br />	
 	<input style='width: 700px;' type='text' value='<?php echo $file_path; ?>' /><br /><br />
-	<?php if (! empty($item['options']['tpl_data']) and (empty($item['options']['cpt']) or ! in_array('shop_order', $item['options']['cpt'])) and ! empty($bundle_url)): ?>			
+	<?php if (! empty($bundle_url)): ?>			
 		<?php _e('Export Bundle URL', 'wp_all_export_plugin'); ?><br />	
 		<input style='width: 700px;' type='text' value='<?php echo $bundle_url; ?>' /><br /><br />
 	<?php endif; ?>
@@ -30,7 +30,7 @@
 
 <p><i><?php _e('Example:', 'wp_all_export_plugin'); ?></i></p>
 
-<p>wget -q -O /dev/null "<?php echo home_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=trigger'; ?>"</p>
+<p>wget -q -O /dev/null "<?php echo site_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=trigger'; ?>"</p>
  
 <p><strong><?php _e('Execution Script', 'wp_all_export_plugin'); ?></strong></p>
 
@@ -42,7 +42,7 @@
 
 <p><i><?php _e('Example:', 'wp_all_export_plugin'); ?></i></p>
 
-<p>wget -q -O /dev/null "<?php echo home_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=processing'; ?>"</p>
+<p>wget -q -O /dev/null "<?php echo site_url() . '/wp-cron.php?export_key=' . $cron_job_key . '&export_id=' . $id . '&action=processing'; ?>"</p>
 
 <p><strong><?php _e('Notes', 'wp_all_export_plugin'); ?></strong></p>
  

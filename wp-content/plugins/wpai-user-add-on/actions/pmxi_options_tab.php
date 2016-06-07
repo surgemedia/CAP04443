@@ -5,7 +5,7 @@ function pmui_pmxi_options_tab( $isWizard, $post ){
 
 		$pmui_controller = new PMUI_Admin_Import();										
 		
-		$pmui_controller->options( $isWizard );
+		$pmui_controller->options( $isWizard, $post );
 
 	endif;
 

@@ -17,6 +17,11 @@
 				//debug($package_info[$i]);
 				switch (trim($package_info[$i])) {
 					//5x7s
+					case '5x7s':
+							$text = 'One 5x7s';
+							$class = "pack-5x7s";
+							includePart('components/atom-package-img.php',$text,$class);
+							break;
 					case '5x7s-1':
 							$text = 'One 5x7s';
 							$class = "pack-5x7s";
@@ -153,17 +158,17 @@
 					case 'bookmarks':
 							$text = "Three Bookmarks";
 							$class = "pack-bookmarks";
-							includePart('components/atom-package-img-3.php',$text,$class);
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
 					case 'Bookmarks-Family-1':
 							$text = "One Family Bookmarks";
 							$class = "pack-Bookmarks-Family";
-							includePart('components/atom-package-img-3.php',$text,$class);
+							includePart('components/atom-package-img.php',$text,$class);
 							break;
 					case 'Bookmarks-Family-2':
 							$text = "Two Family Bookmarks";
 							$class = "pack-Bookmarks-Family";
-							includePart('components/atom-package-img-3.php',$text,$class);
+							includePart('components/atom-package-img-2.php',$text,$class);
 							break;
 					case 'Bookmarks-Family-3':
 							$text = "Three Family Bookmarks";
@@ -173,9 +178,9 @@
 					case 'Bookmarks-Family-4':
 							$text = "Four Family Bookmarks";
 							$class = "pack-Bookmarks-Family";
-							includePart('components/atom-package-img-3.php',$text,$class);
+							includePart('components/atom-package-img-4.php',$text,$class);
 							break;
-					//Bookmarks
+					//Class
 					case 'class':
 							$text = "Class";
 							$class = "pack-class";
@@ -197,15 +202,25 @@
 								$class = "pack-MINI-WALLETS";
 								includePart('components/atom-package-img.php',$text,$class);
 							break;
+					case 'Wallets-1': //2x3s
+								$text = "One Wallets";
+								$class = "pack-WALLETS";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
 					case 'Wallet-1': //2x3s
 								$text = "One Wallets";
 								$class = "pack-WALLETS";
 								includePart('components/atom-package-img.php',$text,$class);
 							break;
-					case 'Wallet-2': //2x3s
-								$text = "One Wallets";
+					case 'Wallets-2': //2x3s
+								$text = "Two Wallets";
 								$class = "pack-WALLETS";
-								includePart('components/atom-package-img.php',$text,$class);
+								includePart('components/atom-package-img-2.php',$text,$class);
+							break;
+					case 'Wallet-2': //2x3s
+								$text = "Two Wallets";
+								$class = "pack-WALLETS";
+								includePart('components/atom-package-img-2.php',$text,$class);
 							break;
 					case 'Wallets-Family-1': //2x3s
 								$text = "One Family Wallets";
@@ -215,38 +230,59 @@
 					case 'Wallets-Family-2': //2x3s
 								$text = "Two Family Wallets";
 								$class = "pack-Wallets-Family";
-								includePart('components/atom-package-img.php',$text,$class);
+								includePart('components/atom-package-img-2.php',$text,$class);
 							break;
 					case 'Wallets-Family-3': //2x3s
 								$text = "Three Family Wallets";
 								$class = "pack-Wallets-Family";
-								includePart('components/atom-package-img.php',$text,$class);
+								includePart('components/atom-package-img-3.php',$text,$class);
 							break;
 					case 'Wallets-Family-4': //2x3s
 								$text = "Four Family Wallets";
 								$class = "pack-Wallets-Family";
-								includePart('components/atom-package-img.php',$text,$class);
+								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
 					//Family Sizes
-					case "Family-3-5x5-1":
+					case "Family-3.5x5-1":
 								$text = "One Family 3.5x5";
-								$class = "pack-FAMILY-3.5x5s";
+								$class = "pack-FAMILY-3-5x5s";
 								includePart('components/atom-package-img.php',$text,$class);
 							break;
+					case "Family-3-5x5-1":
+								$text = "One Family 3.5x5";
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+					case "Family-3.5x5s-2":
+								$text = "Two Family 3.5x5";
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-2.php',$text,$class);
+							break;
+
 					case "Family-3-5x5s-2":
 								$text = "Two Family 3.5x5";
-								$class = "pack-FAMILY-3.5x5s";
-								includePart('components/atom-package-img.php',$text,$class);
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-2.php',$text,$class);
+							break;
+					case "Family-3.5x5s-3":
+								$text = "Three Family 3.5x5";
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-3.php',$text,$class);
 							break;
 					case "Family-3-5x5s-3":
 								$text = "Three Family 3.5x5";
-								$class = "pack-FAMILY-3.5x5s";
-								includePart('components/atom-package-img.php',$text,$class);
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-3.php',$text,$class);
+							break;
+					case "Family-3.5x5s-4":
+								$text = "Four Family 3.5x5";
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
 					case "Family-3-5x5s-4":
 								$text = "Four Family 3.5x5";
-								$class = "pack-FAMILY-3.5x5s";
-								includePart('components/atom-package-img.php',$text,$class);
+								$class = "pack-FAMILY-3-5x5s";
+								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
 					case "Family-5x7s-1":
 								$text = "One Family 5x7s";
@@ -286,7 +322,7 @@
 					case "Family-6x4s-4":
 								$text = "Four Family 6x4s";
 								$class = "pack-FAMILY-6x4s";
-								includePart('components/atom-package-im-4g.php',$text,$class);
+								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
 					case "Family-8x12s-1":
 								$text = "One Family-8x12s";
@@ -333,3 +369,4 @@
 		</div>
 	</section>
 </div>
+<?php unset($detail); ?>

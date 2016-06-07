@@ -32,6 +32,7 @@
 				.price{
 					font-size: 30px;
 					line-height: 2;
+
 				}
 				a{
 					width: 100%;
@@ -53,7 +54,13 @@
 		display:none;
 	}
 }
-
+.package.col-sm-12 {
+	.price{
+						font-size: 30px;
+						line-height: 2;
+						min-width: 100px;
+					}
+}
 .package-info{
 	padding: 5%;
 	color:#fff;
@@ -131,15 +138,15 @@
 	overflow:hidden;
 }
 .pack-1-frames{
-	i { font-size:10vw;}
+	i { font-size:9vw;}
 	i.pack-class { font-size:14vw;}
 	i.pack-3-5x5s { font-size:9vw}
 	i.pack-misc { font-size:9em; opacity:0.7;} 
 	// i.pack-misc + div { bottom:3.3em;}  
-	div { position:absolute; bottom:0.5em; width:100%;}
+	div { position:absolute; bottom:-0.2em; width:100%;}
 }
 .pack-2-frames{
-	i { font-size:10vw;}
+	i { font-size:9vw;}
 	i.pack-3-5x5s { font-size:9vw}
 
 	div { position:absolute; bottom:0.5em; width:100%;}

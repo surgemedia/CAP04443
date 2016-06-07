@@ -220,6 +220,35 @@
 					</div>
 
 					<div class="options_group">
+						<p class="form-field wpallimport-radio-field">
+							<label><?php _e("Allow Backorders?"); ?></label>
+						</p>
+						<p class="form-field wpallimport-radio-field">
+							<input type="radio" id="variable_allow_backorders_no" class="switcher" name="variable_allow_backorders" value="no" <?php echo 'no' == $post['variable_allow_backorders'] ? 'checked="checked"': '' ?>/>
+							<label for="variable_allow_backorders_no"><?php _e("Do not allow"); ?></label>
+						</p>
+						<p class="form-field wpallimport-radio-field">
+							<input type="radio" id="variable_allow_backorders_notify" class="switcher" name="variable_allow_backorders" value="notify" <?php echo 'notify' == $post['variable_allow_backorders'] ? 'checked="checked"': '' ?>/>
+							<label for="variable_allow_backorders_notify"><?php _e("Allow, but notify customer"); ?></label>
+						</p>
+						<p class="form-field wpallimport-radio-field">
+							<input type="radio" id="variable_allow_backorders_yes" class="switcher" name="variable_allow_backorders" value="yes" <?php echo 'yes' == $post['variable_allow_backorders'] ? 'checked="checked"': '' ?>/>
+							<label for="variable_allow_backorders_yes" style="width:100px;"><?php _e("Allow"); ?></label>							
+						</p>
+						<div class="form-field wpallimport-radio-field">
+							<input type="radio" id="variable_allow_backorders_xpath" class="switcher" name="variable_allow_backorders" value="xpath" <?php echo 'xpath' == $post['variable_allow_backorders'] ? 'checked="checked"': '' ?>/>
+							<label for="variable_allow_backorders_xpath"><?php _e('Set with XPath', 'wpai_woocommerce_addon_plugin' )?></label>
+							<span class="wpallimport-clear"></span>
+							<div class="switcher-target-variable_allow_backorders_xpath set_with_xpath" style="width:390px;">
+								<span class="wpallimport-slide-content" style="padding-left:0;">
+									<input type="text" class="smaller-text" name="single_variable_allow_backorders" style="width:345px;" value="<?php echo esc_attr($post['single_variable_allow_backorders']) ?>"/>
+									<a href="#help" class="wpallimport-help" title="<?php _e('The value of presented XPath should be one of the following: (\'no\', \'notify\', \'yes\').', 'wpai_woocommerce_addon_plugin') ?>" style="position:relative; top:2px;">?</a>									
+								</span>																							
+							</div>						
+						</div>
+					</div>
+
+					<div class="options_group">
 						<p class="form-field">
 							<label style="width:150px;"><?php _e('Regular Price','wpai_woocommerce_addon_plugin');?> (<?php echo get_woocommerce_currency_symbol(); ?>)</label>
 							<input type="text" value="<?php echo esc_attr($post['variable_regular_price']) ?>" style="" name="variable_regular_price" class="short">

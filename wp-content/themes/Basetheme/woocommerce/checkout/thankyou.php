@@ -36,29 +36,29 @@ if ( $order ) : ?>
 
 		<h1 class=" woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></h1>
 
-		<?php /* ?>
+		<?php  ?>
 		<ul class="woocommerce-thankyou-order-details order_details col-lg-8 col-lg-offset-2">
 		<?php if ( $order->payment_method_title ) : ?>
-			<li class="method">
+			<!-- <li class="method">
 				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
 				<strong><?php echo $order->payment_method_title; ?></strong>
-			</li>
+			</li> -->
 			<?php endif; ?>
 			<li class="order">
-				<?php _e( 'Order Number:', 'woocommerce' ); ?>
+				<?php _e( 'Receipt Number:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
 			</li>
 			<li class="date">
 				<?php _e( 'Date:', 'woocommerce' ); ?>
 				<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
 			</li>
-			<li class="total">
+			<!-- <li class="total">
 				<?php _e( 'Total:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
-			</li>
+			</li> -->
 			
 		</ul>
-		<?php */ ?>
+		<?php  ?>
 		<div class="clear"></div>
 
 	<?php endif; ?>

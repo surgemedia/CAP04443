@@ -37,23 +37,23 @@
 
 	}
 	function createLateFee(){
-			if(sizeof(getCurrentSchool()) > 0){
-			$date = get_field('late_fee_applies_after', 'school_'.getCurrentSchool(true)->term_id);
-			if(isset($date)){
-			$datetime1 = new DateTime($date);
-	        $datetime2 = new DateTime(date('m/d/Y'));
-	        debug($datetime1);
-	        debug($datetime2);
+			// if(sizeof(getCurrentSchool()) > 0){
+			// $date = get_field('late_fee_applies_after', 'school_'.getCurrentSchool(true)->term_id);
+			// if(isset($date)){
+			// $datetime1 = new DateTime($date);
+	  //       $datetime2 = new DateTime(date('m/d/Y'));
+	  //       debug($datetime1);
+	  //       debug($datetime2);
 
-	        $interval = $datetime1->diff($datetime2);
-	        debug($interval->format('%R'));
-		        if ($interval->format('%R') != '-') {
-		            add_action( 'woocommerce_cart_calculate_fees', 'cp_add_custom_price' );
-		            // add_action('woocommerce_before_checkout_form', 'cp_add_custom_price');
-		        	return true;
-		        };
-	        };
-        };
+	  //       $interval = $datetime1->diff($datetime2);
+	  //       debug($interval->format('%R'));
+		 //        if ($interval->format('%R') != '-') {
+		 //            add_action( 'woocommerce_cart_calculate_fees', 'cp_add_custom_price' );
+		 //            // add_action('woocommerce_before_checkout_form', 'cp_add_custom_price');
+		 //        	return true;
+		 //        };
+	  //       };
+   //      };
 	}
 	function getCurrentSchool(){
 		$user_id = wp_get_current_user()->data->ID;

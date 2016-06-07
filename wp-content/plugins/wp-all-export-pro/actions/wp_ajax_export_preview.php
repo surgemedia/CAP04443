@@ -18,11 +18,18 @@ function pmxe_wp_ajax_export_preview(){
 	
 	parse_str($_POST['data'], $values);	
 
+	$export_id = (isset($_GET['id'])) ? stripcslashes($_GET['id']) : 0;
+
 	$exportOptions = $values + (PMXE_Plugin::$session->has_session() ? PMXE_Plugin::$session->get_clear_session_data() : array()) + PMXE_Plugin::get_default_import_options();	
 
-	XmlExportEngine::$exportOptions  = $exportOptions;
-	XmlExportEngine::$is_user_export = $exportOptions['is_user_export'];
+	$errors = new WP_Error();
+
+	$engine = new XmlExportEngine($exportOptions, $errors);
+
+	XmlExportEngine::$exportOptions     = $exportOptions;
+	XmlExportEngine::$is_user_export    = $exportOptions['is_user_export'];
 	XmlExportEngine::$is_comment_export = $exportOptions['is_comment_export'];
+	XmlExportEngine::$exportID 			= $export_id;
 
 	if ( 'advanced' == $exportOptions['export_type'] ) 
 	{		
@@ -43,20 +50,33 @@ function pmxe_wp_ajax_export_preview(){
 	{
 		XmlExportEngine::$post_types = $exportOptions['cpt'];
 
-		if ( in_array('users', $exportOptions['cpt']))
-		{			
+		if ( in_array('users', $exportOptions['cpt']) or in_array('shop_customer', $exportOptions['cpt']))
+		{						
 			add_action('pre_user_query', 'wp_all_export_pre_user_query', 10, 1);
 			$exportQuery = new WP_User_Query( array( 'orderby' => 'ID', 'order' => 'ASC', 'number' => 10 ));
 			remove_action('pre_user_query', 'wp_all_export_pre_user_query');
 		}
 		elseif( in_array('comments', $exportOptions['cpt']))
-		{
+		{			
 			add_action('comments_clauses', 'wp_all_export_comments_clauses', 10, 1);
-			$exportQuery = new WP_Comment_Query( array( 'orderby' => 'comment_ID', 'order' => 'ASC', 'number' => 10 ));
+			
+			global $wp_version;					
+
+			if ( version_compare($wp_version, '4.2.0', '>=') ) 
+			{
+				$exportQuery = new WP_Comment_Query( array( 'orderby' => 'comment_ID', 'order' => 'ASC', 'number' => 10 ));
+			}
+			else
+			{
+				$exportQuery = get_comments( array( 'orderby' => 'comment_ID', 'order' => 'ASC', 'number' => 10 ));
+			}
 			remove_action('comments_clauses', 'wp_all_export_comments_clauses');
 		}
 		else
-		{
+		{			
+			remove_all_actions('parse_query');
+			remove_all_actions('pre_get_posts');
+			
 			add_filter('posts_join', 'wp_all_export_posts_join', 10, 1);
 			add_filter('posts_where', 'wp_all_export_posts_where', 10, 1);
 			$exportQuery = new WP_Query( array( 'post_type' => $exportOptions['cpt'], 'post_status' => 'any', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 10 ));			
@@ -85,25 +105,17 @@ function pmxe_wp_ajax_export_preview(){
 			case 'xml':				
 
 				$dom = new DOMDocument('1.0', $exportOptions['encoding']);
-				$old = libxml_use_internal_errors(true);
-				
-				if (XmlExportEngine::$is_user_export)
-				{
-					$xml = pmxe_export_users_xml($exportQuery, $exportOptions, true);	
-				}
-				elseif(XmlExportEngine::$is_comment_export)
-				{
-					$xml = pmxe_export_comments_xml($exportQuery, $exportOptions, true);	
-				}
-				else
-				{
-					$xml = pmxe_export_xml($exportQuery, $exportOptions, true);
-				}
+				$old = libxml_use_internal_errors(true);							
+
+				$xml = XmlCsvExport::export_xml( true );
 				
 				$dom->loadXML($xml);
 				libxml_use_internal_errors($old);
 				$xpath = new DOMXPath($dom);
-				if (($elements = @$xpath->query('/' . $exportOptions['main_xml_tag'])) and $elements->length){
+
+				$main_xml_tag = apply_filters('wp_all_export_main_xml_tag', $exportOptions['main_xml_tag'], XmlExportEngine::$exportID);
+
+				if (($elements = @$xpath->query('/' . $main_xml_tag)) and $elements->length){
 					pmxe_render_xml_element($elements->item( 0 ), true);
 				}			
 													
@@ -112,19 +124,10 @@ function pmxe_wp_ajax_export_preview(){
 			case 'csv':
 				?>			
 				<small>
-				<?php
-					if (XmlExportEngine::$is_user_export)
-					{
-						$csv = pmxe_export_users_csv($exportQuery, $exportOptions, true);
-					}
-					elseif(XmlExportEngine::$is_comment_export)
-					{
-						$csv = pmxe_export_comments_csv($exportQuery, $exportOptions, true);
-					}
-					else
-					{
-						$csv = pmxe_export_csv($exportQuery, $exportOptions, true);
-					}					
+				<?php					
+					
+					$csv = XmlCsvExport::export_csv( true );					
+
 					if (!empty($csv)){
 						$csv_rows = array_filter(explode("\n", $csv));
 						if ($csv_rows){

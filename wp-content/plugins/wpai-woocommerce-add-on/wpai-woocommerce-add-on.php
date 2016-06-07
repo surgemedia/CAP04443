@@ -3,7 +3,7 @@
 Plugin Name: WP All Import - WooCommerce Add-On Pro
 Plugin URI: http://www.wpallimport.com/
 Description: Import to WooCommerce. Adds a section to WP All Import that looks just like WooCommerce. Requires WP All Import.
-Version: 2.2.7
+Version: 2.2.9
 Author: Soflyy
 */
 /**
@@ -24,7 +24,7 @@ define('PMWI_ROOT_URL', rtrim(plugin_dir_url(__FILE__), '/'));
  */
 define('PMWI_PREFIX', 'pmwi_');
 
-define('PMWI_VERSION', '2.2.7');
+define('PMWI_VERSION', '2.2.9');
 
 if ( class_exists('PMWI_Plugin') and PMWI_EDITION == "free"){
 
@@ -567,7 +567,9 @@ else {
 				'multiple_variable_product_tax_class' => 'parent',
 				'single_variable_product_tax_class' => '',
 				'variable_stock_status' => 'instock',
-				'single_variable_stock_status' => '',				
+				'single_variable_stock_status' => '',		
+				'variable_allow_backorders' => 'no',
+				'single_variable_allow_backorders' => '',
 				'is_variable_product_downloadable' => 'no',
 				'single_variable_product_downloadable' => '',
 				'variable_attribute_name' => array(),

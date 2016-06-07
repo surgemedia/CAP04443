@@ -1,4 +1,6 @@
 <?php  
+	unset($product1);
+	unset($product2);
 	//Products
 	$product1=$args[1];
 	$product2=$args[2];
@@ -52,23 +54,28 @@
 	<?php } ?>
 
 	<?php if(strlen($product1) > 0){ ?>
+	<?php //debug($product1); ?>
+	<?php //print_r(apply_filters('the_content', get_post_field('post_content', $product1))) ?>
 	<?php 	includePart('components/molecule-package-info.php',
 			$product1, //id
 			get_the_title($product1), //title
-			get_the_content($product1),
+			get_post_field('post_content', $product1),
 			$color1,
 			"hidden-xs",
 			$rand1 
 			);?> 
-	<?php } ?>
+	<?php unset($product1);
+			} ?>
 
 	<?php if(strlen($product2) > 0){ ?>
 	<?php 	includePart('components/molecule-package-info.php',
 			$product2, //id
 			get_the_title($product2), //title
-			get_the_content($product2),
+			get_post_field('post_content', $product2),
 			$color2,
 			"hidden-xs",
 			$rand2
-			);?> 
+			);
+			unset($product2);
+			?> 
 	<?php } ?>
