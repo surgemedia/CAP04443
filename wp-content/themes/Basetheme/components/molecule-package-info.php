@@ -344,6 +344,11 @@
 								$class = "pack-FAMILY-8x12s";
 								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
+					case "memorymate":
+								$text = "Memory Mate";
+								$class = "pack-memorymate";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
 
 						default:
 							if(strlen(trim($package_info[$i])) > 1){
