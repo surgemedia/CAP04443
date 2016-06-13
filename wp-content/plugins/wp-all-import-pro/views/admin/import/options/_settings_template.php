@@ -49,7 +49,7 @@
 								
 									$custom_types = get_post_types(array('_builtin' => true), 'objects') + get_post_types(array('_builtin' => false, 'show_ui' => true), 'objects'); 
 									foreach ($custom_types as $key => $ct) {
-										if (in_array($key, array('attachment', 'revision', 'nav_menu_item'))) unset($custom_types[$key]);
+										if (in_array($key, array('attachment', 'revision', 'nav_menu_item', 'shop_coupon'))) unset($custom_types[$key]);
 									}
 									$custom_types = apply_filters( 'pmxi_custom_types', $custom_types );
 
@@ -63,13 +63,31 @@
 								<div class="wpallimport-change-custom-type">
 									<select name="custom_type_selector" id="custom_type_selector" class="wpallimport-post-types">									
 										<?php if ( ! empty($custom_types)): ?>							
-											<?php foreach ($custom_types as $key => $cpt) :?>	
+											<?php foreach ($custom_types as $key => $ct) :?>	
 												<?php 
 													$image_src = 'dashicon-cpt';
-													if (  in_array($key, array('post', 'page', 'product') ) )
-														$image_src = 'dashicon-' . $key;										
+
+													$cpt = $key;
+													$cpt_label = $ct->labels->name;
+
+													if (class_exists('WooCommerce'))
+													{
+														if ($key == 'product')
+														{
+															$cpt = 'shop_order';
+															$cpt_label = $custom_types['shop_order']->labels->name;
+														}
+														elseif($key == 'shop_order')
+														{
+															$cpt = 'product';
+															$cpt_label = $custom_types['product']->labels->name;
+														}
+													}
+
+													if (  in_array($cpt, array('post', 'page', 'product', 'shop_order') ) )
+														$image_src = 'dashicon-' . $cpt;										
 												?>
-											<option value="<?php echo $key; ?>" data-imagesrc="dashicon <?php echo $image_src; ?>" <?php if ( $key == $post['custom_type'] ) echo 'selected="selected"';?>><?php echo $cpt->labels->name; ?></option>
+											<option value="<?php echo $cpt; ?>" data-imagesrc="dashicon <?php echo $image_src; ?>" <?php if ( $cpt == $post['custom_type'] ) echo 'selected="selected"';?>><?php echo $cpt_label; ?></option>
 											<?php endforeach; ?>
 										<?php endif; ?>
 										<?php if ( ! empty($hidden_post_types)): ?>							
@@ -91,6 +109,12 @@
 									<input type="text" name="xpath" value="<?php echo esc_attr($import->xpath) ?>" style="width: 50%; font-size: 18px; color: #555; height: 50px; padding: 10px;"/>
 								</div>														
 								
+								<h4><?php _e('Downloads', 'wp_all_import_plugin'); ?></h4>
+
+								<div class="input">
+									<button class="button button-primary download_import_template" rel="<?php echo add_query_arg(array('page' => 'pmxi-admin-manage', 'id' => $_GET['id'], 'action' => 'get_template', '_wpnonce' => wp_create_nonce( '_wpnonce-download_template' )), $this->baseUrl); ?>" style="background-image: none;"><?php _e('Import Template', 'wp_all_import_plugin'); ?></button>
+									<button class="button button-primary download_import_bundle" rel="<?php echo add_query_arg(array('page' => 'pmxi-admin-manage', 'id' => $_GET['id'], 'action' => 'bundle', '_wpnonce' => wp_create_nonce( '_wpnonce-download_bundle' )), $this->baseUrl); ?>" style="background-image: none;"><?php _e('Import Bundle', 'wp_all_import_plugin'); ?></button>
+								</div>
 							<?php endif; ?>
 							<h4><?php _e('Other', 'wp_all_import_plugin'); ?></h4>
 							<div class="input">

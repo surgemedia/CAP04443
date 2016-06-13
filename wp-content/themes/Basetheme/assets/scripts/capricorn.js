@@ -4,6 +4,7 @@
 var menu = {
 	init: function(tag){
 		jQuery(tag).click(function(){
+      jQuery(this).toggleClass('cross'); 
 			jQuery(this).parent().siblings(".box").toggleClass("open");
 		});
 	}	
@@ -42,13 +43,14 @@ jQuery(document).ready(function(){
 =            Placeholder Forms            =
 =========================================*/
 function placeholder_login(){
-		jQuery('#user_login').attr('placeholder', 'Username');
+		jQuery('#user_login').attr('placeholder', 'Unique ID');
 }
 placeholder_login();
 
 /*=========================================
 =            Packages Collapse            =
 =========================================*/
+jQuery("[class*='collapseExample-']").collapse('hide');
 jQuery("[class*='collapseExample-']").on('show.bs.collapse', function () {
   jQuery("[class*='collapseExample-']").collapse('hide');
 });
@@ -72,4 +74,19 @@ function getCookie(cname) {
     }
 
 
+jQuery(document).bind('gform_post_render', function(){
+   jQuery('[data-hide-on-submit]').addClass('hide');
+});
 
+
+
+
+function showProductPosition(product){
+  var the_id = jQuery(product).data('prodcartid');
+      //console.log(the_id);
+      jQuery('[data-prodid="'+the_id+'"]')[0].scrollIntoView({
+          behavior: "smooth", // or "auto" or "instant"
+          block: "start" // or "end"
+      });
+       jQuery('[data-prodid="'+the_id+'"] a.detail')[0].click();
+}

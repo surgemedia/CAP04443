@@ -1,4 +1,6 @@
 <?php
+	unset($product_meta);
+	unset($id);
 	$id=$args[1];
 	$color=$args[2];
 	$rand =$args[3];
@@ -13,18 +15,20 @@
 										get_field('subtitle',$id),//$info
 										"$".$product_meta['_price'][0],//$price
 										"full", //length
-										get_the_content($id),
+										get_post_field('post_content', $id),
 										$color,
 										$rand
 										 //color
 );?>
-<?php 	includePart('components/molecule-package-info.php',
+<?php 
+	includePart('components/molecule-package-info.php',
 											$id, //id
 											get_post($id)->post_title, //title
-											get_the_content($id),
+											get_post_field('post_content', $id),
 											$color,
 											"hidden-xs",
 											$rand
 );
 unset($product_meta);
+unset($id);
 ?>

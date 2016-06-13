@@ -31,7 +31,14 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 ?>
 <div class="image-bg" style="background-image:url('<?php echo get_field('image') ?>')">
-				
+<script type='text/javascript'>
+	 var schoolname = "<?php echo getUserTaxonomy(get_current_user_id(),'school')[0]->name; ?>";
+	jQuery(document).ready(function(){
+		jQuery('#billing_company').val(schoolname);
+		jQuery('#billing_company').text(schoolname);
+
+	});
+</script>				
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>

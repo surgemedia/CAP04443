@@ -14,7 +14,13 @@
 
 .btn-basic{
 	@include button(315px, $blue_bg);
+	&:hover {
+		background-color:$pink;
+		color:#FFF;
+
+	}
 }
 .btn-on-grey{
 	@include button(315px, $blue_bg);
 }
+

@@ -1,4 +1,15 @@
 <?php  
+	unset($id);
+	unset($icon);
+	unset($line1);
+	unset($line2);
+	unset($info);
+	unset($price);
+	unset($length);
+	unset($detail);
+	unset($color);
+	unset($rand);
+	
 	$id			=$args[1];
 	$icon		=$args[2];
 	$line1		=$args[3];
@@ -14,10 +25,11 @@
 	$price_button = explode('</span>',$price_button)[1];
 	$price_button = explode('</div>',$price_button)[0];
 
+	$pull_class = "pull-right";
 ?>
 
 
-<article class="package col-sm-<?php echo ("half"==$length)? '6': '12'; ?> text-center <?php echo $color;?>">
+<article data-prodID="<?php echo $id; ?>" class="package col-sm-<?php echo ("half"==$length)? '6': '12'; ?> text-center <?php echo $color;?>">
 			<div class="box">
 				<i class="<?php echo $icon;?>"></i>
 				<hgroup class="title">
@@ -27,21 +39,24 @@
 				</hgroup>
 				<p class="info"><?php echo $info; ?></p>
 				<ul>
+				<?php if($GLOBALS['turnoff_add'] != true ){ ?>
 					<li class="free"><div class="price"><?php echo $price; ?></div></li>
 					<li id="<?php  echo $rand ?>cart" class="pull-left">
 						
 						<?php 
-
-						if($GLOBALS['turnoff_add'] != true ){
 							echo $price_button;
-						}
+						
 						 ?>
 					</li>
-					<li id="<?php  echo $rand ?>details"  class="pull-right"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
+					<?php } else {
+						$pull_class = "";
+						 } ?>
+					<li id="<?php  echo $rand ?>details"  class="<?php echo $pull_class; ?>"><a class="detail" data-parent="packages" role="button" data-toggle="collapse" href=".collapseExample-<?php echo $rand; ?>" aria-expanded="false" aria-controls="collapseExample" >details</a></li>
 				</ul>
 			</div>
 </article>
-<?php 	includePart('components/molecule-package-info.php',
+<?php 	
+includePart('components/molecule-package-info.php',
 												$id, //id
 												$line1." ".$line2, //title
 												$detail,
@@ -49,4 +64,15 @@
 												"visible-xs",
 												$rand,
 												$price_button
-												);?> 
+												);
+	unset($id);
+	unset($icon);
+	unset($line1);
+	unset($line2);
+	unset($info);
+	unset($price);
+	unset($length);
+	unset($detail);
+	unset($color);
+	unset($rand);
+												?> 

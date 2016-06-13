@@ -27,6 +27,8 @@
 @import "molecules/contact-detail";
 @import "molecules/contact-form";
 @import "molecules/login";
+@import "molecules/model";
+
 
 /*----------  ORGANISMS  ----------*/
 
@@ -67,6 +69,12 @@
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 	@import "res/_res-md.scss";
+}
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+	//@import "res/_res-800-portrait.scss";
 }
 @media (min-width: $screen-lg-min) {
 	@import "res/_res-lg.scss";

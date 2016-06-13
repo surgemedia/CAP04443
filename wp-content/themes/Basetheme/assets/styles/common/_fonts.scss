@@ -53,15 +53,32 @@
    font-family: 'Packages';
    font-style: normal;
    font-weight: normal;
-   line-height: 1;
+   line-height: 240px;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 
 }
-.pack-2-frames:before{content:'\0041';}
-.pack-3-frames:before{content:'\0042';}
+
+.pack-3-5x5s:before{content:'\0041';}
+.pack-5x7s:before{content:'\0042';}
 .pack-bookmarks:before{content:'\0043';}
 .pack-class:before{content:'\0044';}
+.pack-graduation:before{content:'\0045';}
+.pack-MINI-WALLETS:before{content:'\0046';}
+.pack-pendant-key-rings:before{content:'\0047';}
+.pack-6x4s:before{content:'\0048';}
+.pack-8x12s:before{content:'\0049';}
+.pack-a4-folder:before{content:'\004a';}
+.pack-portrait-group-folder:before{content:'\004b';}
+.pack-traditional-group-folder:before{content:'\004c';}
+.pack-FAMILY-3-5x5s:before{content:'\004d';}
+.pack-FAMILY-5x7s:before{content:'\004e';}
+.pack-FAMILY-6x4s:before{content:'\004f';}
+.pack-FAMILY-8x12s:before{content:'\0050';}
+.pack-misc:before{content:'\0051';}
+.pack-WALLETS:before{content:'\0052';}
+.pack-Wallets-Family:before{content:'\0053';}
+.pack-Pendant-Key-Rings-Family:before{content:'\0054';}
+.pack-Bookmarks-Family:before{content:'\0055';}
 
-.pack-5-frames:before{content:'\0046';}
-.pack-combination:before{content:'\0047';}
+

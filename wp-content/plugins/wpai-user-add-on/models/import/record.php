@@ -28,7 +28,7 @@ class PMUI_Import_Record extends PMUI_Model_Record {
 	 */
 	public function parse($parsing_data = array()) { //$import, $count, $xml, $logger = NULL, $chunk = false, $xpath_prefix = ""		
 
-		if ( ! $parsing_data['import']->options['pmui']['import_users'] ) return;
+		if ( empty($parsing_data['import']->options['pmui']['import_users']) ) return;
 
 		add_filter('user_has_cap', array($this, '_filter_has_cap_unfiltered_html')); kses_init(); // do not perform special filtering for imported content			
 
@@ -152,7 +152,17 @@ class PMUI_Import_Record extends PMUI_Model_Record {
 		if (empty($importData['articleData']['ID']) and empty($importData['import']->options['do_not_send_password_notification']))
 		{
 			// Welcome Email
-			wp_new_user_notification( $importData['pid'], null, 'both' );
+
+			global $wp_version;
+
+			if (version_compare($wp_version, '4.3.1') < 0)
+			{
+				wp_new_user_notification( $importData['pid'], 'both' );
+			}
+			else
+			{
+				wp_new_user_notification( $importData['pid'], null, 'both' );
+			}
 		}		
 
 	}

@@ -2,6 +2,8 @@
 	height: 140vh;
   position: relative;
   background-position:right; 
+  background-size:cover;
+  overflow: hidden;
   .box{
 	background: rgba(#fff,.8);
     position: absolute;

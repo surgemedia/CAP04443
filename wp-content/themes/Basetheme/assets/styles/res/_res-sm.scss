@@ -3,15 +3,15 @@
 =====================================*/
 .banner{ 
 	.box{
-		
-		
-		
 		width:93%;
 		padding-left: 1.5em;
-		padding-top: 20px; 
+		padding-top: 20px;
+		&.open {
+			width:100%;
+		} 
 		.menu-wrap{
 
-			padding-left: 6em;
+			padding-top: 6em;
 			ul{
 				li{
 					display: inline-block;
@@ -27,3 +27,98 @@
 	}
 }
 
+
+.cart_list {
+	.cart-item {
+		padding:1em;
+	}
+}
+.user-info .scroll-hide .purchase .cart_item .product-name a {
+	clear:both;
+}
+.package { 
+	&:before {
+
+	}
+	.box ul li a {
+		padding:.5em 0px;
+	}
+}
+.cart-collaterals { 
+	 .checkout-button {
+		text-align: center !important;
+		display: block !important;
+		margin: 0 auto !important;
+		// margin-top: .3em;
+		width: 80% !important;
+	 }
+}
+.purchase {
+      input.button.update-cart {
+      	float:none !important;
+      }
+      }
+
+.banner{
+	.logout{
+		
+    width: 38.7%;
+    margin-top: 0;
+    padding: 0px;
+    height:auto;
+		a{
+			font-size:15px;
+      width:100%;
+      //border-bottom:0px;
+		}
+    }
+    .shop.pull-right {
+      margin-top: 0;
+      padding: 0px;
+      a {
+        //border-top:0px;
+      }
+     // float:left !important;
+	}
+
+}
+.simple-page {
+
+    width:90%;
+    margin-left:auto;
+    margin-right:auto; 
+}
+.page-template-template-home {
+  .shop {
+    display: none;
+  }
+}
+
+/*=======================================
+=            Organism Header            =
+=======================================*/
+.header{
+
+  .home-menu{
+    
+    img{
+     right:0px;
+     // left:20px;
+     max-width:30%;
+    }
+    .banner{ 
+      
+      button.navbar{
+        left: initial;
+        right: 20px;
+      }
+      .box{
+        
+      }
+      .logout{
+        
+      }
+
+    }
+  }
+}

@@ -1,8 +1,10 @@
 <?php 
 	$text	=$args[1];
 	$class	=$args[2];
+	$mainclass	=$args[3];
+
 ?>
-<div class="col-lg-6 package-img">
+<div class="col-md-6 package-img pack-1-frames">
 	<i class="<?php echo $class; ?>"></i>
 	<div><?php echo $text; ?></div>
 </div>

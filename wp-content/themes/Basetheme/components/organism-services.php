@@ -11,17 +11,22 @@ if( have_rows('services') ):
 											get_sub_field("image"),
 											get_sub_field("title"),
 											get_sub_field("content"),
-											get_sub_field("register_text"));
-					$flick="odd";
+											get_sub_field("register_text"),
+											get_sub_field("register_link"),
+											get_sub_field("more_info_text"),
+											get_sub_field("more_info_link"));
+											$flick="odd";
   			} else {
   				includePart('components/molecule-service-odd.php',
 											get_sub_field("image"),
 											get_sub_field("title"),
 											get_sub_field("content"),
-											get_sub_field("register_text"));
-					$flick="even";
+											get_sub_field("register_text"),
+											get_sub_field("register_link"),
+											get_sub_field("more_info_text"),
+											get_sub_field("more_info_link"));
+											$flick="even";
   			}
-
     endwhile;
 
 else :

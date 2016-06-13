@@ -4,11 +4,16 @@
 */
 ?>
 
-<div class="col-lg-6 left-side">
+<div class="col-md-6 left-side">
     <?php   includePart('components/header.php');?>
+    <div class="simple-page services">
+    <div class="scroll-hide">
+        <div class="box">
     <?php while (have_posts()) : the_post(); ?>
-    <h1><?php the_title(); ?></h1>
-    <div class="box"><?php the_content(); ?></div>
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+        </div></div></div>
+    </div>
     </div>
 <?php endwhile; ?>
 </div>
@@ -23,7 +28,7 @@
         for ($i=0; $i < sizeof(get_field('packages_displayed')); $i++) { 
         $product_section = get_field('packages_displayed')[$i];
         if($product_section['title']){
-                echo '<h1 class>'.$product_section['title'].'</h1>';
+                echo '<h1 class="section-title">'.$product_section['title'].'</h1>';
             }
              $args = array( 
             'post_type'              => array( 'product' ),

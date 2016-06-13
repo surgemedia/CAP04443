@@ -62,7 +62,7 @@
 										</div>
 									</div>						
 
-									<?php if ($post_type != 'page'):?>														
+									<?php if ( post_type_supports( $post_type, 'excerpt' ) ):?>														
 									<div class="template_input">
 										<input type="text" name="post_excerpt" style="width:100%; line-height: 25px;" value="<?php echo esc_attr($post['post_excerpt']) ?>" placeholder="<?php echo ($post_type == 'product' and class_exists('PMWI_Plugin')) ? __('WooCommerce Short Description', 'wp_all_import_plugin') : __('Excerpt', 'wp_all_import_plugin'); ?>"/>
 									</div>
@@ -148,7 +148,7 @@
 							<div class="wpallimport-collapsed-content" style="padding: 0;">
 								<div class="wpallimport-collapsed-content-inner">									
 
-									<textarea id="wp_all_import_code" name="wp_all_import_code"><?php echo (empty($functions_content)) ? "<?php\n\n?>": $functions_content;?></textarea>						
+									<textarea id="wp_all_import_code" name="wp_all_import_code"><?php echo (empty($functions_content)) ? "<?php\n\n?>": esc_textarea($functions_content);?></textarea>						
 
 									<div class="input" style="margin-top: 10px;">
 

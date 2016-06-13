@@ -1,0 +1,83 @@
+ls
+cd /wptest
+ls
+cd wptest
+ls
+ssh-keygen -t rsa
+cd .shh
+cd .ssh
+ls
+cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEoQIBAAKCAQEAypOedI+oHhNgNX/2AFDlNlVmvlN6gLmIFJvZGQ9vIcgdDW0F
+EOUkY//s33GXmbTBF5P8X31lz7ePLidcU/6S7UutU0IxKP9pOYSKBAWqLuBUk4b+
+4txV6KXTdqIWQrx8qJWkf+U6j1gh9VX+a981aiOZAzYxTCcvGdhKwi3VG0uhbzya
+Nh3opr0+Q01ypaZ1S7u7JUWHmAZx9TbBtIu+C5uzm8mAGVM0ig1rY83tHVKj1quU
+qijSxT6lANs61QMh+/+kl4d4RkU4qyzmFMMcckoKgtZTbLI4agaE2+t5TKpSTSLP
+or3f03BiKKZvVLAaulb/dSzLcUJ/tjD6BI39GwIBIwKCAQAXJtBH1edT5PUNbbW2
+5Kx7PPXMm9N8bPmb9I3W+nMZzbota4uM5vzYOoF4n0SGmFCU+vhFbWq4p0OQPwM8
+zKMTziJv6k7C21x7mh5m3BNzElLPCB0hPcCs38BlVFpQxRWPnBLMyb2MuZ17H8VO
+KCNcllqhSAWiTZ77o7DFvBha495OmChlbjjM4B+PFUJb7D/mozb9dnSNeEMKTBsb
+i26BUpY3HCLfMTqa7uM+2+H+ApsGKC2hXlroqKXJ+ifBqdwxOoQk3wGhfdK/iRcR
+2oIqNNmrt7HLhjxsu4sg+YNms4qYJGq2Z6UCZNvqIVY6nhjVtQDvyWV3Gx3GLF3D
+9XSrAoGBAPGTvGdmSoDc4DqgayUD+D22vdI41lVO6wdy9CNZg/ysWhxpr1ezlnQT
+4NpNAdD3gfJvu+v9s1L/UQqVLk0P7WiFd956djJnwBcjui8LT9AYi2hCrNkLgn0g
+bU/EqOWMMrCP7Pi2B5oENY3hqG3puR9osPdzQYL0r2FazboWmbE1AoGBANarzNFY
+TvbJM+9+6Ej9Wwhy6cfCorZzPx/oKLEqA7pzrvTP4/dEzf+qgkywyCK3OeTxEBlo
+e+RSKe/EYBHmh3LHx8HacfeZeC17gy0tO1locDGhoiasWSqSMDO2u1X91KUJ9zEw
+q2H6SFAGWk7qD6IDtj/PyRCqZdnVXwt7UI8PAoGBALpcBl5k2mNoj7gym8wZAVQt
+4uP/9czH2eEsyvayxOd9pJmTW2Dpn/MlRw7NsPGo/dhHkPfg+AzTlkn+DcZrX19C
+Y8jiIKqKjN6miFAtTDLRGxXqStNSBZO57e0UDUNdhjBvB0OFG86ViGYjG4f9cY1C
+Ih3503Om0G+sctFh5EbfAoGAbmb7ntz1aPnC8DKjWLzPuzPIr+Bw8B4DNPsNnPEJ
+O1Fv654dd9o+DnTyjddCWv8lFqfcZNamHaaZOXrvlC1qOweoj5TqJ5DBdnoI8qmM
+PJwccUvPvB4fOncRea5u+QYy2IjIRS75DdEsgO1TBANYfzUb5k2amttKUsWBVlyt
+Fl8CgYAISFyZWkmCDwz4iI1dT1qbliiQcXWdYrMHzUTepPeCVK3/e7lr1H4bNt1a
+GTe8xYxhUyWmhLtr3siz+TByBR/vqB9ZlvND14gnEp53mg7UnLjn14NJ+IfWEdyP
+uiHxh1oE+DQqduxWMQHd4mq6Rm7/TZaZ9nKWIS2PT94zLmHc3A==
+-----END RSA PRIVATE KEY-----
+cd .ssh
+ls
+cat id_rsa.puh
+cat id_rsa.pub
+ls
+ls
+ssh git@github.com
+exit
+#1434005197
+ls -l /etc/cron.daily/
+#1434005339
+ls
+#1434005348
+cd etc
+#1434005379
+ /etc
+#1434005381
+ls
+#1434005399
+ls -la
+#1434005437
+cd /etc
+#1434005440
+ls
+#1434005444
+ls -la
+#1434005493
+cd cron.daily/
+#1434005495
+ls
+#1434005499
+ls -la
+#1434005629
+cd
+#1434005631
+la
+#1434005632
+ls
+#1434005644
+cd .cpanel
+#1434005646
+ls
+#1434005660
+ls -la
+#1434005802
+crontab -u wptest -l

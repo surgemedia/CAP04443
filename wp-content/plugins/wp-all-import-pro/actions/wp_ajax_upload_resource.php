@@ -6,7 +6,7 @@ function pmxi_wp_ajax_upload_resource(){
 		exit( json_encode(array('success' => false, 'errors' => '<div class="error inline"><p>' . __('Security check', 'wp_all_import_plugin') . '</p></div>')) );
 	}
 
-	if ( ! current_user_can('manage_options') ){
+	if ( ! current_user_can( PMXI_Plugin::$capabilities ) ){
 		exit( json_encode(array('success' => false, 'errors' => '<div class="error inline"><p>' . __('Security check', 'wp_all_import_plugin') . '</p></div>')) );
 	}
 	
@@ -14,19 +14,26 @@ function pmxi_wp_ajax_upload_resource(){
 
 	$post = $input->post(array(
 		'type' => '',
-		'file' => ''
-	));		
+		'file' => '',
+		'template' => ''
+	));			
 
 	$response = array(
 		'success' => true,
-		'errors' => false,
+		'errors' => false,		
 		'upload_result' => '',
-		'filesize' => 0
+		'filesize' => 0,
+		'notice' => false
 	);
 
 	if ($post['type'] == 'url'){
 
 		$filesXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<data><node></node></data>";
+
+		if ( strpos($post['file'], "dropbox") !== false && preg_match('%\W(dl=0)$%i', $post['file']) )
+		{
+			$post['file'] = str_replace("?dl=0", "?dl=1", $post['file']);
+		}
 
 		$files = XmlImportParser::factory($filesXML, '/data/node', $post['file'], $file)->parse(); $tmp_files[] = $file;	
 
@@ -39,11 +46,11 @@ function pmxi_wp_ajax_upload_resource(){
 		if ( ! empty($files) and is_array($files) )
 		{
 			$file_to_import = array_shift($files);
-		}
+		}				
 
 		$errors = new WP_Error;
 		$uploader = new PMXI_Upload(trim($file_to_import), $errors);			
-		$upload_result = $uploader->url('', $post['file']);			
+		$upload_result = $uploader->url('', $post['file'], $post['template']);
 
 		if ($upload_result instanceof WP_Error){
 			$errors = $upload_result;
@@ -57,6 +64,7 @@ function pmxi_wp_ajax_upload_resource(){
 			<?php
 			$response = array(		
 				'success' => false,
+				'is_valid' => true,
 				'errors'  => ob_get_clean()
 			);			
 
@@ -79,7 +87,7 @@ function pmxi_wp_ajax_upload_resource(){
 
 			    	if ( ! empty($xml) ) { 
 
-			      		PMXI_Import_Record::preprocessXml($xml);
+			      		//PMXI_Import_Record::preprocessXml($xml);
 			      		$xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . "\n" . $xml;								    
 				      	$dom = new DOMDocument( '1.0', 'UTF-8' );
 						$old = libxml_use_internal_errors(true);
@@ -88,7 +96,7 @@ function pmxi_wp_ajax_upload_resource(){
 						$xpath = new DOMXPath($dom);									
 						if (($elements = $xpath->query($defaultXpath)) and $elements->length){
 							break;
-						}												
+						}																		
 				    }
 				    /*else {
 				    	$is_valid = false;
@@ -102,22 +110,56 @@ function pmxi_wp_ajax_upload_resource(){
 			unset($file);
 				
 			if ( ! $is_valid )
-			{
-				ob_start();
-				?>
-				
-				<div class="error inline"><p><?php _e('Please confirm you are importing a valid feed.<br/> Often, feed providers distribute feeds with invalid data, improperly wrapped HTML, line breaks where they should not be, faulty character encodings, syntax errors in the XML, and other issues.<br/><br/>WP All Import has checks in place to automatically fix some of the most common problems, but we can’t catch every single one.<br/><br/>It is also possible that there is a bug in WP All Import, and the problem is not with the feed.<br/><br/>If you need assistance, please contact support – <a href="mailto:support@wpallimport.com">support@wpallimport.com</a> – with your XML/CSV file. We will identify the problem and release a bug fix if necessary.', 'wp_all_import_plugin'); ?></p></div>
-				
-				<?php
+			{				
 				$response = array(		
-					'success' => false,
-					'errors'  => ob_get_clean()
+					'success'  => false,
+					'is_valid' => false,
+					'errors'   => __("Please verify that the URL returns a valid import file.", "wp_all_import_plugin")
 				);
 			}
 			else {
 				$response['upload_result'] = $upload_result;			
 				$response['filesize'] = filesize($upload_result['filePath']);
 				$response['post_type'] = $upload_result['post_type'];
+
+				if ( ! empty($response['post_type']) ) 
+				{
+					switch ( $response['post_type'] ) {
+
+						case 'product':
+							
+							if ( ! class_exists('WooCommerce') ) {
+								$response['notice'] = __('<p class="wpallimport-bundle-notice">The import bundle you are using requires WooCommerce.</p><a class="upgrade_link" href="https://wordpress.org/plugins/woocommerce/" target="_blank">Get WooCommerce</a>.', 'wp_all_import_plugin');							
+							}
+							else {
+
+								if ( ! defined('PMWI_EDITION') ) {
+
+									$response['notice'] = __('<p class="wpallimport-bundle-notice">The import bundle you are using requires the Pro version of the WooCommerce Add-On.</p><a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1" class="upgrade_link" target="_blank">Purchase the WooCommerce Add-On</a>.', 'wp_all_import_plugin');
+
+								}
+								elseif ( PMWI_EDITION != 'paid' ) {
+
+									$response['notice'] = __('<p class="wpallimport-bundle-notice">The import bundle you are using requires the Pro version of the WooCommerce Add-On, but you have the free version installed.</p><a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1529&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link">Purchase the WooCommerce Add-On</a>.', 'wp_all_import_plugin');
+
+								}							
+							}
+
+							break;
+
+						case 'import_users':
+
+							if ( ! class_exists('PMUI_Plugin') ) {
+								$response['notice'] = __('<p class="wpallimport-bundle-notice">The import bundle you are using requires the User Import Add-On.</p><a href="http://www.wpallimport.com/checkout/?edd_action=add_to_cart&download_id=1921&edd_options%5Bprice_id%5D=1" target="_blank" class="upgrade_link">Purchase the User Import Add-On</a>.', 'wp_all_import_plugin');
+							}
+
+							break;
+						
+						default:
+							# code...
+							break;
+					}
+				}
 			}
 		}
 	} 	

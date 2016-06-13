@@ -6,10 +6,19 @@
 	vertical-align: middle;
 	position: relative;
 	padding: 11em 0;
+	
 	.box{
 		width:360px;
 		margin:auto;
-		
+		small.error {
+			    font-weight: 700;
+			    background: $pink;
+			    color: #fff;
+			    display: inline-block;
+			    padding: 1em;
+			    width: 100%;
+			    text-align: center;
+		}
 		.nav-tabs{
 			border:0;
 			li{
@@ -41,6 +50,8 @@
 			font-weight: $SemiBold;
 			font-size: 14px;
 			padding: 1em 0;
+			display:inline-block;
+
 		}
 		.tab-content{
 			border-top: 0;
@@ -92,28 +103,7 @@
 					display: block;
 				}
 			}
-			/* ul{
-				padding: 0;
-				list-style: none;
-				input{
-					@extend .form-control;
-					background: transparent;
-					color:#fff;
-					border: 2px solid #fff; 
-					height: 60px;
-					font-size: $paragraph-size;
-					text-align: center;
-				}
-			}
-			input[type=submit]{
-				width:100%;
-				background-color:$blue-bg;
-				border:0;
-				height: 60px;
-				font-size: $paragraph-size;
-				border: 2px solid #fff;
-			} */
-			/**** fix style after connect with WP***/
+			
 		}
 		.download{
 			
@@ -131,5 +121,54 @@
 
 	}
 	
+
+}
+.active { 
+	a.prepaid:after {
+    content:"orders";
+    position:absolute;
+    font-size:0.4em;
+    right:10px;
+    bottom:5px;
+	}
+	a.postpaid:after {
+    content:"orders";
+    position:absolute;
+    font-size:0.4em;
+    right:35px;
+    bottom:5px;
+	}
+}
+
+
+#login-area {
+	h2 {
+		// text-align: center;
+		font-weight: 900;
+	}
+		a {
+				color:#fff;
+				text-decoration: none;
+				transition: 0.3s all ease;
+				&:hover {
+					color:$blue;
+					
+					text-decoration: none;
+					transition: 0.3s all ease;
+
+				}
+		&.btn-basic {
+			background-color:$pink;
+		}
+		&.btn-basic:last-child {
+			margin-top: 0.2em;
+			background-color:$blue;
+		}
+		&.btn-basic:hover {
+				color:#fff;
+			}
+		}
+	}
+#needHelp {
 
 }

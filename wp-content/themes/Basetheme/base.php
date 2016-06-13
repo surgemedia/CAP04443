@@ -16,7 +16,11 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <?php
       do_action('get_header');
-      // get_template_part('includes/header');
+      if(is_page() && !is_page_template('template-shop.php') && !is_page_template('template-checkout.php') && !is_page_template('template-services.php') && !is_front_page()){
+        $GLOBALS['header_class'] = 'full-width-header';
+        get_template_part('components/header');
+      }
+
     ?>
     <div class="wrap" role="document">
       <div class="content row">
@@ -32,7 +36,8 @@ use Roots\Sage\Wrapper;
     </div><!-- /.wrap -->
     <?php
       do_action('get_footer');
-     if (!is_page_template('template-shop.php')){
+    //debug(is_page_template('template-shop.php'));
+     if (!is_page_template('template-shop.php') && !is_page_template('template-services.php')){
        get_template_part('components/footer');  
      }
   

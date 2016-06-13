@@ -8,6 +8,7 @@
 	
 	.box{
 		margin: auto;
+		min-width:85%;
 		[class*='icon-']{
 			font-size: 4em;
 		}
@@ -31,6 +32,7 @@
 				.price{
 					font-size: 30px;
 					line-height: 2;
+
 				}
 				a{
 					width: 100%;
@@ -40,7 +42,7 @@
 					font-weight: $Heavy;
 					display: inline-block;
 					border: 3px solid;
-			    padding: .5em 0;
+			    padding: .5em 0px;
 				}
 			}
 			.free{
@@ -52,17 +54,21 @@
 		display:none;
 	}
 }
-
+.package.col-sm-12 {
+	.price{
+						font-size: 30px;
+						line-height: 2;
+						min-width: 100px;
+					}
+}
 .package-info{
 	padding: 5%;
 	color:#fff;
 	.package-collection{
-	/* 	border: 1px solid #fff; */
-    height: auto;
-    margin-bottom: 4em;
-    display: inline-block;
-    width: 100%;
-
+	    height: auto;
+	    margin-bottom: 4em;
+	    display: inline-block;
+	    width: 100%;
 	}
 	.title{
 		font-weight: $Heavy;
@@ -125,75 +131,71 @@
 
 .package-img{
 	height: 240px;
+	position:relative;
+	i {
+		line-height: 240px;
+	}
+	overflow:hidden;
 }
-
+.pack-1-frames{
+	i { font-size:9vw;}
+	i.pack-class { font-size:14vw;}
+	i.pack-3-5x5s { font-size:9vw}
+	i.pack-misc { font-size:9em; opacity:0.7;} 
+	// i.pack-misc + div { bottom:3.3em;}  
+	div { position:absolute; bottom:-0.2em; width:100%;}
+}
 .pack-2-frames{
-	&.wallet:before{
-		font-size: 10em;
-		top:34px;
-	}
-	&.inches3x5:before{
-		font-size: 13em;
-	}
-	&.inches5x7:before{
-  	font-size: 16em;
-  	top: -21px;
-	}
+	i { font-size:9vw;}
+	i.pack-3-5x5s { font-size:9vw}
+
+	div { position:absolute; bottom:0.5em; width:100%;}
 }
-,
 .pack-3-frames{
-	&.wallet:before{
-    font-size: 15em;
-    top: 0px;
-	}
-	&.inches3x5:before{
-		font-size: 19em;
-    top: -42px;
-	}
-	&.inches5x7:before{
-  	font-size: 24em;
-  	top:-77px;
-	}
-}
+	i { font-size:7vw;}
+	i.pack-3-5x5s { font-size:6vw}
 
-.pack-5-frames {
-	&.wallet:before{
-	font-size: 16em;
-    top: -10px;
-	}
-	&.inches3x5:before{
- 		font-size: 18em;
-    bottom: -22px;
-
-	}
-	&.inches5x7:before{
-    font-size: 20em;
-    top: -47px;
-	}
+	div { position:absolute; bottom:0.5em; width:100%;}
 }
+.pack-4-frames{
+	i { font-size:5vw;}
+	i.pack-3-5x5s { font-size:4vw}
+
+	div { position:absolute; bottom:0.5em; width:100%;}
+}
+.pack-5-frames {}
 
 [class*="pack-"]{
-	height: 200px;	
-	display:block;
-  position: relative;
-  &:before{
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
+	// height: 200px;	
+	// display:block;
+ //  position: relative;
+ //  &:before{
+ //    margin: auto;
+ //    position: absolute;
+ //    left: 0;
+ //    right: 0;
+ //  }
 }
 
 .pack-bookmarks{
-	font-size: 13em;
+	// font-size: 13em;
 }
 .pack-class{
-	font-size: 20em;
-  top: -41px;
+	// font-size: 20em;
+  // top: -41px;
 }
 .pack-combination{
-	font-size: 21em;
-  top: -34px;
+	// font-size: 21em;
+  // top: -34px;
+}
+
+	.section-title {
+		    padding: 0.36em 0.2em;
+		    display: inline-block;
+		    overflow: hidden;
+		    width: 100%;
+		    color:$grey-dark;
+		    text-align: center;
 }
 
 // WORDPRESS FUNCTIONAL CLASSES

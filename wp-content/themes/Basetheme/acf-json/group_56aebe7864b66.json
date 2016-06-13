@@ -82,7 +82,9 @@
                     "post_type": [
                         "product"
                     ],
-                    "taxonomy": [],
+                    "taxonomy": [
+
+                    ],
                     "filters": [
                         "search",
                         "taxonomy"
@@ -93,6 +95,23 @@
                     "return_format": "id"
                 }
             ]
+        },
+        {
+            "key": "field_570212a7f98aa",
+            "label": "late_fee_applies_after",
+            "name": "late_fee_applies_after",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "m\/d\/Y",
+            "first_day": 1
         }
     ],
     "location": [
@@ -112,5 +131,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1457394962
+    "modified": 1463459466
 }

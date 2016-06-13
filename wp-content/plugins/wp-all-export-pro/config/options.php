@@ -18,4 +18,4 @@ $config = array(
 	"zapier_invitation_url" => "",
 	"zapier_invitation_url_received" => ""
 );
-if (!defined('WPALLEXPORT_SIGNATURE')) define('WPALLEXPORT_SIGNATURE', 'MjEwOTM2NmQ2ODc3MGM1NTI4YWE1NjcwNTUxNmYzNjQ=');
+if (!defined('WPALLEXPORT_SIGNATURE')) define('WPALLEXPORT_SIGNATURE', '');

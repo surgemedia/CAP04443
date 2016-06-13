@@ -5,59 +5,21 @@
  * @author Max Tsiplyakov <makstsiplyakov@gmail.com>
  */
 
-class PMUI_Admin_Import extends PMUI_Controller_Admin {		
-	
-	public function _step_ready() {
+class PMUI_Admin_Import extends PMUI_Controller_Admin {				
 
-		$default = PMUI_Plugin::get_default_import_options();
+	public function index( $post = array() ) {			
 
-		$this->data['id'] = $id = $this->input->get('id');
-
-		$this->data['import'] = $import = new PMXI_Import_Record();			
-		if ( ! $id or $import->getById($id)->isEmpty()) { // specified import is not found		
-			$DefaultOptions = (isset(PMXI_Plugin::$session->options) ? PMXI_Plugin::$session->options : array()) + $default;				
-			$post = $this->input->post( $DefaultOptions );	
-		}
-		else 
-			$post = $this->input->post(
-				$this->data['import']->options
-				+ $default			
-			);				
-
-		$this->data['is_loaded_template'] = ( ! empty(PMXI_Plugin::$session->is_loaded_template)) ? PMXI_Plugin::$session->is_loaded_template : false;
-
-		$load_options = $this->input->post('load_template');
-
-		if ($load_options) { // init form with template selected
-			
-			$template = new PMXI_Template_Record();
-			if ( ! $template->getById($this->data['is_loaded_template'])->isEmpty()) {	
-				$post = (!empty($template->options) ? $template->options : array()) + $default;				
-			}
-			
-		} elseif ($load_options == -1){
-			
-			$post = $DefaultOptions;
-							
-		}
-				
 		$this->data['post'] =& $post;	
-
-	}
-
-	public function index( $post = array() ) {	
-
-		$this->_step_ready();
 		
 		$this->render();
 
 	}	
 	
-	public function options( $isWizard = false ){
-
-		$this->_step_ready();
+	public function options( $isWizard = false, $post = array() ){		
 
 		$this->data['isWizard'] = $isWizard;	
+
+		$this->data['post'] =& $post;	
 
 		// Get All meta keys in the system
 		$this->data['existing_meta_keys'] = array();

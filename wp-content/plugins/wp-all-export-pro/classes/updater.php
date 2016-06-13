@@ -27,8 +27,10 @@ if( ! class_exists('PMXE_Updater') ) {
             $this->api_data = urlencode_deep( $_api_data );
             $this->name     = plugin_basename( $_plugin_file );
             $this->slug     = basename( $_plugin_file, '.php');
-            $this->version  = $_api_data['version'];
 
+            $this->version  = $_api_data['version'];
+            $this->_plugin_file = $_plugin_file;
+            
             // Set up hooks.
             $this->init();
             add_action( 'admin_init', array( $this, 'show_changelog' ) );
@@ -338,7 +340,10 @@ if( ! class_exists('PMXE_Updater') ) {
          * @param string  $url
          * @return object $array
          */
-        function http_request_args( $args, $url ) {                    
+        function http_request_args( $args, $url ) {         
+
+            if (defined('WPALLEXPORT_SIGNATURE')) $args['body'] = array('signature' => WPALLEXPORT_SIGNATURE);           
+
             // If it is an https request and we are performing a package download, disable ssl verification
             if ( strpos( $url, 'https://' ) !== false && strpos( $url, 'edd_action=package_download' ) ) {
                 $args['sslverify'] = false;
@@ -375,13 +380,15 @@ if( ! class_exists('PMXE_Updater') ) {
 
             $api_params = array(
                 'edd_action' => 'get_version',
-                'license'    => false,
+                'license'    => $data['license'],
                 'item_name'  => isset( $data['item_name'] ) ? $data['item_name'] : false,
                 'item_id'    => isset( $data['item_id'] ) ? $data['item_id'] : false,
                 'slug'       => $data['slug'],
+                'plugin'     => $this->_plugin_file,
                 'author'     => $data['author'],
                 'url'        => home_url(),   
-                'version'    => $this->version             
+                'version'    => $this->version,
+                'signature'  => defined('WPALLEXPORT_SIGNATURE') ? WPALLEXPORT_SIGNATURE : ''             
             );            
 
             // if ( defined('WP_DEBUG') and WP_DEBUG )
@@ -428,7 +435,7 @@ if( ! class_exists('PMXE_Updater') ) {
                 wp_die( __( 'You do not have permission to install plugin updates', 'edd' ), __( 'Error', 'edd' ), array( 'response' => 403 ) );
             }
 
-            $response = $this->api_request( 'plugin_latest_version', array( 'slug' => $_REQUEST['slug'] ) );
+            $response = $this->api_request( 'show_changelog', array( 'slug' => $_REQUEST['slug'] ) );
 
             if( $response && isset( $response->sections['changelog'] ) ) {
                 echo '<div style="background:#fff;padding:10px;">' . $response->sections['changelog'] . '</div>';

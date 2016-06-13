@@ -27,12 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
 		<h1>Checkout</h1>
-		<h2><?php _e( 'Billing Details', 'woocommerce' ); ?></h2>
+		<h2><?php _e( 'Your Contact Details', 'woocommerce' ); ?></h2>
 
 	<?php else : ?>
 		
 		<h1>Checkout</h1>
-		<h2><?php _e( 'Billing Details', 'woocommerce' ); ?></h2>
+		<h2><?php _e( 'Your Contact Details', 'woocommerce' ); ?></h2>
 	
 	<?php endif; ?>
 
