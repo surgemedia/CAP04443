@@ -25,7 +25,7 @@
 	$price_button = explode('</span>',$price_button)[1];
 	$price_button = explode('</div>',$price_button)[0];
 
-	$pull_class = "pullr-right";
+	$pull_class = "pull-right";
 ?>
 
 
