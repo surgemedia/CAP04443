@@ -32,8 +32,11 @@
     		$items = $woocommerce->cart->get_cart();
     		//debug(sizeof($items));
     		if(sizeof($items) == 0){ 
-			$GLOBALS['remove_page_on_click'] = true;
-			} else {
+			$GLOBALS['remove_page_on_click'] = true;?>
+            <div style="border: 2px dashed; color: #d1d1d1; text-align: center; padding: 3em; margin-bottom: 6em;">
+                No Items
+            </div>
+		<?php	} else {
        			echo do_shortcode('[woocommerce_cart]');
 			}
     	 ?>
