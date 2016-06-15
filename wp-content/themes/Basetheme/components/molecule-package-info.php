@@ -14,7 +14,7 @@
 		<div class="box">
 			<div class="package-collection">
 			<?php for ($i=0; $i < sizeof($package_info); $i++) {
-				//debug($package_info[$i]);
+				// print_r($package_info[$i]);
 				switch (trim($package_info[$i])) {
 					//5x7s
 					case '5x7s':
@@ -344,6 +344,16 @@
 								$class = "pack-FAMILY-8x12s";
 								includePart('components/atom-package-img-4.php',$text,$class);
 							break;
+					case "memorymate":
+								$text = "Memory Mate";
+								$class = "pack-memorymate";
+								includePart('components/atom-package-img.php',$text,$class);
+							break;
+							case "MemoryMate":
+										$text = "Memory Mate";
+										$class = "pack-memorymate";
+										includePart('components/atom-package-img.php',$text,$class);
+									break;
 
 						default:
 							if(strlen(trim($package_info[$i])) > 1){
@@ -354,7 +364,7 @@
 							break;
 					}
 			} ?>
-				
+
 			</div>
 			<hgroup class="title">
 			<?php if (!empty($title)):?> <h2><?php echo $title; ?></h2><?php endif; ?>
