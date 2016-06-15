@@ -54,9 +54,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			if ( $_product && $_product->exists()  && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
-				<li onclick="showProductPosition(this)" data-prodCartID="<?php echo $cart_item['product_id']; ?>" class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<li  data-prodCartID="<?php echo $cart_item['product_id']; ?>" class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 				<div class="title visible-xs">ITEMS DETAILS</div>
-					<div class="product-name col-md-5" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
+					<div onclick="showProductPosition(this.parentElement)" class="product-name col-md-5" data-title="<?php _e( 'Product', 'woocommerce' ); ?>">
 						<?php
 							if ( ! $_product->is_visible() ) {
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;';
@@ -96,15 +96,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
 						?>
 						<div class="product-remove">
+
 						<?php
+						
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">REMOVE ITEM</a>',
-								esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+								esc_url(  wc()->cart->get_remove_url( $cart_item_key )  ),
 								__( 'Remove all of this item from cart', 'woocommerce' ),
 								esc_attr( $product_id ),
 								esc_attr( $_product->get_sku() )
 							), $cart_item_key );
+							
 						?>
+
 					</div>
 					</div>
 
@@ -151,8 +155,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="cart-collaterals col-md-6">
 
-
-	
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 
 </div>
