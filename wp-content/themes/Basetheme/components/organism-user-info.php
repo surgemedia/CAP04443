@@ -10,7 +10,7 @@
 <div class="user-info">
 	<div class="scroll-hide">
 		<div class="box">
-			<img width="auto" height="auto" src="<?php echo aq_resize($logo,300,111,true,true,true); ?>" alt="">
+			<img width="auto" height="auto" src="<?php echo aq_resize($logo,300,111,false,true,true); ?>" alt="">
 			<p><?php echo $school; ?></p>
 			<p><?php echo $year; ?> - <?php echo $class; ?></p>
             <p>Student's Name</p>
